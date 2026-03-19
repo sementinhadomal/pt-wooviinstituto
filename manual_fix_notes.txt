@@ -1,0 +1,26 @@
+const fs = require('fs');
+const path = require('path');
+
+const baseDir = 'c:\\Users\\julia\\Downloads\\mariaalice (3)';
+
+function processFile(filePath) {
+    let content = fs.readFileSync(filePath, 'utf8');
+    let modified = false;
+
+    // This is for index.html type grids
+    // Look for cards: <div ...> ... <a href="campanha-XXX.html"> ... </div>
+    // We can look for the hrefs and if we see the same href twice, we might have a duplicate card.
+    
+    const hrefRegex = /href="([^"]+\.html)"/g;
+    let match;
+    const seenHrefs = new Set();
+    const toRemoveIndices = [];
+
+    // However, index.html has a lot of content. 
+    // Let's just focus on the campaign grid area.
+    
+    // Better approach for index.html: it seems the WHOLE GRID content was doubled.
+}
+
+// Actually, I'll just do a manual fix for index.html since it's large and specific.
+// And for campanha-124.html too.

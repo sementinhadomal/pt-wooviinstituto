@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview Upsell - Lista Horizontal</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: #e5e7eb; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+
+  .label {
+    background: #1e293b; color: white;
+    font-size: 0.75rem; font-weight: 700;
+    padding: 8px 18px; border-radius: 999px;
+    letter-spacing: 0.05em; margin-bottom: 24px;
+  }
+
+  .phone {
+    width: 375px;
+    background: linear-gradient(160deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    overflow: hidden;
+    padding: 36px 20px 48px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+  .check-icon {
+    background: #4A9D44; border-radius: 50%;
+    width: 72px; height: 72px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 24px rgba(74,157,68,0.4);
+    animation: pop 0.45s ease;
+  }
+
+  h1 { font-size: 1.55rem; font-weight: 900; color: #166534; margin-bottom: 8px; }
+  .sub { font-size: 0.88rem; color: #4b7c59; line-height: 1.65; margin-bottom: 26px; }
+
+  .carousel-label { text-align: left; font-weight: 800; color: #166534; font-size: 0.88rem; margin-bottom: 12px; }
+
+  .carousel {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 4px 2px 14px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-bottom: 18px;
+  }
+
+  .campaign-card {
+    flex: 0 0 188px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    transition: transform 0.15s;
+  }
+
+  .campaign-card:hover { transform: translateY(-2px); }
+
+  .card-img {
+    height: 115px; overflow: hidden; position: relative;
+  }
+
+  .card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .card-badge {
+    position: absolute; bottom: 6px; left: 6px;
+    background: #4A9D44; color: white;
+    font-size: 9px; font-weight: 800;
+    padding: 3px 7px; border-radius: 6px;
+  }
+
+  .card-body {
+    padding: 12px; flex: 1;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+
+  .card-title {
+    font-weight: 700; font-size: 0.76rem; color: #111827;
+    line-height: 1.4;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  .progress-bar { background: #e5e7eb; border-radius: 4px; height: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #4A9D44; border-radius: 4px; }
+
+  .card-raised { font-size: 0.7rem; color: #4A9D44; font-weight: 700; }
+  .card-raised span { color: #9ca3af; font-weight: 400; }
+
+  .btn-donate {
+    display: block; background: #4A9D44; color: white;
+    text-align: center; padding: 9px;
+    border-radius: 10px; font-weight: 800; font-size: 0.78rem;
+    text-decoration: none; margin-top: auto;
+  }
+
+  .btn-all {
+    display: inline-block; background: white; color: #4A9D44;
+    border: 2px solid #4A9D44; padding: 10px 28px;
+    border-radius: 10px; font-weight: 700; font-size: 0.85rem;
+    text-decoration: none; margin-bottom: 12px;
+  }
+
+  .btn-close {
+    background: transparent; border: none; color: #9ca3af;
+    padding: 10px; font-weight: 600; cursor: pointer;
+    font-size: 0.78rem; font-family: inherit;
+  }
+</style>
+    <script src="js/protect.js?v=1773470675610" defer></script>
+</head>
+<body>
+<div class="label">PREVIEW — Upsell com Lista de Campanhas</div>
+
+<div class="phone">
+  <div class="check-icon">
+    <svg width="36" height="36" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  </div>
+
+  <h1>Doação Confirmada! 🎉</h1>
+  <p class="sub">Obrigado pela sua generosidade!<br>Que tal ajudar <strong>mais uma causa</strong>?</p>
+
+  <p class="carousel-label">💚 Escolha uma campanha para apoiar:</p>
+
+  <div class="carousel">
+
+    <div class="campaign-card">
+      <div class="card-img">
+        <img src="https://institutomaosqueacolhem.com.br/vaquinhas/160/vaquinha_160_1769001587.webp" alt="João">
+        <div class="card-badge">🐢 Woovi Instituto</div>
+      </div>
+      <div class="card-body">
+        <p class="card-title">Ajude o João a Continuar Vivo</p>
+        <div class="progress-bar"><div class="progress-fill" style="width:36%"></div></div>
+        <p class="card-raised">€ 60 325 <span>de € 166 666</span></p>
+        <a href="#" class="btn-donate">💚 Ajudar</a>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="card-img">
+        <img src="https://institutomaosqueacolhem.com.br/vaquinhas/67/vaquinha_67_1766789193.jpg" alt="Davi">
+        <div class="card-badge">🐢 Woovi Instituto</div>
+      </div>
+      <div class="card-body">
+        <p class="card-title">Ajude o Davi a Vencer o Câncer</p>
+        <div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+        <p class="card-raised">€ 156 834 <span>de € 250 000</span></p>
+        <a href="#" class="btn-donate">💚 Ajudar</a>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="card-img">
+        <img src="https://institutomaosqueacolhem.com.br/vaquinhas/19/vaquinha_19_1762541775.png" alt="Miguel">
+        <div class="card-badge">🐢 Woovi Instituto</div>
+      </div>
+      <div class="card-body">
+        <p class="card-title">Ajude o Miguel a vencer o Câncer no Pulmão</p>
+        <div class="progress-bar"><div class="progress-fill" style="width:89%"></div></div>
+        <p class="card-raised">€ 81 554 <span>de € 91 666</span></p>
+        <a href="#" class="btn-donate">💚 Ajudar</a>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="card-img">
+        <img src="https://institutomaosqueacolhem.com.br/vaquinhas/185/vaquinha_185_1770386781.webp" alt="Júlia">
+        <div class="card-badge">🐢 Woovi Instituto</div>
+      </div>
+      <div class="card-body">
+        <p class="card-title">Ajude a Júlia a continuar vivendo</p>
+        <div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+        <p class="card-raised">€ 55 832 <span>de € 89 880</span></p>
+        <a href="#" class="btn-donate">💚 Ajudar</a>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="card-img">
+        <img src="https://institutomaosqueacolhem.com.br/vaquinhas/100/vaquinha_100_1767480052.png" alt="Manuela">
+        <div class="card-badge">🐢 Woovi Instituto</div>
+      </div>
+      <div class="card-body">
+        <p class="card-title">Ajude Manuela nesse momento difícil ❤️</p>
+        <div class="progress-bar"><div class="progress-fill" style="width:36%"></div></div>
+        <p class="card-raised">€ 14 868 <span>de € 41 666</span></p>
+        <a href="#" class="btn-donate">💚 Ajudar</a>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="#" class="btn-all">Ver todas as campanhas →</a>
+  <br>
+  <button class="btn-close">Fechar</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+[2026-01-28 18:41:18] [WEBHOOK-WAYMB] 📥 Webhook recebido
+Dados: {
+    "method": "POST",
+    "data": {
+        "statusCode": 200,
+        "message": "Payment processed successfully",
+        "transactionId": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+        "id": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+        "amount": 21,
+        "value": 21,
+        "currency": "EUR"
+    }
+}
+----------------------------------------
+[2026-01-28 18:41:18] [WEBHOOK-WAYMB] 🔍 Processando transação
+Dados: {
+    "transaction_id": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+    "status": null,
+    "amount": 21
+}
+----------------------------------------
+[2026-01-28 18:42:24] [WEBHOOK-WAYMB] 📥 Webhook recebido
+Dados: {
+    "method": "POST",
+    "data": {
+        "statusCode": 200,
+        "message": "Payment processed successfully",
+        "transactionId": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+        "id": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+        "amount": 20,
+        "value": 20,
+        "currency": "EUR"
+    }
+}
+----------------------------------------
+[2026-01-28 18:42:24] [WEBHOOK-WAYMB] 🔍 Processando transação
+Dados: {
+    "transaction_id": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+    "status": null,
+    "amount": 20
+}
+----------------------------------------
+[2026-01-28 18:45:20] [WEBHOOK-WAYMB] 📥 Webhook recebido
+Dados: {
+    "method": "POST",
+    "data": {
+        "statusCode": 200,
+        "message": "Payment processed successfully",
+        "transactionId": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+        "id": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+        "amount": 21,
+        "value": 21,
+        "currency": "EUR",
+        "status": "DECLINED",
+        "updatedAt": 1769625919859
+    }
+}
+----------------------------------------
+[2026-01-28 18:45:20] [WEBHOOK-WAYMB] 🔍 Processando transação
+Dados: {
+    "transaction_id": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+    "status": "DECLINED",
+    "amount": 21
+}
+----------------------------------------
+[2026-01-28 18:46:25] [WEBHOOK-WAYMB] 📥 Webhook recebido
+Dados: {
+    "method": "POST",
+    "data": {
+        "statusCode": 200,
+        "message": "Payment processed successfully",
+        "transactionId": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+        "id": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+        "amount": 20,
+        "value": 20,
+        "currency": "EUR",
+        "status": "DECLINED",
+        "updatedAt": 1769625985371
+    }
+}
+----------------------------------------
+[2026-01-28 18:46:25] [WEBHOOK-WAYMB] 🔍 Processando transação
+Dados: {
+    "transaction_id": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+    "status": "DECLINED",
+    "amount": 20
+}
+----------------------------------------

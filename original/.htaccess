@@ -1,0 +1,21 @@
+# Redirecionar para HTTPS preservando metodo POST
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Permitir POST em HTTPS
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=307]
+
+# CORS para toda a aplicacao
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Accept"
+</IfModule>
+
+# Responder OK para preflight OPTIONS
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]

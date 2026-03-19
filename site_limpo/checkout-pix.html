@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerando Seu PIX - Ajude a Maria Alice</title>
+    <!-- UTMify -->
+
+    <script>
+      window.pixelId = "697185be2058fdd08c7d7436";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+                    colors: { primary: '#00a859', 'primary-dark': '#008445' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; color: #1e293b; font-family: 'Montserrat', sans-serif; }
+        .card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; }
+        .loading-spinner { border: 4px solid #f3f3f3; border-top: 4px solid #00a859; border-radius: 50%; width: 3rem; height: 3rem; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+    <script src="js/protect.js?v=1773470675537" defer></script>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Tela de Carregamento -->
+    <div id="loading-screen" class="w-full max-w-md card p-10 text-center">
+        <div class="flex justify-center mb-6"><div class="loading-spinner"></div></div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Gerando seu PIX...</h2>
+        <p id="loading-sub" class="text-gray-500">Aguarde um instante para ajudar a Maria Alice.</p>
+    </div>
+
+    <!-- Tela do PIX Finalizado -->
+    <div id="pix-screen" class="hidden w-full max-w-md card p-6 sm:p-8">
+        <div class="text-center mb-4">
+            <h2 class="text-2xl font-extrabold mb-1 text-[#16a34a]">PIX Disponível!</h2>
+            <p id="pix-amount-msg" class="text-gray-500 text-sm">Escaneie o QR Code ou copie o código abaixo.</p>
+        </div>
+
+        <div class="flex justify-center my-6">
+            <div class="p-2 bg-white rounded-2xl border-2 border-green-100 shadow-sm inline-block">
+                <img loading="lazy" decoding="async" id="pix-qrcode" src="" alt="QR Code do PIX" class="w-48 h-48 object-contain">
+            </div>
+        </div>
+
+        <div class="mb-6 relative">
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 text-center">Código Pix (Copia e Cola)</p>
+            <textarea id="pix-copiacola" readonly="" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm text-gray-600 focus:outline-none resize-none break-all" rows="3"></textarea>
+        </div>
+
+        <button onclick="copyPix()" id="btn-copy" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-5 px-4 rounded-xl transition-all flex justify-center items-center gap-2 shadow-lg shadow-green-200 uppercase tracking-wide text-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            COPIAR CÓDIGO PIX
+        </button>
+
+        <div class="mt-6 flex items-center justify-center gap-2 text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            <span class="text-xs font-medium uppercase tracking-widest text-[#16a34a]">Ambiente 100% Seguro</span>
+        </div>
+    </div>
+
+    <!-- Tela de Erro -->
+    <div id="error-screen" class="hidden w-full max-w-md card p-8 text-center border-t-8 border-red-500">
+        <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </div>
+        <h2 class="text-xl font-bold text-gray-900 mb-2">Ops! Algo deu errado</h2>
+        <p id="error-message" class="text-gray-500 mb-6">Não conseguimos gerar o código agora. Por favor, tente novamente.</p>
+        <button onclick="location.reload()" class="w-full bg-gray-900 text-white font-bold py-3 rounded-xl">Tentar Novamente</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const params = new URLSearchParams(window.location.search);
+            const amount = parseFloat(params.get('amount')) || 25; // Default € 4 se nada for passado
+            
+            const payload = {
+                amount: amount, 
+                method: 'pix',
+                payer: { 
+                    name: 'Doador Maria Alice', 
+                    document: '84942918073',
+                    phone: '11999999999',
+                    email: 'doador@salveamaria-alice.online'
+                }
+            };
+
+            if(amount > 0) {
+                document.getElementById('loading-sub').textContent = 'Gerando PIX de € ' + amount.toFixed(2).replace('.', ',');
+            }
+
+            try {
+                // Tentar gerar dinamicamente via PHP
+                const res = await fetch('/api/gerar-ativushub.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const text = await res.text();
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch(e) {
+                    console.error('Resposta nao e JSON:', text);
+                    throw new Error('Erro de comunicação com o servidor. Tente novamente.');
+                }
+                
+                if(!data.success) {
+                    let debugInfo = data.debug ? '<br><br><div class="text-[9px] opacity-40 text-left bg-gray-100 p-2 rounded overflow-auto max-h-40">' + JSON.stringify(data.debug, null, 2) + '</div>' : '';
+                    throw new Error(data.error + debugInfo);
+                }
+                
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('pix-screen').classList.remove('hidden');
+                
+                let qrSrc = 'data:image/png;base64,' + data.data.qr_code_base64;
+                try {
+                    const decoded = atob(data.data.qr_code_base64);
+                    if(decoded.startsWith('http')) qrSrc = decoded;
+                } catch(e) {}
+                
+                document.getElementById('pix-qrcode').src = qrSrc;
+                document.getElementById('pix-copiacola').value = data.data.pix_code;
+                
+                if(amount > 0) {
+                    document.getElementById('pix-amount-msg').innerHTML = 'Valor da doação: <strong class="text-[#16a34a]">€ ' + amount.toFixed(2).replace('.', ',') + '</strong><br>Escaneie ou copie o código abaixo no seu banco.';
+                }
+
+            } catch(err) {
+                console.error(err);
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('error-screen').classList.remove('hidden');
+                document.getElementById('error-message').innerHTML = err.message + '<br><br><small class="opacity-30 text-[9px]">' + (new Date().toISOString()) + '</small>';
+            }
+        });
+
+        function copyPix() {
+            const txt = document.getElementById('pix-copiacola');
+            navigator.clipboard.writeText(txt.value).then(() => {
+                const btn = document.getElementById('btn-copy');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'CÓDIGO COPIADO!';
+                btn.classList.replace('bg-green-600', 'bg-gray-800');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-gray-800', 'bg-green-600');
+                }, 2000);
+            });
+        }
+    </script>
+
+
+</body></html>

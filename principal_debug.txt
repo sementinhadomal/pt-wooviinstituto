@@ -1,0 +1,2860 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Terapia Génica para a cura da Síndrome CTNNB1</title>
+
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script async="" src="js/fbevents.js"></script><script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Doe com Solidariedade - Estilos Principais */
+
+/* Base Styles */
+body { 
+    background-color: #F5F5F5!important; 
+    color: #4f4f4f;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Typography Scale - Mobile First */
+h1 {
+    font-size: 1.75rem; /* 28px mobile */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+h2 {
+    font-size: 1.5rem; /* 24px mobile */
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-size: 1.25rem; /* 20px mobile */
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-size: 1.125rem; /* 18px mobile */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+p {
+    font-size: 0.9375rem; /* 15px mobile */
+    line-height: 1.6;
+    margin-bottom: 0.875rem;
+}
+
+small, .text-sm {
+    font-size: 0.8125rem; /* 13px mobile */
+}
+
+.text-xs {
+    font-size: 0.6875rem; /* 11px mobile */
+}
+
+button, .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem; /* 15px mobile */
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Desktop Typography - Larger screens */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* 40px desktop */
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem; /* 32px desktop */
+        margin-bottom: 0.875rem;
+    }
+
+    h3 {
+        font-size: 1.5rem; /* 24px desktop */
+        margin-bottom: 0.75rem;
+    }
+
+    h4 {
+        font-size: 1.25rem; /* 20px desktop */
+    }
+
+    p {
+        font-size: 1rem; /* 16px desktop */
+        margin-bottom: 1rem;
+    }
+
+    small, .text-sm {
+        font-size: 0.875rem; /* 14px desktop */
+    }
+
+    .text-xs {
+        font-size: 0.75rem; /* 12px desktop */
+    }
+
+    button, .btn {
+        font-size: 1rem; /* 16px desktop */
+    }
+}
+
+/* Accordion Styles */
+.accordion-content { 
+    max-height: 0px; 
+    overflow: hidden; 
+    transition: max-height 0.3s ease-in-out; 
+}
+
+.accordion-item.active .accordion-content { 
+    max-height: 200px; 
+}
+
+.accordion-item.active .accordion-arrow { 
+    transform: rotate(180deg); 
+}
+
+.accordion-arrow { 
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Menu Mobile Styles */
+#mobile-menu { 
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 40;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#mobile-menu.show { 
+    display: block; 
+}
+
+/* Tab Styles */
+.tab-link-active { 
+    border-bottom: 2px solid #25D366; 
+    color: #25D366; 
+    font-weight: 600; 
+}
+
+/* Avatar Group */
+.avatar-group > div { 
+    margin-left: -10px; 
+}
+
+.avatar-group > div:first-child { 
+    margin-left: 0; 
+}
+
+/* Confetti Animation */
+.confetti-container {
+    position: absolute;
+    top: -100px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: 200px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+    border-radius: 50%;
+    animation: fall-and-fade 3s linear forwards;
+}
+
+/* Keyframes para a animação de queda e fade-out */
+@keyframes fall-and-fade {
+    0% { 
+        transform: translateY(-50px) rotate(0deg); 
+        opacity: 0.8; 
+    }
+    100% { 
+        transform: translateY(200px) rotate(720deg);
+        opacity: 0; 
+    }
+}
+
+/* Animação para a notificação deslizar da direita para a esquerda */
+@keyframes slide-in-right {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.5s ease forwards;
+}
+
+/* Animação de fade para troca de doadores */
+@keyframes fade-in-out {
+    0% { opacity: 0; transform: translateY(5px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-5px); }
+}
+
+.donor-fade {
+    animation: fade-in-out 4s ease-in-out;
+}
+
+/* Animação para lista de doações */
+.donation-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.donation-item:hover {
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+
+/* Container de doações com overflow controlado */
+#recent-donations-list {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animação para o card fixo aparecer */
+@keyframes slide-up {
+    from {
+        transform: translateY(120%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slide-up 0.4s ease-out forwards;
+}
+
+/* Estilo adicional para o card fixo */
+#sticky-donation-card {
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#sticky-donation-card.hidden {
+    display: none !important;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #ffffff;
+    color: #282828;
+    position: relative;
+    margin-top: 80px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+}
+
+/* Header do Footer */
+.footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo svg {
+    width: 170px;
+    height: 45px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #282828;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+    opacity: 0.6;
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    fill: #282828;
+}
+
+/* Conteúdo Principal do Footer */
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    color: #25D366;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #282828;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    transition: opacity 0.3s;
+}
+
+.footer-column ul li a:hover {
+    opacity: 0.6;
+}
+
+/* Coluna Fale Conosco */
+.contact-info {
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+
+.security-seal {
+    margin-top: 15px;
+}
+
+.security-seal img {
+    width: 115px;
+    height: 40px;
+}
+
+/* Coluna App */
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-button {
+    display: block;
+    width: 150px;
+}
+
+.app-button img {
+    width: 100%;
+    height: auto;
+}
+
+/* Copyright */
+.footer-copyright {
+    background-color: #f3f4f6;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    color: #282828;
+}
+
+/* Responsividade do Footer */
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-logo svg {
+        width: 120px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-content {
+        padding: 30px 15px 15px;
+    }
+}
+
+    </style>
+    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-ignore-iframe="" data-utmify-prevent-subids="" async="" defer=""></script>
+        <script type="text/javascript">
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/b8e37182-99d8-446e-bc5f-24b858a3ce55.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script><script type="text/javascript" defer="" src="js/b8e37182-99d8-446e-bc5f-24b858a3ce55.js"></script>
+
+    <script>
+        window.pixelId = " 697185be2058fdd08c7d7436";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script><script async="" defer="" src="js/pixel.js"></script>
+
+    <style>
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(1px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            animation: fadeIn 0.5s ease-out;
+            pointer-events: all;
+        }
+
+        .video-overlay.playing {
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .overlay-card {
+            background: #C8F77D;
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 280px;
+            width: 85%;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+
+        .overlay-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .overlay-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .overlay-title {
+            color: #000;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .sound-icon {
+            animation: pulse 2s infinite;
+            
+        }
+
+        .overlay-subtitle {
+            color: #000!important;
+            font-size: 0.875rem;
+            margin: 0 0 1rem 0;
+            font-weight: 500;
+        }
+
+        .play-button {
+            background: white;
+            color: #000!important;
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .play-button:hover {
+            background: #000!important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Responsividade                          */
+        @media (max-width: 768px) {
+            .overlay-card {
+                padding: 1rem;
+                max-width: 240px;
+            }
+
+            .overlay-title {
+                font-size: 1rem;
+            }
+
+            .overlay-subtitle {
+                font-size: 0.8rem;
+            }
+
+            .play-button {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.8rem;
+            }
+
+            .sound-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+      
+    </style>
+<style>
+        body {
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+
+        .valor-btn {
+            padding: 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .valor-btn:hover {
+            border-color: #4A9D44;
+            background-color: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 157, 68, 0.15);
+        }
+
+        .valor-btn.selecionado {
+            border-color: #4A9D44;
+            background-color: #4A9D44;
+            color: white;
+            box-shadow: 0 4px 12px rgba(74, 157, 68, 0.3);
+        }
+
+        .checkout-container {
+            max-width: 32rem;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-finalizar {
+            width: 100%;
+            background-color: #4A9D44;
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(74, 157, 68, 0.3);
+        }
+
+        .btn-finalizar:hover {
+            background-color: #3d8539;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(74, 157, 68, 0.4);
+        }
+
+        .btn-doar {
+            width: 100%;
+            background-color: #4A9D44;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(74, 157, 68, 0.3);
+        }
+
+        .btn-doar:hover {
+            background-color: #3d8539;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(74, 157, 68, 0.4);
+        }
+
+
+
+        .donor-info-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .donor-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .last-donor-text {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .security-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .security-seal-small {
+            width: 80px;
+            height: auto;
+        }
+
+        .checkout-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #111827;
+        }
+
+        .gofundme-guarantee {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .guarantee-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+        }
+
+        .guarantee-text {
+            flex: 1;
+        }
+
+        .guarantee-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .guarantee-description {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .guarantee-link {
+            color: #4A9D44;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .guarantee-link:hover {
+            color: #3d8539;
+        }
+
+        .anonymous-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .anonymous-checkbox:hover {
+            border-color: #4A9D44;
+        }
+
+        .anonymous-checkbox:checked {
+            background-color: #4A9D44;
+            border-color: #4A9D44;
+        }
+
+        .anonymous-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 5px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .anonymous-label {
+            font-size: 0.875rem;
+            color: #4b5563;
+            cursor: pointer;
+            user-select: none;
+            line-height: 1.4;
+        }
+
+        .anonymous-checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        /* Donation Form Styles */
+        #donation-form input[type="number"]::-webkit-outer-spin-button,
+        #donation-form input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #donation-form input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .quick-amount-btn.active {
+            border-color: #4A9D44;
+            background-color: #f0fdf4;
+        }
+
+        .payment-method-card {
+            transition: all 0.2s ease;
+        }
+
+        .payment-method-option input:checked + .payment-method-card {
+            border-color: #4A9D44;
+            background-color: #f0fdf4;
+        }
+
+        #donation-form .btn-doar:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+    
+    <style>
+        body.no-scroll {
+    overflow: hidden;
+}
+
+/* BACKDROP ESCURO */
+.donation-offcanvas-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Quando visível */
+.donation-offcanvas-backdrop.is-visible {
+    display: block;
+    opacity: 1;
+}
+
+/* PAINEL PRINCIPAL (full screen, com seu header e main) */
+.donation-offcanvas-panel {
+    position: fixed;
+    inset: 0; /* top, right, bottom, left = 0 */
+    background: #ffffff;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+/* Aberto */
+.donation-offcanvas-panel.is-open {
+    transform: translateY(0);
+}
+    </style>
+    
+        <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=true;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1574873043554006');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1574873043554006&ev=PageView&noscript=1"></noscript>
+        
+        <script>   window.pixelId = "697185be2058fdd08c7d7436";   var a = document.createElement("script");   a.setAttribute("async", "");   a.setAttribute("defer", "");   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");   document.head.appendChild(a); </script><script async="" defer="" src="js/pixel.js"></script>    
+
+</head>
+
+
+
+<body class="font-sans m-0 p-0">
+    
+    
+    
+    <!-- OFFCANVAS DONATION FULL PAGE -->
+<div id="donation-offcanvas-backdrop" class="donation-offcanvas-backdrop">
+    <div id="donation-offcanvas-panel" class="donation-offcanvas-panel">
+
+        <!-- HEADER IGUAL AO QUE VOCÊ MANDOU -->
+        <header class="bg-white shadow-sm sticky top-0 z-30">
+            <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+
+                <!-- Search icon on the left -->
+                <button class="text-gray-600 hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+
+                <!-- Centered logo -->
+               <div class="absolute left-1/2 transform -translate-x-1/2">
+    <a data-tracking-id="logo">
+                    <svg class="hrt-disp-block hrt-gfm-logo" fill="none" height="36" viewBox="0 0 105 36" width="105" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="m49.483 1.416.913 5.167c.023.131.142.22.274.209a12.65 12.65 0 0 1 2.266 0 .253.253 0 0 0 .274-.209l.912-5.167a.254.254 0 0 0-.22-.296 18.61 18.61 0 0 0-4.199 0 .253.253 0 0 0-.22.296ZM60.051 14.004a.254.254 0 0 0 .212-.394 10.182 10.182 0 0 0-8.46-4.504 10.18 10.18 0 0 0-8.459 4.504.254.254 0 0 0 .213.394H60.05ZM38.744 6.856l3.965 3.442c.1.087.249.081.344-.011a12.589 12.589 0 0 1 1.76-1.424.255.255 0 0 0 .083-.336L42.35 3.938a.254.254 0 0 0-.358-.092 18.61 18.61 0 0 0-3.264 2.64.252.252 0 0 0 .016.369ZM61.258 3.94l-2.546 4.589a.256.256 0 0 0 .082.335 12.681 12.681 0 0 1 1.76 1.424.255.255 0 0 0 .345.01l3.965-3.441a.254.254 0 0 0 .016-.37 18.484 18.484 0 0 0-3.264-2.639.254.254 0 0 0-.358.093v-.002ZM88.106 16.67c-1.222 0-2.545.576-3.482 1.764a.204.204 0 0 1-.332-.017c-.748-1.155-1.855-1.747-2.954-1.747-1.1 0-2.37.792-3.1 1.764-.076.101-.239.03-.216-.096l.195-1.106a.254.254 0 0 0-.25-.297h-3.394a.254.254 0 0 0-.254.254V27.99c0 .14.113.254.253.254h3.312c.14 0 .254-.114.254-.254v-6.223c0-1.039.694-1.745 1.575-1.745.88 0 1.562.693 1.562 1.745v6.224c0 .14.114.253.254.253h3.31c.14 0 .254-.114.254-.254v-6.223c0-1.039.695-1.745 1.575-1.745.881 0 1.562.693 1.562 1.745v6.224c0 .14.114.253.254.253h3.31c.14 0 .255-.114.255-.254v-6.959c0-2.833-1.922-4.36-3.943-4.36v-.002ZM72.567 10.975h-3.378a.22.22 0 0 0-.22.22v7.138a.15.15 0 0 1-.273.087c-.71-.994-1.972-1.76-3.386-1.75-3.1.019-5.157 2.863-5.157 5.92 0 3.055 2.062 5.751 5.157 5.912 1.62.083 2.891-.881 3.646-1.877.056-.073.172-.023.156.069l-.274 1.549h3.729a.22.22 0 0 0 .22-.22V11.195a.22.22 0 0 0-.22-.22ZM66.272 25.15a2.56 2.56 0 0 1-2.566-2.564 2.56 2.56 0 0 1 2.566-2.564 2.56 2.56 0 0 1 2.567 2.564 2.56 2.56 0 0 1-2.567 2.564Z" fill="#4A9D44"></path>
+                <path clip-rule="evenodd" d="m103.264 14.004.613 1.8.609-1.8h.411v2.128h-.275v-1.256c0-.044 0-.115.003-.216.003-.1.003-.208.003-.323l-.609 1.795h-.287l-.614-1.795v.065l.004.24c.003.106.003.184.003.235v1.256h-.276v-2.128h.415Zm-.673 0v.254h-.718v1.874h-.292v-1.874h-.719v-.254h1.729ZM19.668 16.67c-3.37 0-6.096 2.398-6.096 5.915s2.726 5.916 6.096 5.916 6.144-2.423 6.144-5.916c0-3.493-2.763-5.916-6.144-5.916Zm.024 8.479a2.56 2.56 0 0 1-2.566-2.564 2.56 2.56 0 0 1 2.566-2.564 2.56 2.56 0 0 1 2.567 2.564 2.56 2.56 0 0 1-2.567 2.564Z" fill="#4A9D44" fill-rule="evenodd"></path>
+                <path d="M12.635 17.192a.263.263 0 0 0-.263-.263H8.989a.254.254 0 0 0-.25.297l.193 1.095c.023.124-.136.196-.214.098-.684-.864-1.947-1.826-3.56-1.75C2.06 16.814 0 19.526 0 22.58c0 3.055 2.058 5.919 5.158 5.92a4.163 4.163 0 0 0 3.435-1.825c.067-.1.224-.053.224.068v1.955c0 1.61-1.021 2.563-2.439 2.563-1.092 0-2.131-.675-2.487-1.92a.305.305 0 0 0-.397-.202L.54 30.213a.248.248 0 0 0-.15.308c.798 2.611 3.243 4.158 5.964 4.158 3.454 0 6.281-2.276 6.281-5.981V17.19v.002ZM6.12 25.149a2.56 2.56 0 0 1-2.567-2.564 2.56 2.56 0 0 1 2.567-2.564 2.56 2.56 0 0 1 2.566 2.564A2.56 2.56 0 0 1 6.12 25.15ZM39.63 28.506c1.121 0 2.35-.784 3.077-1.758.076-.102.239-.03.216.096l-.195 1.107a.253.253 0 0 0 .251.298l3.392-.005c.14 0 .254-.114.254-.254V17.186a.254.254 0 0 0-.254-.254h-3.31a.254.254 0 0 0-.255.254v6.068c0 1.101-.756 1.88-1.711 1.88-.955 0-1.712-.754-1.712-1.88v-6.069a.254.254 0 0 0-.254-.253h-3.31a.254.254 0 0 0-.254.254v6.92c0 2.895 1.959 4.398 4.067 4.398l-.001.002Z" fill="#4A9D44"></path>
+                <path clip-rule="evenodd" d="M101.514 24.45a.256.256 0 0 0-.311.12c-.403.704-1.264 1.073-2.096 1.073-1.165 0-2.157-.807-2.528-2.002h8.113a.253.253 0 0 0 .252-.221c.037-.27.056-.549.056-.834 0-3.62-2.865-5.915-5.917-5.915-3.37 0-6.097 2.398-6.097 5.915 0 3.518 2.727 5.916 6.097 5.916 2.195 0 4.13-1.022 5.217-2.695a.263.263 0 0 0-.133-.391l-2.653-.965Zm-2.408-5.014c1.224 0 2.095.75 2.474 1.84h-4.947c.378-1.09 1.249-1.84 2.474-1.84h-.001Z" fill="#4A9D44" fill-rule="evenodd"></path>
+                <path d="M55.148 16.675c-1.121 0-2.35.784-3.077 1.757-.076.102-.239.03-.216-.096l.195-1.107a.253.253 0 0 0-.251-.297l-3.392.005a.254.254 0 0 0-.254.254v10.804c0 .14.114.254.255.254h3.31c.14 0 .254-.114.254-.254v-6.07c0-1.1.756-1.88 1.711-1.88.955 0 1.712.755 1.712 1.88v6.07c0 .14.113.254.254.254h3.31c.14 0 .254-.114.254-.254v-6.921c0-2.895-1.959-4.397-4.066-4.397v-.002ZM34.29 16.933h-2.226a.152.152 0 0 1-.153-.153v-.756c0-1.432 1.27-2.393 2.706-1.93a.252.252 0 0 0 .324-.198l.527-2.962a.255.255 0 0 0-.195-.293c-3.694-.855-7.178 1.72-7.178 5.705v.434a.153.153 0 0 1-.153.154h-1.697a.254.254 0 0 0-.254.254v2.582a.251.251 0 0 0 .253.253h1.697c.085 0 .153.069.153.153v7.81c0 .14.114.254.254.254h3.31c.14 0 .254-.114.254-.254v-7.81c0-.084.069-.152.153-.152h2.226c.14 0 .254-.114.254-.255v-2.581a.254.254 0 0 0-.254-.254l-.001-.001Z" fill="#4A9D44"></path>
+            </svg>
+            </a>
+</div>
+
+                <!-- Hamburger menu on the right -->
+                <button id="menu-toggle-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-4 pt-4 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">
+                        How to help
+                    </a>
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">
+                        Discover
+                    </a>
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">
+                        How it works
+                    </a>
+                    <div class="border-t border-gray-200 pt-4 pb-3">
+                        <a href="#" class="block px-3 py-2 text-base font-medium text-green-500">
+                            My account
+                        </a>
+                        <button class="w-full mt-3 bg-[#25D366] text-white px-4 py-2 rounded-md font-semibold">
+                            Start a fundraiser!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL (MESMO MAIN QUE VOCÊ MANDOU, AGORA DINÂMICO) -->
+        <main class="py-8">
+            <div class="checkout-container">
+                <h1 class="checkout-title">
+   <strong><p><br></p></strong>
+</h1>
+                <h1 class="checkout-title" id="remaining-text">Still £69,990 to go.<br>Help us give it a boost.</h1>
+
+                <!-- FORMULÁRIO DE DOAÇÃO COM VALOR PERSONALIZADO -->
+                <form id="donation-form" class="space-y-4">
+                    <!-- Campo de Valor -->
+                    <div class="mb-4">
+                        <label for="donation-amount" class="block text-sm font-medium text-gray-700 mb-2">Enter your donation amount</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-semibold text-lg">€</span>
+                            <input 
+                                type="number" 
+                                id="donation-amount" 
+                                name="amount" 
+                                min="1" 
+                                step="0.01"
+                                placeholder="50.00"
+                                required
+                                class="w-full pl-10 pr-4 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold focus:border-[#4A9D44] focus:outline-none focus:ring-2 focus:ring-[#4A9D44]/20 transition-all"
+                            >
+                        </div>
+                        <!-- Quick Amount Buttons -->
+                        <div class="grid grid-cols-4 gap-2 mt-3">
+                            <button type="button" class="quick-amount-btn py-2 px-3 text-sm font-medium border border-gray-200 rounded-lg hover:border-[#4A9D44] hover:bg-green-50 transition-all" data-amount="20">€20</button>
+                            <button type="button" class="quick-amount-btn py-2 px-3 text-sm font-medium border border-gray-200 rounded-lg hover:border-[#4A9D44] hover:bg-green-50 transition-all" data-amount="50">€50</button>
+                            <button type="button" class="quick-amount-btn py-2 px-3 text-sm font-medium border border-gray-200 rounded-lg hover:border-[#4A9D44] hover:bg-green-50 transition-all" data-amount="100">€100</button>
+                            <button type="button" class="quick-amount-btn py-2 px-3 text-sm font-medium border border-gray-200 rounded-lg hover:border-[#4A9D44] hover:bg-green-50 transition-all" data-amount="200">€200</button>
+                        </div>
+                    </div>
+
+                    <!-- Dados do Pagador -->
+                    <div class="space-y-3">
+                        <div>
+                            <label for="payer-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="payer-name" 
+                                name="payer_name" 
+                                placeholder="Your full name"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#4A9D44] focus:outline-none focus:ring-2 focus:ring-[#4A9D44]/20 transition-all"
+                            >
+                        </div>
+                        <div>
+                            <label for="payer-document" class="block text-sm font-medium text-gray-700 mb-1">Document (NIF/ID)</label>
+                            <input 
+                                type="text" 
+                                id="payer-document" 
+                                name="payer_document" 
+                                placeholder="Your identification document"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#4A9D44] focus:outline-none focus:ring-2 focus:ring-[#4A9D44]/20 transition-all"
+                            >
+                        </div>
+<div>
+  <label for="payer-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+  <div class="relative flex">
+    <div class="flex items-center gap-2 px-3 py-3 bg-gray-100 border-2 border-r-0 border-gray-200 rounded-l-xl">
+      <!-- Portugal Flag SVG -->
+      <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="16" rx="2" fill="#FF0000"/>
+        <rect width="8" height="16" fill="#006600"/>
+        <circle cx="8" cy="8" r="3" fill="#FFCC00"/>
+        <circle cx="8" cy="8" r="2" fill="#FF0000"/>
+        <rect x="7" y="6" width="2" height="4" fill="white"/>
+      </svg>
+      <span class="text-gray-600 font-medium text-sm">+351</span>
+    </div>
+    <input
+      type="tel"
+      id="payer-phone"
+      name="payer_phone"
+      placeholder="912 345 678"
+      required
+      class="w-full px-4 py-3 border-2 border-gray-200 rounded-r-xl focus:border-[#4A9D44] focus:outline-none focus:ring-2 focus:ring-[#4A9D44]/20 transition-all"
+    >
+  </div>
+</div>
+                    </div>
+
+                    <!-- Payment Method Selection -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="payment-method-option relative cursor-pointer">
+                                <input type="radio" name="payment_method" value="mbway" class="sr-only" checked>
+                                <div class="payment-method-card flex items-center justify-center gap-2 p-4 border-2 border-[#4A9D44] bg-green-50 rounded-xl transition-all">
+                                    <img src="/mariaalice/images/mbway2.png" alt="MB WAY" class="h-6 object-contain">
+                                </div>
+                            </label>
+                            <label class="payment-method-option relative cursor-pointer">
+                                <input type="radio" name="payment_method" value="multibanco" class="sr-only">
+                                <div class="payment-method-card flex items-center justify-center gap-2 p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-gray-300">
+                                    <img src="/mariaalice/images/multibanco.jpg" alt="Multibanco" class="h-6 object-contain">
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="donation-error" class="hidden p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"></div>
+
+                    <!-- Success Message / Payment Info -->
+                    <div id="donation-success" class="hidden p-4 bg-green-50 border border-green-200 rounded-xl">
+                        <div id="mbway-success" class="hidden text-center">
+                            <svg class="mx-auto mb-2 w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h4 class="font-bold text-green-800 mb-1">MB WAY Request Sent!</h4>
+                            <p class="text-green-700 text-sm">Please check your MB WAY app to confirm the payment.</p>
+                        </div>
+                        <div id="multibanco-success" class="hidden">
+                            <h4 class="font-bold text-green-800 mb-3 text-center">Multibanco Payment Details</h4>
+                            <div class="space-y-2 bg-white p-3 rounded-lg">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Entity:</span>
+                                    <span id="mb-entity" class="font-mono font-bold text-gray-800">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Reference:</span>
+                                    <span id="mb-reference" class="font-mono font-bold text-gray-800">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Amount:</span>
+                                    <span id="mb-amount" class="font-bold text-gray-800">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Expires:</span>
+                                    <span id="mb-expires" class="text-gray-800">-</span>
+                                </div>
+                            </div>
+                            <p class="text-green-700 text-sm mt-3 text-center">Use these details to pay at any ATM or through your bank's app.</p>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="finalizar-doacao" class="btn-doar">
+                        <span id="donate-btn-text">Donate now</span>
+                        <span id="donate-btn-loading" class="hidden">
+                            <svg class="animate-spin h-5 w-5 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+
+                <div class="anonymous-checkbox-container">
+                    <input type="checkbox" id="anonymous-donation" class="anonymous-checkbox">
+                    <label for="anonymous-donation" class="anonymous-label">
+                        Don't display my name publicly on the fundraiser.
+                    </label>
+                </div>
+
+                <div class="donor-info-container">
+                    <img src="images/9Bcg547.png" alt="Donation icon" class="donor-icon">
+                    <p id="last-donor-info" class="last-donor-text donor-fade">Tegan Perry donated £50.00</p>
+                </div>
+
+                <div class="gofundme-guarantee">
+                    <img src="images/AcZZz5M.png" alt="Security Icon" class="guarantee-icon">
+                    <div class="guarantee-text">
+                        <h3 class="guarantee-title">GoFundMe protects your donation</h3>
+                        <p class="guarantee-description">
+                            We guarantee a full refund for up to one year in the rare event of fraud.
+                            <a href="#" class="guarantee-link">
+                                See our GoFundMe Giving Guarantee.
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+
+            <!-- Search icon on the left -->
+            <button class="text-gray-600 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+
+            <div class="absolute left-1/2 transform -translate-x-1/2">
+    <a data-tracking-id="logo">
+                    <svg class="hrt-disp-block hrt-gfm-logo" fill="none" height="36" viewBox="0 0 105 36" width="105" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="m49.483 1.416.913 5.167c.023.131.142.22.274.209a12.65 12.65 0 0 1 2.266 0 .253.253 0 0 0 .274-.209l.912-5.167a.254.254 0 0 0-.22-.296 18.61 18.61 0 0 0-4.199 0 .253.253 0 0 0-.22.296ZM60.051 14.004a.254.254 0 0 0 .212-.394 10.182 10.182 0 0 0-8.46-4.504 10.18 10.18 0 0 0-8.459 4.504.254.254 0 0 0 .213.394H60.05ZM38.744 6.856l3.965 3.442c.1.087.249.081.344-.011a12.589 12.589 0 0 1 1.76-1.424.255.255 0 0 0 .083-.336L42.35 3.938a.254.254 0 0 0-.358-.092 18.61 18.61 0 0 0-3.264 2.64.252.252 0 0 0 .016.369ZM61.258 3.94l-2.546 4.589a.256.256 0 0 0 .082.335 12.681 12.681 0 0 1 1.76 1.424.255.255 0 0 0 .345.01l3.965-3.441a.254.254 0 0 0 .016-.37 18.484 18.484 0 0 0-3.264-2.639.254.254 0 0 0-.358.093v-.002ZM88.106 16.67c-1.222 0-2.545.576-3.482 1.764a.204.204 0 0 1-.332-.017c-.748-1.155-1.855-1.747-2.954-1.747-1.1 0-2.37.792-3.1 1.764-.076.101-.239.03-.216-.096l.195-1.106a.254.254 0 0 0-.25-.297h-3.394a.254.254 0 0 0-.254.254V27.99c0 .14.113.254.253.254h3.312c.14 0 .254-.114.254-.254v-6.223c0-1.039.694-1.745 1.575-1.745.88 0 1.562.693 1.562 1.745v6.224c0 .14.114.253.254.253h3.31c.14 0 .254-.114.254-.254v-6.223c0-1.039.695-1.745 1.575-1.745.881 0 1.562.693 1.562 1.745v6.224c0 .14.114.253.254.253h3.31c.14 0 .255-.114.255-.254v-6.959c0-2.833-1.922-4.36-3.943-4.36v-.002ZM72.567 10.975h-3.378a.22.22 0 0 0-.22.22v7.138a.15.15 0 0 1-.273.087c-.71-.994-1.972-1.76-3.386-1.75-3.1.019-5.157 2.863-5.157 5.92 0 3.055 2.062 5.751 5.157 5.912 1.62.083 2.891-.881 3.646-1.877.056-.073.172-.023.156.069l-.274 1.549h3.729a.22.22 0 0 0 .22-.22V11.195a.22.22 0 0 0-.22-.22ZM66.272 25.15a2.56 2.56 0 0 1-2.566-2.564 2.56 2.56 0 0 1 2.566-2.564 2.56 2.56 0 0 1 2.567 2.564 2.56 2.56 0 0 1-2.567 2.564Z" fill="#4A9D44"></path>
+                <path clip-rule="evenodd" d="m103.264 14.004.613 1.8.609-1.8h.411v2.128h-.275v-1.256c0-.044 0-.115.003-.216.003-.1.003-.208.003-.323l-.609 1.795h-.287l-.614-1.795v.065l.004.24c.003.106.003.184.003.235v1.256h-.276v-2.128h.415Zm-.673 0v.254h-.718v1.874h-.292v-1.874h-.719v-.254h1.729ZM19.668 16.67c-3.37 0-6.096 2.398-6.096 5.915s2.726 5.916 6.096 5.916 6.144-2.423 6.144-5.916c0-3.493-2.763-5.916-6.144-5.916Zm.024 8.479a2.56 2.56 0 0 1-2.566-2.564 2.56 2.56 0 0 1 2.566-2.564 2.56 2.56 0 0 1 2.567 2.564 2.56 2.56 0 0 1-2.567 2.564Z" fill="#4A9D44" fill-rule="evenodd"></path>
+                <path d="M12.635 17.192a.263.263 0 0 0-.263-.263H8.989a.254.254 0 0 0-.25.297l.193 1.095c.023.124-.136.196-.214.098-.684-.864-1.947-1.826-3.56-1.75C2.06 16.814 0 19.526 0 22.58c0 3.055 2.058 5.919 5.158 5.92a4.163 4.163 0 0 0 3.435-1.825c.067-.1.224-.053.224.068v1.955c0 1.61-1.021 2.563-2.439 2.563-1.092 0-2.131-.675-2.487-1.92a.305.305 0 0 0-.397-.202L.54 30.213a.248.248 0 0 0-.15.308c.798 2.611 3.243 4.158 5.964 4.158 3.454 0 6.281-2.276 6.281-5.981V17.19v.002ZM6.12 25.149a2.56 2.56 0 0 1-2.567-2.564 2.56 2.56 0 0 1 2.567-2.564 2.56 2.56 0 0 1 2.566 2.564A2.56 2.56 0 0 1 6.12 25.15ZM39.63 28.506c1.121 0 2.35-.784 3.077-1.758.076-.102.239-.03.216.096l-.195 1.107a.253.253 0 0 0 .251.298l3.392-.005c.14 0 .254-.114.254-.254V17.186a.254.254 0 0 0-.254-.254h-3.31a.254.254 0 0 0-.255.254v6.068c0 1.101-.756 1.88-1.711 1.88-.955 0-1.712-.754-1.712-1.88v-6.069a.254.254 0 0 0-.254-.253h-3.31a.254.254 0 0 0-.254.254v6.92c0 2.895 1.959 4.398 4.067 4.398l-.001.002Z" fill="#4A9D44"></path>
+                <path clip-rule="evenodd" d="M101.514 24.45a.256.256 0 0 0-.311.12c-.403.704-1.264 1.073-2.096 1.073-1.165 0-2.157-.807-2.528-2.002h8.113a.253.253 0 0 0 .252-.221c.037-.27.056-.549.056-.834 0-3.62-2.865-5.915-5.917-5.915-3.37 0-6.097 2.398-6.097 5.915 0 3.518 2.727 5.916 6.097 5.916 2.195 0 4.13-1.022 5.217-2.695a.263.263 0 0 0-.133-.391l-2.653-.965Zm-2.408-5.014c1.224 0 2.095.75 2.474 1.84h-4.947c.378-1.09 1.249-1.84 2.474-1.84h-.001Z" fill="#4A9D44" fill-rule="evenodd"></path>
+                <path d="M55.148 16.675c-1.121 0-2.35.784-3.077 1.757-.076.102-.239.03-.216-.096l.195-1.107a.253.253 0 0 0-.251-.297l-3.392.005a.254.254 0 0 0-.254.254v10.804c0 .14.114.254.255.254h3.31c.14 0 .254-.114.254-.254v-6.07c0-1.1.756-1.88 1.711-1.88.955 0 1.712.755 1.712 1.88v6.07c0 .14.113.254.254.254h3.31c.14 0 .254-.114.254-.254v-6.921c0-2.895-1.959-4.397-4.066-4.397v-.002ZM34.29 16.933h-2.226a.152.152 0 0 1-.153-.153v-.756c0-1.432 1.27-2.393 2.706-1.93a.252.252 0 0 0 .324-.198l.527-2.962a.255.255 0 0 0-.195-.293c-3.694-.855-7.178 1.72-7.178 5.705v.434a.153.153 0 0 1-.153.154h-1.697a.254.254 0 0 0-.254.254v2.582a.251.251 0 0 0 .253.253h1.697c.085 0 .153.069.153.153v7.81c0 .14.114.254.254.254h3.31c.14 0 .254-.114.254-.254v-7.81c0-.084.069-.152.153-.152h2.226c.14 0 .254-.114.254-.255v-2.581a.254.254 0 0 0-.254-.254l-.001-.001Z" fill="#4A9D44"></path>
+            </svg>
+            </a>
+</div>
+
+
+            <!-- Hamburger menu on the right -->
+            <button id="menu-toggle-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+
+        <div id="mobile-menu" class="md:hidden">
+            <div class="px-4 pt-4 pb-3 space-y-1">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">Como
+                    ajudar</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">Descubra</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">Como
+                    funciona</a>
+                <div class="border-t border-gray-200 pt-4 pb-3">
+                    <a href="#" class="block px-3 py-2 text-base font-medium text-green-500">Minha conta</a>
+                    <button class="w-full mt-3 bg-[#25D366] text-white px-4 py-2 rounded-md font-semibold">Faz uma
+                        vaquinha!</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    
+
+    <main>
+        
+     
+
+        
+        <div class="bg-black overflow-hidden">
+    <div class="video-container" style="position: relative; width: 100%; max-width: 100%; aspect-ratio: 16/9; background: #000;">
+
+                    <!-- QUANDO FOR VÍDEO -->
+            <video id="customVideo" style="width: 100%; height: 100%; object-fit: cover; display: block;" muted="" playsinline="" preload="auto">
+                <source src="media/banner_6971634f7302e.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+
+            <!-- Overlay -->
+            <div id="videoOverlay" class="video-overlay">
+                <div class="overlay-card">
+                    <div class="overlay-header">
+                        <h3 class="overlay-title">Your video has started</h3>
+                        <div class="sound-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M19.07 4.93C20.9447 6.80528 21.9979 9.34836 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 12C17.0039 13.3308 16.4774 14.6024 15.54 15.54" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="overlay-subtitle">Click to enable sound</p>
+                    <button class="play-button">
+                        <div class="play-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="5,3 19,12 5,21" fill="currentColor"></polygon>
+                            </svg>
+                        </div>
+                        <span>Watch now</span>
+                    </button>
+                </div>
+            </div>
+
+        
+    </div>
+</div>
+
+        <!-- Amount raised, progress bar and buttons -->
+        <div id="donation-section" class="bg-white p-4 md:p-6">
+            <div class="flex items-center gap-4 mb-4">
+                <!-- Barra circular de progresso -->
+                <div class="flex-shrink-0">
+                    <div class="relative w-16 h-16 md:w-20 md:h-20">
+                        <svg class="transform -rotate-90 w-full h-full">
+                            <circle cx="50%" cy="50%" r="28" stroke="#e5e7eb" stroke-width="6" fill="none"></circle>
+                            <circle id="progress-circle" cx="50%" cy="50%" r="28" stroke="#2D5A3D" stroke-width="6" fill="none" stroke-dasharray="176" stroke-dashoffset="176" stroke-linecap="round" style="stroke-dasharray: 226.195, 226.195; stroke-dashoffset: 183.218;"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span id="progress-percentage" class="text-sm md:text-base font-bold text-gray-800">19%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fundraising information -->
+                <div class="flex-grow">
+                    <p class="text-xl md:text-2xl font-bold text-gray-800" id="value-raised-desktop">£ 45.750</p>
+                    <p class="text-xs md:text-sm text-gray-500" id="value-goal-desktop">goal £ 230.000</p>
+                    <p id="last-donor-info" class="text-xs text-gray-500 mt-1">Tegan Perry donated £50.00</p>
+                </div>
+            </div>
+
+            <!-- Side by side buttons -->
+            <div class="grid grid-cols-2 gap-3">
+                <a class="bg-[#2d5a3d] text-[#c8f77d] py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-[#234a2f] transition-colors text-center flex items-center justify-center" data-open-donation="">Share</a>
+                <a class="bg-[#c8f77d] text-[#2d5a3d] py-3 md:py-4 rounded-full font-bold text-sm md:text-base text-center hover:bg-[#b8e76d] transition-colors flex items-center justify-center" data-open-donation="">Donate</a>
+            </div>
+        </div>
+
+        <!-- Container for the rest of the content -->
+        <div class="container mx-auto px-4 py-6">
+
+            <div class="hidden md:block bg-white p-4 rounded-lg shadow-sm mb-6">
+                <p class="text-xs text-gray-500 mb-1 flex justify-between">
+                    <span id="campaign-category-desktop"></span>
+                    <span id="campaign-location-desktop"></span>
+                </p>
+                <h1 id="campaign-title-desktop" class="text-2xl font-bold text-gray-800">Maria Alice precisa da sua ajuda para comprar o medicamento mais caro do mundo!
+</h1>
+                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-desktop">GLufQa1hbWkP</span></p>
+            </div>
+
+            <div class="md:hidden bg-white p-4 rounded-lg shadow-sm mb-6">
+                <p class="text-xs text-gray-500 mb-1 flex justify-between">
+                    <span id="campaign-category-mobile"></span>
+                    <span id="campaign-location-mobile"></span>
+                </p>
+                <h1 id="campaign-title-mobile" class="text-2xl font-bold text-gray-800">Maria Alice precisa da sua ajuda para comprar o medicamento mais caro do mundo!
+</h1>
+                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-mobile">GLufQa1hbWkP</span></p>
+
+            </div>
+
+            <!-- About Section -->
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <!-- Story title -->
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Maria Alice precisa da sua ajuda para comprar o medicamento mais caro do mundo!
+</h2>
+
+                <!-- Description -->
+                <div id="campaign-description" class="text-gray-700 text-base leading-relaxed space-y-4 mb-6"><p></p><p>🚨 <strong>A Mafaldinha precisa de nós. Agora.</strong> 🚨</p><p>Esta é a nossa Mafalda.</p><p>Uma menina cheia de luz, que vive com a <strong>Síndrome CTNNB1</strong>, uma condição genética rara que afeta profundamente o seu desenvolvimento, a comunicação e a autonomia.</p><p>Durante anos, famílias de todo o mundo uniram-se para apoiar a investigação científica.</p><p>Uma luta feita de esperança, persistência e amor �R$� que tornou possível algo que parecia inalcançável: <strong>um ensaio clínico de terapia génica para a Síndrome CTNNB1</strong>.</p><p>✨ <strong>A notícia que mudou tudo</strong></p><p>Em dezembro de 2025, após um processo de seleção extremamente rigoroso, apenas <strong>4 crianças em todo o mundo</strong> foram escolhidas para participar neste ensaio.</p><p>E a Mafalda foi uma delas.</p><p>🇵🇹 <strong>A primeira criança portuguesa selecionada.</strong></p><p>🧠 <strong>O tratamento (ensaio GAIN-CTNNB1 / URBAGEN)</strong></p><p>Trata-se de uma terapia génica experimental, administrada diretamente no cérebro, no âmbito de um ensaio clínico.</p><p>É uma oportunidade única, com esperança �R$� mas também com riscos e sem garantias.</p><p>Ainda assim, para nós, é a oportunidade pela qual lutámos durante anos.</p><p>⏳ <strong>Porque precisamos de ajuda agora</strong></p><p>A intervenção será realizada na <strong>Eslovénia</strong> e implica custos médicos elevados (cerca de <strong>165.000€</strong>), além das despesas de estadia, viagens e logística durante vários meses fora de Portugal.</p><p>🎯 <strong>Como será utilizado o valor angariado</strong></p><p>🏥 Custos hospitalares e procedimentos clínicos</p><p>🏠 Estadia (alojamento, alimentação e transportes)</p><p>✈️ Viagens e logística</p><p>🧩 Terapias intensivas</p><p>Nada é um luxo.</p><p>Tudo é essencial.</p><p>❤️ <strong>Como pode ajudar</strong></p><p>👉 Com um donativo �R$� qualquer valor faz a diferença</p><p>👉 Com uma partilha �R$� pode chegar à pessoa certa</p><p>Iremos partilhar atualizações ao longo de todo o processo.</p><p>🙏 Obrigado por nos ouvir</p><p>💙 Obrigado por acreditar</p><p>🤝 Obrigado por ajudar a Mafalda</p><p></p></div>
+
+                <!-- <button class="text-gray-600 hover:text-gray-800 font-semibold mb-6 underline">Ler mais</button> -->
+
+                <!-- Reactions Section -->
+                <div class="pt-4 border-t">
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <!-- React button -->
+                        <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                                <line x1="12" y1="5.67" x2="12" y2="21.23"></line>
+                            </svg>
+                            React
+                        </button>
+
+                        <!-- Reactions -->
+                        <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors">
+                            <span style="font-size: 1.5rem;">❤️�R$�🩹</span>
+                            <span style="font-size: 1.5rem;">🙏</span>
+                            <span style="font-size: 1.5rem;">💚</span>
+                            <span style="font-size: 1.5rem;">💐</span>
+                            <span style="font-size: 1.5rem;">✨</span>
+                            <span style="font-size: 1.5rem;">👏</span>
+                            <span class="font-semibold text-gray-700 underline ml-2">215</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Donations Section (Independent Card) -->
+            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <h3 class="text-2xl font-bold text-gray-800">Donations</h3>
+                        <span id="donations-count-badge" class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm font-semibold">100</span>
+                    </div>
+                    <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full text-gray-600 text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                        See top donations
+                    </button>
+                </div>
+
+                <!-- Donor statistics -->
+                <div class="mb-6 flex items-center gap-3">
+                    <div class="bg-purple-100 rounded-full p-3 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </div>
+                    <p class="text-lg font-semibold text-purple-700"><span id="total-donors-count">100</span>
+                        people just donated</p>
+                </div>
+
+                <!-- Donors list -->
+                <div id="recent-donations-list" class="space-y-4">
+                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
+                        <img src="images/iRLJ05E.png" alt="Tegan Perry" class="w-12 h-12 rounded-full flex-shrink-0">
+                        <div class="flex-grow">
+                            <p class="font-bold text-gray-800">Tegan Perry</p>
+                            <p class="text-gray-700">
+                                <span class="font-bold">£50.00</span>
+                                <span class="text-gray-500"> · Recent donation</span>
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
+                        <img src="images/iRLJ05E.png" alt="Leigh Rivers" class="w-12 h-12 rounded-full flex-shrink-0">
+                        <div class="flex-grow">
+                            <p class="font-bold text-gray-800">Leigh Rivers</p>
+                            <p class="text-gray-700">
+                                <span class="font-bold">£500,000.00</span>
+                                <span class="text-gray-500"> · Top donation</span>
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
+                        <img src="images/iRLJ05E.png" alt="Anonymous" class="w-12 h-12 rounded-full flex-shrink-0">
+                        <div class="flex-grow">
+                            <p class="font-bold text-gray-800">Anonymous</p>
+                            <p class="text-gray-700">
+                                <span class="font-bold">£250.00</span>
+                                <span class="text-gray-500"> · First donation</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- See all button -->
+                <button class="w-full mt-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 font-bold hover:bg-gray-50 transition-colors">
+                    See all
+                </button>
+            </div>
+
+            <!-- Organizer Section (Separate Card) -->
+            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm">
+                <!-- <h3 class="text-2xl font-bold text-gray-800 mb-6">Organizer</h3> -->
+                <div class="flex items-start gap-4">
+                    <img id="organizer-avatar-tab" src="images/9Bcg547.png" alt="Organizer" class="w-16 h-16 rounded-full">
+                    <div class="flex-grow">
+                        <h4 id="organizer-name-tab" class="text-xl font-bold text-gray-800">Maria Alice precisa da sua ajuda para comprar o medicamento mais caro do mundo!</h4>
+                        <p class="text-sm text-gray-600 mt-1">Organizer</p>
+                        <!-- <p id="organizer-location-tab" class="text-sm text-gray-600"></p> -->
+                        <button class="mt-4 px-8 py-2 border-2 border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-50 transition-colors">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <!-- Campaign information -->
+            <div class="bg-white mt-6 p-4 rounded-lg">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <p class="text-gray-500 text-xs md:text-sm">
+    January 23, 2026</p>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            Protected donation
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Campaign information -->
+        <div class="bg-white mt-6 p-6 rounded-lg shadow-sm">
+            <button class="w-full py-3 text-gray-600 font-semibold hover:text-gray-800 transition-colors flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                Report fundraiser
+            </button>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="bg-gray-50 mt-6 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Your trusted, powerful, and easy place to
+                get help</h3>
+
+            <div class="space-y-8">
+                <!-- Easy -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <img src="images/9Bcg547.png" alt="Easy" class="w-12 h-12">
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Easy</h4>
+                        <p class="text-gray-600">Donate quickly and easily</p>
+                    </div>
+                </div>
+
+                <!-- Powerful -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <img src="images/9Bcg547.png" alt="Powerful" class="w-12 h-12">
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Powerful</h4>
+                        <p class="text-gray-600">Send help directly to the people and causes that matter to you</p>
+                    </div>
+                </div>
+
+                <!-- Trusted -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <img src="images/AcZZz5M.png" alt="Trusted" class="w-12 h-12">
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Trusted</h4>
+                        <p class="text-gray-600">Your donation is protected by the <a href="#" class="text-blue-600 hover:underline">GoFundMe Giving Guarantee</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="mt-8">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Perguntas Frequentes</h3>
+            <div class="space-y-2">
+
+                <details class="bg-white rounded-lg shadow-sm">
+                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
+                        Como será usado o dinheiro arrecadado?
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-gray-600 text-sm">
+                        <p>Todo o valor será destinado exclusivamente ao Lar Sanyu em Uganda: alimentação, educação,
+                            cuidados médicos, roupas e melhorias na infraestrutura do orfanato para proporcionar um
+                            ambiente seguro e acolhedor para as crianças.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-lg shadow-sm">
+                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
+                        O Lar Sanyu é uma instituição confiável?
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-gray-600 text-sm">
+                        <p>Sim, o Lar Sanyu é uma instituição registrada e reconhecida em Uganda, que atua há anos
+                            cuidando de crianças órfãs e vulneráveis. Temos documentação completa e relatórios de
+                            atividades disponíveis para total transparência.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-lg shadow-sm">
+                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
+                        E se não atingirmos a meta de R$ 100 mil?
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-gray-600 text-sm">
+                        <p>Qualquer valor arrecadado será usado para beneficiar as crianças do Lar Sanyu. Priorizaremos
+                            as necessidades mais urgentes como alimentação e cuidados médicos, e buscaremos outras
+                            formas de complementar o restante.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-lg shadow-sm">
+                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
+                        Posso acompanhar como os recursos estão sendo usados?
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-gray-600 text-sm">
+                        <p>Sim! Publicaremos atualizações regulares com fotos, vídeos e relatórios mostrando como os
+                            recursos estão sendo aplicados no Lar Sanyu e o impacto positivo na vida das crianças.
+                            Transparência total com os apoiadores.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Sticky card when scrolling down -->
+        <div id="sticky-donation-card" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:w-96 bg-white shadow-2xl rounded-2xl p-4 z-50 transition-all duration-300 border border-gray-200">
+            <div class="flex items-center gap-3">
+                <!-- Smaller circular progress bar -->
+                <div class="flex-shrink-0">
+                    <div class="relative w-12 h-12">
+                        <svg class="transform -rotate-90 w-full h-full">
+                            <circle cx="50%" cy="50%" r="20" stroke="#e5e7eb" stroke-width="4" fill="none"></circle>
+                            <circle id="sticky-progress-circle" cx="50%" cy="50%" r="20" stroke="#2D5A3D" stroke-width="4" fill="none" stroke-dasharray="126" stroke-dashoffset="126" stroke-linecap="round" style="stroke-dashoffset: 100.531;"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span id="sticky-progress-percentage" class="text-xs font-bold text-gray-800">20%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compact information -->
+                <div class="flex-grow min-w-0">
+                    <p class="text-sm font-bold text-gray-800 truncate" id="sticky-value-raised">£ 45.750 raised</p>
+                    <p class="text-xs text-gray-500 truncate" id="sticky-donor-info">Tegan Perry donated £50.00</p>
+                </div>
+
+                <!-- Compact buttons -->
+                <div class="flex flex-col gap-2 flex-shrink-0">
+                    <a class="bg-[#2d5a3d] text-[#c8f77d] px-3 py-1.5 rounded-full font-semibold text-xs hover:bg-[#234a2f] transition-colors text-center whitespace-nowrap" data-open-donation="">
+                        Share
+                    </a>
+                    <a class="bg-[#c8f77d] text-[#2d5a3d] px-3 py-1.5 rounded-full font-semibold text-xs hover:bg-[#b8e76d] transition-colors text-center whitespace-nowrap" data-open-donation="">
+                        Donate
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Header do Footer -->
+                <div class="footer-header">
+                    <div class="footer-logo">
+                        <div class="hrt-header-center"><a class="hrt-link hrt-link--gray-dark hrt-link--underlined" data-tracking-id="logo">
+                            
+                                                        
+                            <svg class="hrt-disp-block hrt-gfm-logo" fill="none" height="36" viewBox="0 0 105 36" width="105" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <path d="m49.483 1.416.913 5.167c.023.131.142.22.274.209a12.65 12.65 0 0 1 2.266 0 .253.253 0 0 0 .274-.209l.912-5.167a.254.254 0 0 0-.22-.296 18.61 18.61 0 0 0-4.199 0 .253.253 0 0 0-.22.296ZM60.051 14.004a.254.254 0 0 0 .212-.394 10.182 10.182 0 0 0-8.46-4.504 10.18 10.18 0 0 0-8.459 4.504.254.254 0 0 0 .213.394H60.05ZM38.744 6.856l3.965 3.442c.1.087.249.081.344-.011a12.589 12.589 0 0 1 1.76-1.424.255.255 0 0 0 .083-.336L42.35 3.938a.254.254 0 0 0-.358-.092 18.61 18.61 0 0 0-3.264 2.64.252.252 0 0 0 .016.369ZM61.258 3.94l-2.546 4.589a.256.256 0 0 0 .082.335 12.681 12.681 0 0 1 1.76 1.424.255.255 0 0 0 .345.01l3.965-3.441a.254.254 0 0 0 .016-.37 18.484 18.484 0 0 0-3.264-2.639.254.254 0 0 0-.358.093v-.002ZM88.106 16.67c-1.222 0-2.545.576-3.482 1.764a.204.204 0 0 1-.332-.017c-.748-1.155-1.855-1.747-2.954-1.747-1.1 0-2.37.792-3.1 1.764-.076.101-.239.03-.216-.096l.195-1.106a.254.254 0 0 0-.25-.297h-3.394a.254.254 0 0 0-.254.254V27.99c0 .14.113.254.253.254h3.312c.14 0 .254-.114.254-.254v-6.223c0-1.039.694-1.745 1.575-1.745.88 0 1.562.693 1.562 1.745v6.224c0 .14.114.253.254.253h3.31c.14 0 .254-.114.254-.254v-6.223c0-1.039.695-1.745 1.575-1.745.881 0 1.562.693 1.562 1.745v6.224c0 .14.114.253.254.253h3.31c.14 0 .255-.114.255-.254v-6.959c0-2.833-1.922-4.36-3.943-4.36v-.002ZM72.567 10.975h-3.378a.22.22 0 0 0-.22.22v7.138a.15.15 0 0 1-.273.087c-.71-.994-1.972-1.76-3.386-1.75-3.1.019-5.157 2.863-5.157 5.92 0 3.055 2.062 5.751 5.157 5.912 1.62.083 2.891-.881 3.646-1.877.056-.073.172-.023.156.069l-.274 1.549h3.729a.22.22 0 0 0 .22-.22V11.195a.22.22 0 0 0-.22-.22ZM66.272 25.15a2.56 2.56 0 0 1-2.566-2.564 2.56 2.56 0 0 1 2.566-2.564 2.56 2.56 0 0 1 2.567 2.564 2.56 2.56 0 0 1-2.567 2.564Z" fill="#4A9D44"></path>
+                                    <path clip-rule="evenodd" d="m103.264 14.004.613 1.8.609-1.8h.411v2.128h-.275v-1.256c0-.044 0-.115.003-.216.003-.1.003-.208.003-.323l-.609 1.795h-.287l-.614-1.795v.065l.004.24c.003.106.003.184.003.235v1.256h-.276v-2.128h.415Zm-.673 0v.254h-.718v1.874h-.292v-1.874h-.719v-.254h1.729ZM19.668 16.67c-3.37 0-6.096 2.398-6.096 5.915s2.726 5.916 6.096 5.916 6.144-2.423 6.144-5.916c0-3.493-2.763-5.916-6.144-5.916Zm.024 8.479a2.56 2.56 0 0 1-2.566-2.564 2.56 2.56 0 0 1 2.566-2.564 2.56 2.56 0 0 1 2.567 2.564 2.56 2.56 0 0 1-2.567 2.564Z" fill="#4A9D44" fill-rule="evenodd"></path>
+                                    <path d="M12.635 17.192a.263.263 0 0 0-.263-.263H8.989a.254.254 0 0 0-.25.297l.193 1.095c.023.124-.136.196-.214.098-.684-.864-1.947-1.826-3.56-1.75C2.06 16.814 0 19.526 0 22.58c0 3.055 2.058 5.919 5.158 5.92a4.163 4.163 0 0 0 3.435-1.825c.067-.1.224-.053.224.068v1.955c0 1.61-1.021 2.563-2.439 2.563-1.092 0-2.131-.675-2.487-1.92a.305.305 0 0 0-.397-.202L.54 30.213a.248.248 0 0 0-.15.308c.798 2.611 3.243 4.158 5.964 4.158 3.454 0 6.281-2.276 6.281-5.981V17.19v.002ZM6.12 25.149a2.56 2.56 0 0 1-2.567-2.564 2.56 2.56 0 0 1 2.567-2.564 2.56 2.56 0 0 1 2.566 2.564A2.56 2.56 0 0 1 6.12 25.15ZM39.63 28.506c1.121 0 2.35-.784 3.077-1.758.076-.102.239-.03.216.096l-.195 1.107a.253.253 0 0 0 .251.298l3.392-.005c.14 0 .254-.114.254-.254V17.186a.254.254 0 0 0-.254-.254h-3.31a.254.254 0 0 0-.255.254v6.068c0 1.101-.756 1.88-1.711 1.88-.955 0-1.712-.754-1.712-1.88v-6.069a.254.254 0 0 0-.254-.253h-3.31a.254.254 0 0 0-.254.254v6.92c0 2.895 1.959 4.398 4.067 4.398l-.001.002Z" fill="#4A9D44"></path>
+                                    <path clip-rule="evenodd" d="M101.514 24.45a.256.256 0 0 0-.311.12c-.403.704-1.264 1.073-2.096 1.073-1.165 0-2.157-.807-2.528-2.002h8.113a.253.253 0 0 0 .252-.221c.037-.27.056-.549.056-.834 0-3.62-2.865-5.915-5.917-5.915-3.37 0-6.097 2.398-6.097 5.915 0 3.518 2.727 5.916 6.097 5.916 2.195 0 4.13-1.022 5.217-2.695a.263.263 0 0 0-.133-.391l-2.653-.965Zm-2.408-5.014c1.224 0 2.095.75 2.474 1.84h-4.947c.378-1.09 1.249-1.84 2.474-1.84h-.001Z" fill="#4A9D44" fill-rule="evenodd"></path>
+                                    <path d="M55.148 16.675c-1.121 0-2.35.784-3.077 1.757-.076.102-.239.03-.216-.096l.195-1.107a.253.253 0 0 0-.251-.297l-3.392.005a.254.254 0 0 0-.254.254v10.804c0 .14.114.254.255.254h3.31c.14 0 .254-.114.254-.254v-6.07c0-1.1.756-1.88 1.711-1.88.955 0 1.712.755 1.712 1.88v6.07c0 .14.113.254.254.254h3.31c.14 0 .254-.114.254-.254v-6.921c0-2.895-1.959-4.397-4.066-4.397v-.002ZM34.29 16.933h-2.226a.152.152 0 0 1-.153-.153v-.756c0-1.432 1.27-2.393 2.706-1.93a.252.252 0 0 0 .324-.198l.527-2.962a.255.255 0 0 0-.195-.293c-3.694-.855-7.178 1.72-7.178 5.705v.434a.153.153 0 0 1-.153.154h-1.697a.254.254 0 0 0-.254.254v2.582a.251.251 0 0 0 .253.253h1.697c.085 0 .153.069.153.153v7.81c0 .14.114.254.254.254h3.31c.14 0 .254-.114.254-.254v-7.81c0-.084.069-.152.153-.152h2.226c.14 0 .254-.114.254-.255v-2.581a.254.254 0 0 0-.254-.254l-.001-.001Z" fill="#4A9D44"></path>
+                                </svg>
+                                                                </a></div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/gofundme" target="_blank" title="">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/gofundme/" target="_blank" title="">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/user/gofundme" target="_blank" title="">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Principal -->
+                <div class="footer-main">
+                    <!-- Coluna 1: Links Rápidos -->
+                    <div class="footer-column">
+                        <!-- <h4 style="color:#4A9D44;">Links rápidos</h4> -->
+                        <ul>
+                            <li><a>Terms</a></li>
+                            <li><a>Pivacy Notice</a></li>
+                            <li><a>Legal</a>
+                            </li>
+                            <li><a>Accessibility Statement</a></li>
+                            <li><a>Cookie Policy</a></li>
+                            <li><a>Manage Cookie Policy</a></li>
+                            <li><a>Your Privacy Choices</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <a href="#" class="app-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="105" height="35" fill="none" viewBox="0 0 105 35">
+                        <rect width="104.125" height="34.125" x="0.438" y="0.438" fill="#fff" rx="5.688">
+                        </rect>
+                        <rect width="104.125" height="34.125" x="0.438" y="0.438" stroke="#000" stroke-width="0.875" rx="5.688"></rect>
+                        <g fill="#000">
+                            <path d="M71.335 16.8v2.005H70.08v1.315h1.256v4.467c0 1.525.69 2.135 2.426 2.135.305 0 .596-.036.85-.08v-1.3c-.218.022-.356.037-.596.037-.777 0-1.118-.364-1.118-1.192V20.12h1.714v-1.315h-1.714v-2.004zM79.033 26.831c2.31 0 3.726-1.547 3.726-4.11 0-2.55-1.424-4.104-3.726-4.104-2.31 0-3.733 1.554-3.733 4.103 0 2.564 1.416 4.111 3.733 4.111m0-1.387c-1.358 0-2.12-.995-2.12-2.724 0-1.714.762-2.716 2.12-2.716 1.35 0 2.12 1.002 2.12 2.716 0 1.722-.77 2.724-2.12 2.724M83.97 26.679h1.562v-4.67c0-1.112.836-1.86 2.02-1.86.275 0 .74.051.871.095v-1.54a3.3 3.3 0 0 0-.697-.066c-1.032 0-1.91.567-2.136 1.344h-.116V18.77h-1.503zM92.3 19.946c1.155 0 1.91.806 1.947 2.048h-3.995c.087-1.235.894-2.048 2.048-2.048m1.94 4.597c-.29.618-.937.96-1.881.96-1.25 0-2.056-.88-2.107-2.267v-.087h5.586v-.545c0-2.484-1.33-3.987-3.53-3.987-2.23 0-3.646 1.605-3.646 4.132 0 2.528 1.387 4.082 3.653 4.082 1.809 0 3.072-.871 3.428-2.288zM61.095 23.758c.12 1.942 1.738 3.184 4.147 3.184 2.575 0 4.186-1.302 4.186-3.38 0-1.634-.918-2.537-3.147-3.056l-1.197-.294c-1.415-.331-1.987-.775-1.987-1.55 0-.98.888-1.62 2.22-1.62 1.265 0 2.139.626 2.297 1.627h1.64c-.097-1.83-1.708-3.117-3.914-3.117-2.371 0-3.952 1.288-3.952 3.222 0 1.596.896 2.545 2.86 3.004l1.4.339c1.439.338 2.071.835 2.071 1.663 0 .964-.993 1.664-2.349 1.664-1.453 0-2.461-.655-2.604-1.686zM44.918 18.638c-1.075 0-2.005.538-2.484 1.438h-.116V18.77h-1.504v10.539h1.562V25.48h.123c.414.836 1.308 1.33 2.434 1.33 1.997 0 3.268-1.577 3.268-4.09s-1.271-4.082-3.283-4.082m-.443 6.77c-1.307 0-2.128-1.032-2.128-2.68 0-1.656.82-2.688 2.135-2.688 1.322 0 2.114 1.01 2.114 2.68 0 1.678-.792 2.688-2.121 2.688M53.665 18.638c-1.075 0-2.004.538-2.484 1.438h-.116V18.77h-1.503v10.539h1.561V25.48h.124c.414.836 1.307 1.33 2.433 1.33 1.997 0 3.268-1.577 3.268-4.09s-1.27-4.082-3.283-4.082m-.443 6.77c-1.307 0-2.128-1.032-2.128-2.68 0-1.656.82-2.688 2.135-2.688 1.322 0 2.114 1.01 2.114 2.68 0 1.678-.792 2.688-2.12 2.688M38.013 26.679h1.791l-3.922-10.863h-1.814l-3.922 10.863h1.731l1.001-2.883h4.14zm-3.125-8.89h.128l1.574 4.591h-3.283z">
+                            </path>
+                        </g>
+                        <g fill="#000">
+                            <path d="M31.194 12.873V7.776h2.054c.96 0 1.537.487 1.537 1.272a1.115 1.115 0 0 1-.895 1.095v.06a1.21 1.21 0 0 1 1.15 1.225c0 .897-.654 1.445-1.746 1.445zm.794-2.939h.941c.702 0 1.067-.258 1.067-.741 0-.47-.344-.746-.932-.746h-1.076zm1.147 2.268c.715 0 1.094-.29 1.094-.83 0-.534-.393-.813-1.14-.813h-1.101v1.643zM35.856 11.785c0-.693.517-1.092 1.434-1.148l1.045-.06v-.332c0-.407-.27-.636-.79-.636-.424 0-.719.156-.803.428h-.737c.078-.661.7-1.085 1.576-1.085.967 0 1.512.48 1.512 1.293v2.627h-.733v-.54h-.06a1.3 1.3 0 0 1-1.158.604 1.17 1.17 0 0 1-1.184-.68 1.2 1.2 0 0 1-.102-.471m2.48-.329v-.322l-.943.06c-.53.036-.772.216-.772.555 0 .346.301.548.715.548a.91.91 0 0 0 1-.84M40.185 7.89a.49.49 0 0 1 .57-.516.494.494 0 0 1 .381.667.49.49 0 0 1-.458.31.47.47 0 0 1-.493-.462m.113 1.136h.759v3.846h-.759zM43.67 11.509l-.844 1.363h-.836l1.28-1.914-1.29-1.932h.889l.828 1.357h.06l.822-1.357h.847l-1.272 1.9 1.286 1.946h-.874l-.84-1.363zM46.112 11.785c0-.693.516-1.092 1.434-1.148l1.045-.06v-.332c0-.407-.27-.636-.79-.636-.425 0-.72.156-.804.428h-.737c.078-.661.701-1.085 1.576-1.085.967 0 1.512.48 1.512 1.293v2.627h-.732v-.54h-.06a1.3 1.3 0 0 1-1.159.604 1.17 1.17 0 0 1-1.184-.68 1.2 1.2 0 0 1-.102-.471m2.479-.329v-.322l-.942.06c-.531.036-.772.216-.772.555 0 .346.3.548.715.548a.91.91 0 0 0 .999-.84M50.54 9.026h.733v.59h.057a1.04 1.04 0 0 1 1.041-.654q.172-.001.34.032v.75a2 2 0 0 0-.425-.047.906.906 0 0 0-.985.904v2.271h-.76zM55.644 9.027h.733v.61h.057a1.15 1.15 0 0 1 1.151-.684 1.26 1.26 0 0 1 1.292.876c.056.179.07.368.043.554v2.49h-.761v-2.3c0-.617-.27-.925-.832-.925a.89.89 0 0 0-.88.6.9.9 0 0 0-.041.375v2.25h-.762zM59.878 11.785c0-.693.517-1.092 1.434-1.148l1.045-.06v-.332c0-.407-.27-.636-.79-.636-.425 0-.719.156-.803.428h-.737c.078-.661.7-1.085 1.575-1.085.967 0 1.513.48 1.513 1.293v2.627h-.733v-.54h-.06a1.3 1.3 0 0 1-1.159.604 1.17 1.17 0 0 1-1.183-.68 1.2 1.2 0 0 1-.102-.471m2.479-.329v-.322l-.942.06c-.531.036-.772.216-.772.555 0 .346.301.548.715.548a.91.91 0 0 0 .999-.84">
+                            </path>
+                        </g>
+                        <g fill="#000">
+                            <path d="M21.673 17.764a4.37 4.37 0 0 1 2.062-3.633 4.49 4.49 0 0 0-3.492-1.888c-1.47-.155-2.894.879-3.643.879-.763 0-1.916-.864-3.157-.838a4.69 4.69 0 0 0-3.914 2.386c-1.692 2.93-.43 7.236 1.19 9.605.812 1.16 1.76 2.455 3 2.409 1.214-.05 1.667-.774 3.132-.774 1.451 0 1.877.774 3.142.744 1.303-.02 2.123-1.164 2.906-2.335a9.6 9.6 0 0 0 1.328-2.706 4.22 4.22 0 0 1-2.554-3.85M19.283 10.685a4.26 4.26 0 0 0 .975-3.054 4.34 4.34 0 0 0-2.807 1.452 4.1 4.1 0 0 0-1 2.941 3.63 3.63 0 0 0 2.832-1.339">
+                            </path>
+                        </g>
+                    </svg></a>
+            </div>
+            
+            
+            
+
+            <!-- <div class="footer-copyright">
+                <span>© 2025 - Todos direitos reservados</span>
+            </div> -->
+        </footer>
+
+
+
+        <div id="notifications" class="fixed bottom-5 right-5 flex flex-col space-y-3 z-50"></div>
+
+
+
+
+        <!-- Dados da Campanha Sanyu -->
+        <script>
+    window.campaignData = {
+        id: "GLufQa1hbWkP",
+        title: "Ajude a Salvar a Vida da Maria Alice 💗",
+        category: "",
+        location: "",
+        creationDate: "2026",
+
+        // Aqui uso os valores JÁ FORMATADOS que vêm do banco ($collected e $meta)
+        // se quiser número puro pra cálculo, dá pra tratar depois.
+        valueRaised: "60.990,00",
+        valueGoal: "321.000,00",
+
+        supporters: 100,
+        hearts: 164,
+
+        creator: {
+            name: "Paula Lopes",
+            info: "",
+            // avatarUrl = favicon, como você pediu
+            avatarUrl: "https://i.imgur.com/AOwWB3Q.png"
+        },
+
+        description: [
+            "<p>🚨 <strong>Ajude a Salvar a Vida da Maria Alice 💗<\/strong> 🚨<\/p><p>No dia 13/09/2024, minha filha Maria Alice foi diagnosticada com uma condição rara conhecida como Atrofia Muscular Espinhal (AME) tipo 2. Essa doença afeta aproximadamente 1 em cada 10.000 crianças.<\/p><p><\/p><p>Preciso de arrecadar cerca de 321 mil reais, com urgência. Até ao momento, já conseguimos angariar mais de 562 mil reais através de ONG�R$�s. O medicamento custa aproximadamente 963 mil reais. Faltam exatamente 321 mil reais para conseguirmos o medicamento mais caro do mundo, o Zolgensma, e dar à minha filha, Maria Alice, uma verdadeira oportunidade de lutar contra esta doença neuromuscular. É urgente que a Maria receba este medicamento antes de completar 5 anos de idade.<\/p><p><strong>Meu nome é Eduardo, suspeitei que algo estava errado quando, depois do aniversário de 1 ano da minha filha, ela não conseguia sentar sozinha, engatinhar, ficar de pé ou suportar peso nas pernas. Logo depois, ela também perdeu a capacidade de andar.<\/strong>.<\/p><p>✨ Maria Alice é a minha primeira e única filha. Ela estava totalmente alerta e feliz, apesar de ter perdido esses movimentos. Eu sabia que tinha algo errado quando ela parecia rejeitar a comida, apesar de estar com fome. Depois entendi que era por dificuldade para engolir. Comendo menos, ficou mais fraca e magra.<\/p><p>Após exames, veio o diagnóstico: AME. É uma doença extremamente fatal. Cerca de 68% não chegam aos 2 anos; 84% não chegam aos 4.Ela foi internada por não conseguir se alimentar. Começou a engasgar até com líquidos. Então colocaram uma sonda nasal. Como era curiosa, tentou puxar o tubo no começo.<p>Depois de alguns dias, recebeu alta e começou a se adaptar ao tubo. Muitas pessoas olham torto, fazem comentários cruéis. Mas aprendemos a ignorar. O que importa é que ela está viva e forte.E mesmo assim, nunca deixou de sorrir. Ela nos ensina diariamente o que é força.<p>O Zolgensma pode impedir a progressão da AME, mas precisa ser administrado antes que danos irreversíveis aconteçam.Ele substitui a função do gene SMN1, responsável pela sobrevivência dos neurônios motores.Sem ajuda do governo ou de famosos, decidi trazer nossa história para a internet na esperança de encontrar pessoas que possam nos ajudar.<\/p><p>❤️ <strong>Como pode ajudar<\/strong><\/p><p>👉 Com um donativo �R$� qualquer valor faz a diferença<\/p><p>👉 Com uma partilha �R$� pode chegar à pessoa certa<\/p><p>Iremos partilhar atualizações ao longo de todo o processo.<\/p><p>🙏 Obrigado por nos ouvir<\/p><p>💙 Obrigado por acreditar<\/p><p>🤝 Obrigado por ajudar a Maria Alice<\/p>"        ],
+
+        donorsForNotifications: [
+            { name: "Marcela Aurélio", value: 50, img: "https://i.pravatar.cc/50?img=5" },
+            { name: "João Silva", value: 30, img: "https://i.pravatar.cc/50?img=6" },
+            { name: "Ana Clara", value: 100, img: "https://i.pravatar.cc/50?img=7" },
+            { name: "Carlos Eduardo", value: 75, img: "https://i.pravatar.cc/50?img=8" },
+            { name: "Mariana Costa", value: 25, img: "https://i.pravatar.cc/50?img=9" },
+            { name: "Pedro Henrique", value: 150, img: "https://i.pravatar.cc/50?img=10" },
+            { name: "Laura Fernandes", value: 60, img: "https://i.pravatar.cc/50?img=11" },
+            { name: "Gustavo Rocha", value: 40, img: "https://i.pravatar.cc/50?img=12" },
+            { name: "Fernanda Lima", value: 85, img: "https://i.pravatar.cc/50?img=13" },
+            { name: "Ricardo Almeida", value: 95, img: "https://i.pravatar.cc/50?img=14" }
+        ]
+    };
+</script>
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const details = document.querySelectorAll('details');
+                details.forEach(detail => {
+                    detail.addEventListener('toggle', function () {
+                        const icon = this.querySelector('summary i');
+                        if (this.open) {
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const video = document.getElementById('customVideo');
+                const overlay = document.getElementById('videoOverlay');
+                const playButton = overlay?.querySelector('.play-button');
+
+                if (video && overlay) {
+                    // Fake autoplay - start muted video automatically
+                    video.muted = true;
+
+                    // Wait a bit before starting to ensure everything is loaded
+                    setTimeout(() => {
+                        video.play().catch(error => {
+                            console.log('Autoplay prevented:', error);
+                        });
+                    }, 500);
+
+                    const startVideo = async () => {
+                        try {
+                            overlay.style.transform = 'scale(0.95)';
+                            overlay.style.opacity = '0';
+                            overlay.style.transition = 'all 0.4s ease';
+
+                            await new Promise(resolve => setTimeout(resolve, 400));
+
+                            // Restart from beginning with audio and show controls
+                            video.currentTime = 0;
+                            video.muted = false;
+                            video.controls = true;
+                            await video.play();
+
+                            overlay.style.display = 'none';
+                        } catch (error) {
+                            console.error('Failed to play video:', error);
+                            overlay.style.opacity = '1';
+                            overlay.style.transform = 'scale(1)';
+                        }
+                    };
+
+                    overlay.addEventListener('click', startVideo);
+                    if (playButton) {
+                        playButton.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            startVideo();
+                        });
+                    }
+
+                    video.addEventListener('ended', () => {
+                        overlay.style.display = 'flex';
+                        overlay.style.opacity = '0';
+                        overlay.style.transform = 'scale(0.9)';
+
+                        setTimeout(() => {
+                            overlay.style.opacity = '1';
+                            overlay.style.transform = 'scale(1)';
+                            overlay.style.transition = 'all 0.4s ease';
+                        }, 100);
+                    });
+
+                    video.addEventListener('loadedmetadata', () => {
+                        video.muted = true;
+                        video.pause();
+                    });
+                }
+            });
+        </script>
+        
+        <script>
+            // ===== REFACTORED SCRIPT.JS - NEW ARCHITECTURE =====
+// Campaign data now comes from window.campaignData inline in each page
+
+// Function to get current campaign data
+function getCampaignData() {
+  return window.campaignData || null;
+}
+
+// Function to get donors for notifications from current campaign
+function getCurrentDonors() {
+  const campaignData = getCampaignData();
+  return campaignData?.donorsForNotifications || [];
+}
+
+// ===== NOTIFICATIONS SYSTEM =====
+// const notificationsContainer = document.getElementById('notifications');
+
+// function showNotification(donor) {
+//     if (!notificationsContainer) return;
+
+//     const notification = document.createElement('div');
+//     notification.className = 'notification bg-white border border-gray-200 rounded-lg shadow-lg p-4 flex items-center space-x-3 transform translate-x-full opacity-0 transition-all duration-500 ease-out';
+
+//     notification.innerHTML = `
+//         <img src="${donor.img}" alt="${donor.name}" class="w-10 h-10 rounded-full object-cover">
+//         <div class="flex-1">
+//             <p class="text-sm font-semibold text-gray-800">${donor.name}</p>
+//             <p class="text-xs text-gray-600">Doou R$ ${donor.value.toFixed(2).replace('.', ',')}</p>
+//         </div>
+//         <div class="text-green-500">
+//             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+//                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+//             </svg>
+//         </div>
+//     `;
+
+//     notificationsContainer.appendChild(notification);
+
+//     setTimeout(() => {
+//         notification.classList.remove('translate-x-full', 'opacity-0');
+//         notification.classList.add('translate-x-0', 'opacity-100');
+//     }, 100);
+
+//     setTimeout(() => {
+//         notification.classList.add('translate-x-full', 'opacity-0');
+//         setTimeout(() => {
+//             if (notification.parentNode) {
+//                 notification.parentNode.removeChild(notification);
+//             }
+//         }, 500);
+//     }, 4000);
+// }
+
+// Initialize notifications
+setTimeout(() => {
+  const donors = getCurrentDonors();
+  if (donors.length === 0) return; // No donors to show notifications
+
+  let donorIndex = 0;
+
+  showNotification(donors[donorIndex]);
+  donorIndex = (donorIndex + 1) % donors.length;
+
+  setInterval(() => {
+    const nextDonor = donors[donorIndex];
+    donorIndex = (donorIndex + 1) % donors.length;
+    showNotification(nextDonor);
+  }, 10000);
+}, 15000);
+
+// ===== MAIN DATA POPULATION FUNCTION =====
+function populateData() {
+  const campaignData = getCampaignData();
+  if (!campaignData) {
+    console.warn(
+      "Campaign data not found. Make sure window.campaignData is defined."
+    );
+    return;
+  }
+
+  const formatCurrency = (value) =>
+    value.toLocaleString("en-GB", { style: "currency", currency: "GBP" });
+  document.title = campaignData.title;
+  const percentage = (campaignData.valueRaised / campaignData.valueGoal) * 100;
+
+  // Category and location
+  const categoryElements = [
+    "campaign-category-desktop",
+    "campaign-category-mobile",
+  ];
+  const locationElements = [
+    "campaign-location-desktop",
+    "campaign-location-mobile",
+  ];
+
+  categoryElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.category;
+  });
+
+  locationElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.location;
+  });
+
+  // Titles
+  const titleElements = ["campaign-title-desktop", "campaign-title-mobile"];
+  titleElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.title;
+  });
+
+  // Campaign IDs
+  const idElements = ["campaign-id-desktop", "campaign-id-mobile"];
+  idElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.id;
+  });
+  
+  // Função padrão para todos os textos de dinheiro
+const formatPoundString = (rawValue) => {
+  const str = String(rawValue ?? "");
+  // Remove só o ",00" do final, mantém os pontos
+  const cleaned = str.replace(/,00$/, ""); // "1.235,00" -> "1.235"
+  return `£ ${cleaned}`;
+};
+
+
+  // Raised values
+  const raisedElements = ["value-raised-desktop", "value-raised-mobile"];
+  raisedElements.forEach((id) => {
+    const element = document.getElementById(id);
+if (element) {
+  element.innerText = formatPoundString(campaignData.valueRaised);
+}
+});
+
+  // Goals
+  const goalElements = ["value-goal-desktop", "value-goal-mobile"];
+  goalElements.forEach((id) => {
+    const element = document.getElementById(id);
+if (element) {
+  element.innerText = `goal ${formatPoundString(campaignData.valueGoal)}`;
+}
+});
+
+
+ (function() {
+    // Valor da porcentagem vindo do PHP (já limitado entre 0 e 100 no PHP)
+    const percentage = 19;
+
+    /* =========================
+       CÍRCULO DE PROGRESSO
+       ========================= */
+    const progressCircle = document.getElementById("progress-circle");
+    const progressPercentage = document.getElementById("progress-percentage");
+
+    if (progressCircle && progressPercentage) {
+        const radius = 36;
+        const circumference = 2 * Math.PI * radius;
+
+        // Garante o traço completo configurado
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+
+        const offset = circumference - (percentage / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+
+        progressPercentage.innerText = `${Math.round(percentage)}%`;
+    }
+
+    /* =========================
+       BARRAS DE PROGRESSO (LINEARES)
+       ========================= */
+    const progressElements = ["progress-bar-desktop", "progress-bar-mobile"];
+    const safePercentage = Math.max(0, Math.min(percentage, 100));
+
+    progressElements.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.width = `${safePercentage}%`;
+        }
+    });
+})();
+  // Hearts
+  const heartsElements = ["hearts-desktop", "hearts-mobile-floating"];
+  heartsElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.hearts;
+  });
+
+  // Supporters
+  const supportersElements = ["supporters-desktop"];
+  supportersElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.supporters;
+  });
+
+  // Campaign creator
+  const creatorNameElements = ["creator-name-desktop", "creator-name-mobile"];
+  const creatorInfoElements = ["creator-info-desktop", "creator-info-mobile"];
+  const creatorAvatarElements = [
+    "creator-avatar-desktop",
+    "creator-avatar-mobile",
+  ];
+
+  creatorNameElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.creator.name;
+  });
+
+  creatorInfoElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.innerText = campaignData.creator.info;
+  });
+
+  creatorAvatarElements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) element.src = campaignData.creator.avatarUrl;
+  });
+
+  // Organizer (section after comments and in tab)
+  const organizerElements = [
+    {
+      name: "organizer-name",
+      avatar: "organizer-avatar",
+      location: "organizer-location",
+    },
+    {
+      name: "organizer-name-tab",
+      avatar: "organizer-avatar-tab",
+      location: "organizer-location-tab",
+    },
+  ];
+
+  organizerElements.forEach((org) => {
+    const nameEl = document.getElementById(org.name);
+    const avatarEl = document.getElementById(org.avatar);
+    const locationEl = document.getElementById(org.location);
+
+    if (nameEl) nameEl.innerText = `${campaignData.creator.name}`;
+    if (avatarEl) avatarEl.src = campaignData.creator.avatarUrl;
+    if (locationEl) locationEl.innerText = campaignData.location;
+  });
+
+  // Creation date
+  const creationDateElement = document.getElementById("creation-date");
+  if (creationDateElement) {
+    creationDateElement.innerText = campaignData.creationDate;
+  }
+
+  // Campaign description
+  const descriptionElement = document.getElementById("campaign-description");
+  if (descriptionElement && campaignData.description) {
+    descriptionElement.innerHTML = campaignData.description
+      .map((paragraph) => `<p>${paragraph}</p>`)
+      .join("");
+  }
+
+  // Last donor with rotating animation
+  const lastDonorInfo = document.getElementById("last-donor-info");
+
+  // List of fictional donors
+  const randomDonors = [
+    { name: "Tegan Perry", value: 50 },
+    { name: "Sarah Mitchell", value: 30 },
+    { name: "James Anderson", value: 50 },
+    { name: "Emma Thompson", value: 25 },
+    { name: "Michael Roberts", value: 75 },
+    { name: "Sophie Williams", value: 40 },
+    { name: "David Martinez", value: 60 },
+    { name: "Olivia Brown", value: 35 },
+    { name: "Daniel Wilson", value: 20 },
+    { name: "Isabella Garcia", value: 45 },
+  ];
+
+  if (lastDonorInfo) {
+    let currentDonorIndex = 0;
+
+    function updateDonor() {
+      const donor = randomDonors[currentDonorIndex];
+      lastDonorInfo.classList.remove("donor-fade");
+
+      // Force reflow to restart animation
+      void lastDonorInfo.offsetWidth;
+
+      lastDonorInfo.classList.add("donor-fade");
+      lastDonorInfo.innerText = `${donor.name} donated ${formatCurrency(
+        donor.value
+      )}`;
+
+      currentDonorIndex = (currentDonorIndex + 1) % randomDonors.length;
+    }
+
+    // Update first donor
+    updateDonor();
+
+    // Change donor every 4 seconds
+    setInterval(updateDonor, 4000);
+  }
+
+  // Donations Section
+  const donationsCountBadge = document.getElementById("donations-count-badge");
+  const totalDonorsCount = document.getElementById("total-donors-count");
+  const recentDonationsList = document.getElementById("recent-donations-list");
+
+  // Complete list of fictional donors
+  const allDonors = [
+    { name: "Tegan Perry", value: 50, type: "Recent donation" },
+    { name: "Leigh Rivers", value: 300, type: "Top donation" },
+    { name: "Anonymous", value: 20, type: "First donation" },
+    { name: "Sarah Mitchell", value: 20, type: "Recent donation" },
+    { name: "James Anderson", value: 20, type: "Recent donation" },
+    { name: "Emma Thompson", value: 40, type: "First donation" },
+    { name: "Michael Roberts", value: 30, type: "Recent donation" },
+    { name: "Sophie Williams", value: 80, type: "Recent donation" },
+    { name: "David Martinez", value: 50, type: "Recent donation" },
+    { name: "Olivia Brown", value: 30, type: "First donation" },
+    { name: "Daniel Wilson", value: 60, type: "Recent donation" },
+    { name: "Isabella Garcia", value: 50, type: "Recent donation" },
+    { name: "Matthew Taylor", value: 30, type: "Recent donation" },
+    { name: "Charlotte Moore", value: 20, type: "Recent donation" },
+    { name: "Anonymous", value: 60, type: "First donation" },
+  ];
+
+  if (donationsCountBadge) {
+    const totalDonations = campaignData.supporters || 1234;
+    donationsCountBadge.innerText =
+      totalDonations >= 1000
+        ? `${(totalDonations / 1000).toFixed(1)}k`
+        : totalDonations;
+  }
+
+  if (totalDonorsCount) {
+    const totalCount = campaignData.supporters || 1234;
+    totalDonorsCount.innerText =
+      totalCount >= 1000 ? `${(totalCount / 1000).toFixed(1)}` : totalCount;
+  }
+
+  if (recentDonationsList) {
+    let currentDonorSet = 0;
+
+    function renderDonors() {
+      // Get 3 different donors each time
+      const startIndex = (currentDonorSet * 3) % allDonors.length;
+      const displayDonors = [];
+
+      for (let i = 0; i < 3; i++) {
+        const index = (startIndex + i) % allDonors.length;
+        displayDonors.push(allDonors[index]);
+      }
+
+      recentDonationsList.innerHTML = displayDonors
+        .map((donor) => {
+          return `
+                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
+                        <img src="/images/iRLJ05E.png" alt="${
+                          donor.name
+                        }" class="w-12 h-12 rounded-full flex-shrink-0">
+                        <div class="flex-grow">
+                            <p class="font-bold text-gray-800">${donor.name}</p>
+                            <p class="text-gray-700">
+                                <span class="font-bold">${formatCurrency(
+                                  donor.value
+                                )}</span>
+                                <span class="text-gray-500"> · ${
+                                  donor.type
+                                }</span>
+                            </p>
+                        </div>
+                    </div>
+                `;
+        })
+        .join("");
+
+      currentDonorSet++;
+    }
+
+    // Render initial donors
+    renderDonors();
+
+    // Update donors every 5 seconds with bottom-to-top animation
+    setInterval(() => {
+      const items = recentDonationsList.querySelectorAll(".donation-item");
+
+      // Slide up and fade out (exiting upwards)
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(-30px)";
+        }, index * 100);
+      });
+
+      // After animation, swap content
+      setTimeout(() => {
+        renderDonors();
+
+        // Slide up and fade in (entering from bottom)
+        const newItems = recentDonationsList.querySelectorAll(".donation-item");
+        newItems.forEach((item, index) => {
+          // Position initially below
+          item.style.opacity = "0";
+          item.style.transform = "translateY(30px)";
+
+          setTimeout(() => {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }, index * 150);
+        });
+      }, 600);
+    }, 5000);
+  }
+
+  console.log("✅ Campaign data populated successfully!");
+}
+
+// ===== STICKY DONATION CARD =====
+function initStickyDonationCard() {
+  const donationSection = document.getElementById("donation-section");
+  const stickyCard = document.getElementById("sticky-donation-card");
+
+  if (!donationSection || !stickyCard) {
+  console.error("❌ Required elements not found for sticky card");
+  return;
+}
+
+// Sync sticky card data
+const campaignData = getCampaignData();
+if (campaignData) {
+  // Converte valor para número (para calcular %)
+  const toNumber = (value) => {
+    if (typeof value === "number") return value;
+    if (typeof value === "string") {
+      let cleaned = value.replace(/[^\d.,-]/g, "");
+
+      // Trata padrão BR tipo 1.235,00 -> 1235.00
+      if (cleaned.indexOf(",") > -1 && cleaned.indexOf(".") > -1) {
+        cleaned = cleaned.replace(/\./g, "").replace(",", ".");
+      } else if (cleaned.indexOf(",") > -1 && cleaned.indexOf(".") === -1) {
+        cleaned = cleaned.replace(",", ".");
+      }
+
+      const parsed = parseFloat(cleaned);
+      return isNaN(parsed) ? 0 : parsed;
+    }
+    return 0;
+  };
+
+  const valueRaisedNum = toNumber(campaignData.valueRaised);
+  const valueGoalNum   = toNumber(campaignData.valueGoal);
+
+  const rawPercent =
+    valueGoalNum > 0 ? (valueRaisedNum / valueGoalNum) * 100 : 0;
+
+  const stickyPercentage = Math.max(0, Math.min(Math.round(rawPercent), 100));
+
+  const stickyValueRaised = document.getElementById("sticky-value-raised");
+  const stickyProgressCircle = document.getElementById("sticky-progress-circle");
+  const stickyProgressPercentage = document.getElementById("sticky-progress-percentage");
+
+  // >>> AQUI entra a regra que você pediu <<<
+  if (stickyValueRaised) {
+  stickyValueRaised.innerText =
+    `${formatPoundString(campaignData.valueRaised)} raised`;
+}
+
+
+  if (stickyProgressCircle && stickyProgressPercentage) {
+    const radius = 20;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (stickyPercentage / 100) * circumference;
+
+    stickyProgressCircle.style.strokeDashoffset = offset;
+    stickyProgressPercentage.innerText = `${stickyPercentage}%`;
+  }
+}
+
+
+  // Sync last donor info
+  const lastDonorInfo = document.getElementById("last-donor-info");
+  const stickyDonorInfo = document.getElementById("sticky-donor-info");
+
+  if (lastDonorInfo && stickyDonorInfo) {
+    // Initial sync
+    stickyDonorInfo.innerText = lastDonorInfo.innerText;
+
+    // Observer to keep synced
+    const observer = new MutationObserver(() => {
+      stickyDonorInfo.innerText = lastDonorInfo.innerText;
+    });
+    observer.observe(lastDonorInfo, {
+      childList: true,
+      characterData: true,
+      subtree: true,
+    });
+  }
+
+  // Function to check visibility and show/hide card
+  function checkVisibility() {
+    const rect = donationSection.getBoundingClientRect();
+
+    // Show card when donation section is completely off screen
+    if (rect.bottom < 0) {
+      stickyCard.classList.remove("hidden");
+      stickyCard.classList.add("animate-slide-up");
+    } else {
+      stickyCard.classList.add("hidden");
+      stickyCard.classList.remove("animate-slide-up");
+    }
+  }
+
+  // Check immediately
+  checkVisibility();
+
+  // Add scroll listener with throttle for performance
+  let ticking = false;
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        checkVisibility();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  console.log("✅ Sticky donation card initialized");
+}
+
+// ===== BASIC FUNCTIONALITIES =====
+
+// Mobile menu toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+
+  // Tabs navigation
+  const tabLinks = document.querySelectorAll(".tab-link");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetTab = this.getAttribute("data-tab");
+
+      // Remove active class from all tabs
+      tabLinks.forEach((l) =>
+        l.classList.remove(
+          "tab-link-active",
+          "text-green-600",
+          "border-green-500"
+        )
+      );
+      tabLinks.forEach((l) => l.classList.add("text-gray-500"));
+
+      // Add active class to clicked tab
+      this.classList.add(
+        "tab-link-active",
+        "text-green-600",
+        "border-green-500"
+      );
+      this.classList.remove("text-gray-500");
+
+      // Hide all tab contents
+      tabContents.forEach((content) => content.classList.add("hidden"));
+
+      // Show target tab content
+      const targetContent = document.getElementById(targetTab);
+      if (targetContent) {
+        targetContent.classList.remove("hidden");
+      }
+    });
+  });
+
+  // FAQ accordion functionality
+  document.addEventListener("toggle", function (e) {
+    if (e.target.tagName === "DETAILS") {
+      const icon = e.target.querySelector("i");
+      if (icon) {
+        if (e.target.open) {
+          icon.style.transform = "rotate(180deg)";
+        } else {
+          icon.style.transform = "rotate(0deg)";
+        }
+      }
+    }
+  });
+
+  // Video player functionality
+  const video = document.getElementById("customVideo");
+  const overlay = document.getElementById("videoOverlay");
+
+  if (video && overlay) {
+    overlay.addEventListener("click", function () {
+      video.muted = false;
+      video.play();
+      overlay.style.display = "none";
+    });
+  }
+
+  // Initialize campaign data
+  populateData();
+
+  // Initialize sticky donation card
+  initStickyDonationCard();
+
+  console.log("�R$ Script loaded - New architecture active!");
+});
+
+        </script>
+        
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const offcanvasBackdrop = document.getElementById('donation-offcanvas-backdrop');
+    const offcanvasPanel    = document.getElementById('donation-offcanvas-panel');
+
+    function openDonationOffcanvas() {
+        if (!offcanvasBackdrop || !offcanvasPanel) return;
+        offcanvasBackdrop.classList.add('is-visible');
+        offcanvasPanel.classList.add('is-open');
+        document.body.classList.add('no-scroll');
+    }
+
+    function closeDonationOffcanvas() {
+        if (!offcanvasBackdrop || !offcanvasPanel) return;
+        offcanvasBackdrop.classList.remove('is-visible');
+        offcanvasPanel.classList.remove('is-open');
+        document.body.classList.remove('no-scroll');
+    }
+
+    // Botões que abrem o offcanvas (coloque data-open-donation neles)
+    document.querySelectorAll('[data-open-donation]').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            openDonationOffcanvas();
+        });
+    });
+
+    // Clicar fora (no backdrop) fecha
+    if (offcanvasBackdrop) {
+        offcanvasBackdrop.addEventListener('click', function (e) {
+            if (e.target === offcanvasBackdrop) {
+                closeDonationOffcanvas();
+            }
+        });
+    }
+
+    // Fechar com ESC
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeDonationOffcanvas();
+        }
+    });
+
+    /* ===========================
+       LÓGICA INTERNA DO OFFCANVAS
+       =========================== */
+
+    if (!offcanvasPanel) return;
+
+    // MENU MOBILE DO HEADER INTERNO
+    const menuToggle = offcanvasPanel.querySelector('#menu-toggle-button');
+    const mobileMenu = offcanvasPanel.querySelector('#mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+// LOG STORAGE FOR DOWNLOAD
+    const DEBUG_LOGS = [];
+    
+    function addLog(type, message, data = null) {
+        const timestamp = new Date().toISOString();
+        const logEntry = {
+            timestamp,
+            type,
+            message,
+            data: data ? JSON.stringify(data, null, 2) : null
+        };
+        DEBUG_LOGS.push(logEntry);
+        
+        // Also log to console
+        if (type === 'error') {
+            console.error(`[${timestamp}] ${message}`, data || '');
+        } else {
+            console.log(`[${timestamp}] ${message}`, data || '');
+        }
+    }
+    
+    function downloadLogs() {
+        const logContent = DEBUG_LOGS.map(log => {
+            let line = `[${log.timestamp}] [${log.type.toUpperCase()}] ${log.message}`;
+            if (log.data) {
+                line += `\nDATA: ${log.data}`;
+            }
+            return line;
+        }).join('\n\n' + '='.repeat(80) + '\n\n');
+        
+        const blob = new Blob([logContent], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `AtivusHub-debug-logs-${new Date().toISOString().replace(/[:.]/g, '-')}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+    
+    // AtivusHub API CONFIGURATION
+    const AtivusHub_CONFIG = {
+        baseUrl: 'https://api.AtivusHub.com',
+        clientId: 'Jlengenha3_b907f7dc', // Replace with your actual client_id
+        clientSecret: '453669b7-a420-44de-9799-be8ad1b97f80', // Replace with your actual client_secret
+        accountEmail: 'jlengenha3@gmail.com', // Replace with your account email
+        callbackUrl: window.location.origin + '/api/AtivusHub-callback',
+        successUrl: window.location.origin + '/donation-success',
+        failedUrl: window.location.origin + '/donation-failed'
+    };
+
+    // Quick amount buttons
+    const quickAmountBtns = offcanvasPanel.querySelectorAll('.quick-amount-btn');
+    const amountInput = offcanvasPanel.querySelector('#donation-amount');
+
+    quickAmountBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const amount = btn.getAttribute('data-amount');
+            if (amountInput) {
+                amountInput.value = amount;
+                // Remove active state from all buttons
+                quickAmountBtns.forEach(b => b.classList.remove('border-[#4A9D44]', 'bg-green-50'));
+                // Add active state to clicked button
+                btn.classList.add('border-[#4A9D44]', 'bg-green-50');
+            }
+        });
+    });
+
+    // Payment method selection
+    const paymentMethodOptions = offcanvasPanel.querySelectorAll('.payment-method-option');
+    paymentMethodOptions.forEach(function(option) {
+        const radio = option.querySelector('input[type="radio"]');
+        const card = option.querySelector('.payment-method-card');
+        
+        radio.addEventListener('change', function() {
+            // Reset all cards
+            paymentMethodOptions.forEach(function(opt) {
+                const c = opt.querySelector('.payment-method-card');
+                c.classList.remove('border-[#4A9D44]', 'bg-green-50');
+                c.classList.add('border-gray-200');
+            });
+            // Activate selected
+            if (radio.checked) {
+                card.classList.remove('border-gray-200');
+                card.classList.add('border-[#4A9D44]', 'bg-green-50');
+            }
+        });
+    });
+
+    // DONATION FORM SUBMISSION
+    const donationForm = offcanvasPanel.querySelector('#donation-form');
+    if (donationForm) {
+        donationForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+const amount = parseFloat(offcanvasPanel.querySelector('#donation-amount').value);
+            const payerName = offcanvasPanel.querySelector('#payer-name').value.trim();
+            const payerDocument = offcanvasPanel.querySelector('#payer-document').value.trim();
+            const payerPhone = offcanvasPanel.querySelector('#payer-phone').value.trim();
+            
+            const errorDiv = offcanvasPanel.querySelector('#donation-error');
+            const successDiv = offcanvasPanel.querySelector('#donation-success');
+            const mbwaySuccess = offcanvasPanel.querySelector('#mbway-success');
+            const multibancoSuccess = offcanvasPanel.querySelector('#multibanco-success');
+            const btnText = offcanvasPanel.querySelector('#donate-btn-text');
+            const btnLoading = offcanvasPanel.querySelector('#donate-btn-loading');
+            const submitBtn = offcanvasPanel.querySelector('#finalizar-doacao');
+            
+            // Reset states
+            errorDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+            mbwaySuccess.classList.add('hidden');
+            multibancoSuccess.classList.add('hidden');
+            
+// Validation
+            if (!amount || amount < 1) {
+                errorDiv.textContent = 'Please enter a valid donation amount (minimum 1 EUR).';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (!payerName || !payerDocument || !payerPhone) {
+                errorDiv.textContent = 'Please fill in all required fields.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            // Get payment method for minimum amount validation
+            const paymentMethod = offcanvasPanel.querySelector('input[name="payment_method"]:checked').value;
+            
+            // Validate minimum amounts by payment method
+            if (paymentMethod === 'mbway' && amount < 10) {
+                errorDiv.innerHTML = '<strong>Minimum amount for MB WAY:</strong> €10.00<br><small>Please enter at least €10.00 for MB WAY payments.</small>';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (paymentMethod === 'multibanco' && amount < 50) {
+                errorDiv.innerHTML = '<strong>Minimum amount for Multibanco:</strong> €50.00<br><small>Please enter at least €50.00 for Multibanco payments.</small>';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            
+            // Validate NIF (Portuguese tax number - 9 digits)
+            const cleanDocument = payerDocument.replace(/\s/g, '');
+            if (!/^\d{9}$/.test(cleanDocument)) {
+                errorDiv.innerHTML = '<strong>Invalid NIF:</strong> Portuguese NIF must have exactly 9 digits.<br><small>Example: 123456789</small>';
+                errorDiv.classList.remove('hidden');
+                addLog('error', 'Invalid NIF format: ' + payerDocument + ' (cleaned: ' + cleanDocument + ')');
+                return;
+            }
+            
+            // Validate phone - prefix +351 is already shown, user enters only the number
+            let cleanPhone = payerPhone.replace(/\s/g, '').replace(/^0+/, '');
+            // Add +351 prefix since it's shown in the UI
+            cleanPhone = '+351' + cleanPhone;
+            
+            // Basic 9-digit validation
+            if (!/^\+351\d{9}$/.test(cleanPhone)) {
+                errorDiv.innerHTML = '<strong>Invalid phone:</strong> Please enter a valid Portuguese phone number (9 digits).<br><small>Example: 912 345 678</small>';
+                errorDiv.classList.remove('hidden');
+                addLog('error', 'Invalid phone format: ' + payerPhone + ' (cleaned: ' + cleanPhone + ')');
+                return;
+            }
+            
+// For MB WAY: Must be a mobile number (starts with 91, 92, 93, or 96)
+            if (paymentMethod === 'mbway') {
+                const mobilePrefix = cleanPhone.substring(4, 6); // Get first 2 digits after +351
+                if (!['91', '92', '93', '96'].includes(mobilePrefix)) {
+                    errorDiv.innerHTML = '<strong>MB WAY requires a mobile number:</strong> The number must start with 91, 92, 93, or 96.<br><small>Example: 912 345 678</small>';
+                    errorDiv.classList.remove('hidden');
+                    addLog('error', 'MB WAY requires mobile number. Provided: ' + cleanPhone + ' (prefix: ' + mobilePrefix + ')');
+                    return;
+                }
+            }
+            
+// Show loading state
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            submitBtn.disabled = true;
+            
+            // Get tracking parameters from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Build redirect URL with all payment data
+            const paymentParams = new URLSearchParams({
+                amount: amount.toFixed(2),
+                method: paymentMethod,
+                name: payerName,
+                document: cleanDocument,
+                phone: cleanPhone,
+                // Tracking params
+                utm_source: urlParams.get('utm_source') || '',
+                utm_campaign: urlParams.get('utm_campaign') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_content: urlParams.get('utm_content') || '',
+                utm_term: urlParams.get('utm_term') || '',
+                src: urlParams.get('src') || '',
+                sck: urlParams.get('sck') || '',
+                xcod: urlParams.get('xcod') || '',
+                fbclid: urlParams.get('fbclid') || '',
+                gclid: urlParams.get('gclid') || '',
+                ttclid: urlParams.get('ttclid') || ''
+            });
+            
+            addLog('info', 'Redirecting to payment page with params:', Object.fromEntries(paymentParams));
+            
+// Redirect to payment page
+            window.location.href = 'pagamento.html?' + paymentParams.toString();
+        });
+    }
+
+    // ROTAÇÃO DE DOADORES (igual seu script original)
+    const donors = [
+        { name: "Sarah Mitchell",  amount: "40.00" },
+        { name: "James Anderson",  amount: "25.00" },
+        { name: "Emma Thompson",   amount: "50.00" },
+        { name: "Michael Roberts", amount: "35.00" },
+        { name: "Sophie Williams", amount: "60.00" },
+        { name: "David Martinez",  amount: "45.00" }
+    ];
+
+    let currentDonorIndex = 0;
+    const donorInfo = offcanvasPanel.querySelector('#last-donor-info');
+
+    function updateDonor() {
+        if (!donorInfo) return;
+        donorInfo.style.opacity = '0';
+
+        setTimeout(function () {
+            currentDonorIndex = (currentDonorIndex + 1) % donors.length;
+            const donor = donors[currentDonorIndex];
+            donorInfo.textContent = `${donor.name} donated £\u00A0${donor.amount}`;
+            donorInfo.style.opacity = '1';
+        }, 300);
+    }
+
+    if (donorInfo) {
+        setInterval(updateDonor, 5000);
+    }
+});
+</script>
+
+<script>
+(function () {
+  // Se não tiver campaignData ou o título, não faz nada
+  if (!window.campaignData) return;
+  const el = document.getElementById("remaining-text");
+  if (!el) return;
+
+  const campaignData = window.campaignData;
+
+  // Converte string tipo "1.235,00" ou "19350.00" em número
+  function toNumber(value) {
+    if (typeof value === "number") return value;
+
+    if (typeof value === "string") {
+      // remove qualquer símbolo que não seja dígito, vírgula ou ponto
+      let cleaned = value.replace(/[^\d.,-]/g, "");
+
+      // caso "1.235,00" -> "1235.00"
+      if (cleaned.indexOf(",") > -1 && cleaned.indexOf(".") > -1) {
+        cleaned = cleaned.replace(/\./g, "").replace(",", ".");
+      } else if (cleaned.indexOf(",") > -1 && cleaned.indexOf(".") === -1) {
+        // caso "19350,00" -> "19350.00"
+        cleaned = cleaned.replace(",", ".");
+      }
+
+      const parsed = parseFloat(cleaned);
+      return isNaN(parsed) ? 0 : parsed;
+    }
+
+    return 0;
+  }
+
+  const raisedNum = toNumber(campaignData.valueRaised);
+  const goalNum   = toNumber(campaignData.valueGoal);
+
+  let remaining = goalNum - raisedNum;
+  if (!isFinite(remaining) || remaining < 0) {
+    remaining = 0;
+  }
+
+  // Formata em £19,350 (padrão en-GB, sem casas decimais)
+  const remainingStr = "£" + Math.round(remaining).toLocaleString("en-GB", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  });
+
+  el.innerHTML = `Still ${£69,990} to go.<br>Help us give it a boost.`;
+})();
+</script>
+
+<script>
+    // =========================
+// CURRENCY GLOBAL
+// =========================
+const currency = "£";
+
+/**
+ * Recebe valor vindo do banco (ex: "1.235,00", "19.350,00", 50, "50")
+ * - remove apenas o ",00" do final
+ * - mantém os pontos de milhar
+ * - devolve string no padrão: "£ 1.235"
+ */
+function formatPoundString(rawValue) {
+  if (rawValue === null || rawValue === undefined) {
+    return `${currency} 0`;
+  }
+
+  let str = String(rawValue).trim();
+
+  // remove qualquer símbolo estranho antes
+  // (se vier "£ 1.235,00" ou "R$ 1.235,00")
+  str = str.replace(/[^\d.,]/g, "");
+
+  // remove só ,00 do final (1.235,00 -> 1.235)
+  str = str.replace(/,00$/, "");
+
+  // se ficar vazio, força 0
+  if (!str) str = "0";
+
+  return `${currency} ${str}`;
+}
+
+</script>
+
+
+
+
+</main></body></html>

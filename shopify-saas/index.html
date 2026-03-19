@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopfyr — Importe Produtos, Reviews e Temas para sua Loja Shopify</title>
+  <meta name="description" content="O SaaS tudo-em-um para lojistas Shopify. Importe produtos de qualquer loja, reviews em massa do AliExpress, Shopee e Shein, e acesse uma biblioteca de temas premium." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/i18n.js"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">⚡</div>
+        <span class="nav-logo-text">Shop<span>fyr</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#features" data-i18n="nav_features">Funcionalidades</a>
+        <a href="#themes" data-i18n="nav_themes">Temas</a>
+        <a href="#pricing" data-i18n="nav_pricing">Preços</a>
+        <div class="lang-switcher">
+          <select onchange="i18n.setLang(this.value)" style="background:transparent;border:none;color:var(--text-primary);cursor:pointer;font-size:0.9rem;">
+            <option value="pt" ${i18n.currentLang === 'pt' ? 'selected' : ''}>🇧🇷 PT</option>
+            <option value="en" ${i18n.currentLang === 'en' ? 'selected' : ''}>🇺🇸 EN</option>
+            <option value="es" ${i18n.currentLang === 'es' ? 'selected' : ''}>🇪🇸 ES</option>
+          </select>
+        </div>
+      </div>
+      <div class="nav-cta">
+        <a href="dashboard.html" class="nav-link-login" data-i18n="nav_login">Entrar</a>
+        <a href="#pricing" class="btn btn-primary btn-sm" data-i18n="cta_start">Começar Agora</a>
+      </div>
+
+      <button class="nav-mobile-toggle" id="mobileToggle">☰</button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Tudo que você precisa para escalar sua loja Shopify
+          </div>
+
+          <h1 data-i18n="hero_title">Escalar suas vendas Shopify nunca foi tão fácil</h1>
+          <p data-i18n="hero_subtitle">Importe produtos, reviews e instale temas premium em segundos. O ecossistema completo para o seu dropshipping global.</p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary btn-lg" data-i18n="cta_start">Começar Agora Gratuitamente</a>
+            <a href="#features" class="btn btn-secondary btn-lg" style="margin-left:14px">Ver Demonstração</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <span class="hero-stat-value gradient-text">30+</span>
+              <span class="hero-stat-label">Plataformas</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value gradient-text">1M+</span>
+              <span class="hero-stat-label">Reviews importados</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value gradient-text">50+</span>
+              <span class="hero-stat-label">Temas Premium</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual">
+          <!-- Floating Card 1 -->
+          <div class="hero-card-float hero-card-float-1">
+            <div class="float-label">Reviews importados</div>
+            <div class="float-stars">★★★★★</div>
+            <div class="float-count">847 reviews · agora</div>
+          </div>
+
+          <!-- Main Card -->
+          <div class="hero-card-main">
+            <div class="hero-card-header">
+              <div class="hero-card-dot" style="background:#ef4444"></div>
+              <div class="hero-card-dot" style="background:#f59e0b"></div>
+              <div class="hero-card-dot" style="background:#22c55e"></div>
+              <span style="font-size:0.78rem;color:var(--text-muted);margin-left:8px;">shopfyr.app — Importador</span>
+            </div>
+
+            <div style="margin-bottom:16px;">
+              <div style="display:flex;gap:8px;margin-bottom:12px;">
+                <div style="flex:1;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:0.82rem;color:var(--text-muted);">
+                  🔗 Cole o link do produto...
+                </div>
+                <button class="btn btn-primary btn-sm" style="border-radius:8px;">Importar</button>
+              </div>
+            </div>
+
+            <div class="hero-card-products">
+              <div class="product-item" style="animation-delay:0.1s">
+                <div class="product-thumb-placeholder">👟</div>
+                <div class="product-info">
+                  <div class="product-name">Tênis Running Pro Max 2024</div>
+                  <div class="product-platform">✅ Importado de aliexpress.com</div>
+                </div>
+                <div class="product-action">→</div>
+              </div>
+
+              <div class="product-item" style="animation-delay:0.2s">
+                <div class="product-thumb-placeholder">👗</div>
+                <div class="product-info">
+                  <div class="product-name">Conjunto Feminino Casual</div>
+                  <div class="product-platform">✅ Importado de shopee.com.br</div>
+                </div>
+                <div class="product-action">→</div>
+              </div>
+
+              <div class="product-item" style="animation-delay:0.3s">
+                <div class="product-thumb-placeholder">🎮</div>
+                <div class="product-info">
+                  <div class="product-name">Controle Gamer Sem Fio</div>
+                  <div class="product-platform">✅ Importado de shein.com</div>
+                </div>
+                <div class="product-action">→</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Card 2 -->
+          <div class="hero-card-float hero-card-float-2">
+            <div class="float-label">Tema instalado</div>
+            <div class="float-stat gradient-text">Luxe Pro</div>
+            <div class="float-count">✅ Publicado na sua loja</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PLATFORMS MARQUEE
+       ============================================ -->
+  <div class="logos-section">
+    <div class="logos-label" data-i18n="sec_marquee">Importa de e publica nos maiores players do mercado</div>
+    <div class="marquee-wrap">
+      <div class="marquee" id="marquee">
+        <div class="marquee-item"><span class="icon">🛒</span>AliExpress</div>
+        <div class="marquee-item"><span class="icon">🛍️</span>Shopee</div>
+        <div class="marquee-item"><span class="icon">👗</span>Shein</div>
+        <div class="marquee-item"><span class="icon">📦</span>Amazon</div>
+        <div class="marquee-item"><span class="icon">🏪</span>Shopify</div>
+        <div class="marquee-item"><span class="icon">🛒</span>WooCommerce</div>
+        <div class="marquee-item"><span class="icon">☁️</span>Nuvemshop</div>
+        <div class="marquee-item"><span class="icon">🛒</span>Yampi</div>
+        <div class="marquee-item"><span class="icon">📦</span>Cartpanda</div>
+        <div class="marquee-item"><span class="icon">🏬</span>Mercado Livre</div>
+        <div class="marquee-item"><span class="icon">⭐</span>Judge.me</div>
+        <div class="marquee-item"><span class="icon">💬</span>Loox</div>
+        <div class="marquee-item"><span class="icon">⭐</span>Yotpo</div>
+        <div class="marquee-item"><span class="icon">🌟</span>Ryviu</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="marquee-item"><span class="icon">🛒</span>AliExpress</div>
+        <div class="marquee-item"><span class="icon">🛍️</span>Shopee</div>
+        <div class="marquee-item"><span class="icon">👗</span>Shein</div>
+        <div class="marquee-item"><span class="icon">📦</span>Amazon</div>
+        <div class="marquee-item"><span class="icon">🏪</span>Shopify</div>
+        <div class="marquee-item"><span class="icon">🛒</span>WooCommerce</div>
+        <div class="marquee-item"><span class="icon">☁️</span>Nuvemshop</div>
+        <div class="marquee-item"><span class="icon">🛒</span>Yampi</div>
+        <div class="marquee-item"><span class="icon">📦</span>Cartpanda</div>
+        <div class="marquee-item"><span class="icon">🏬</span>Mercado Livre</div>
+        <div class="marquee-item"><span class="icon">⭐</span>Judge.me</div>
+        <div class="marquee-item"><span class="icon">💬</span>Loox</div>
+        <div class="marquee-item"><span class="icon">⭐</span>Yotpo</div>
+        <div class="marquee-item"><span class="icon">🌟</span>Ryviu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       FEATURES SECTION
+       ============================================ -->
+  <section id="features">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">✨ <span data-i18n="sec_features">Recursos</span></div>
+        <h2 class="section-title" data-i18n="feat_main_title">Tudo que você precisa.<br/>Em um só lugar.</h2>
+        <p class="section-subtitle" data-i18n="feat_main_subtitle">Chega de pagar 3 ferramentas diferentes. Com o Shopfyr você tem o importador de produtos, reviews e biblioteca de temas tudo integrado.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- Feature 1: Product Import -->
+        <div class="feature-card feature-card-large">
+          <div>
+            <div class="feature-icon">🛍️</div>
+            <h3>Importador de Produtos</h3>
+            <p>Importe qualquer produto de mais de 30 plataformas — AliExpress, Shopee, Shein, Amazon, Mercado Livre e muito mais. Títulos, descrições, imagens e variantes em segundos.</p>
+            <ul style="list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+              <li style="display:flex;gap:8px;font-size:0.85rem;color:var(--text-secondary);">
+                <span style="color:var(--purple-light)">✓</span> 1-clique via extensão Chrome
+              </li>
+              <li style="display:flex;gap:8px;font-size:0.85rem;color:var(--text-secondary);">
+                <span style="color:var(--purple-light)">✓</span> IA para reescrever e traduzir descrições
+              </li>
+              <li style="display:flex;gap:8px;font-size:0.85rem;color:var(--text-secondary);">
+                <span style="color:var(--purple-light)">✓</span> Importação em massa de coleções inteiras
+              </li>
+              <li style="display:flex;gap:8px;font-size:0.85rem;color:var(--text-secondary);">
+                <span style="color:var(--purple-light)">✓</span> Publish direto na sua loja Shopify
+              </li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <div style="background:var(--bg-primary);border-radius:12px;padding:16px;border:1px solid var(--border);">
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:12px;font-weight:600;">🔍 Produto detectado</div>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;align-items:center;gap:10px;background:var(--bg-card);padding:10px;border-radius:8px;border:1px solid var(--border);">
+                  <span style="font-size:1.4rem;">👟</span>
+                  <div>
+                    <div style="font-size:0.8rem;font-weight:600;">Air Force Running Pro</div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);">Aliexpress · € 14,83</div>
+                  </div>
+                  <span style="margin-left:auto;font-size:0.72rem;color:var(--cyan-light);background:rgba(6,182,212,0.15);padding:4px 8px;border-radius:4px;">✓ Importado</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;background:var(--bg-card);padding:10px;border-radius:8px;border:1px solid var(--border);">
+                  <span style="font-size:1.4rem;">👗</span>
+                  <div>
+                    <div style="font-size:0.8rem;font-weight:600;">Vestido Midi Floral</div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);">Shein · € 11,17</div>
+                  </div>
+                  <span style="margin-left:auto;font-size:0.72rem;color:var(--cyan-light);background:rgba(6,182,212,0.15);padding:4px 8px;border-radius:4px;">✓ Importado</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:10px;background:var(--bg-card);padding:10px;border-radius:8px;border:1px solid rgba(124,58,237,0.4);animation:pulse-border 2s infinite;">
+                  <span style="font-size:1.4rem;">⌚</span>
+                  <div>
+                    <div style="font-size:0.8rem;font-weight:600;">Smartwatch Ultra 49mm</div>
+                    <div style="font-size:0.7rem;color:var(--text-muted);">Shopee · € 39,00</div>
+                  </div>
+                  <span style="margin-left:auto;font-size:0.72rem;color:var(--purple-light);background:rgba(124,58,237,0.15);padding:4px 8px;border-radius:4px;">⟳ Importando</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Review Import -->
+        <div class="feature-card">
+          <div class="feature-icon cyan-icon">⭐</div>
+          <h3>Importador de Reviews</h3>
+          <p>Adicione centenas de avaliações euros com fotos em menos de 30 segundos. Compatível com Judge.me, Loox, Ryviu, Yotpo e mais 8 apps.</p>
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--cyan-light)">✓</span> Importa de AliExpress, Shopee, Shein
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--cyan-light)">✓</span> +900 mil reviews no banco de dados
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--cyan-light)">✓</span> Tradução automática com IA
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--cyan-light)">✓</span> Filtro por nota, foto e idioma
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Theme Library -->
+        <div class="feature-card">
+          <div class="feature-icon pink-icon">🎨</div>
+          <h3>Biblioteca de Temas</h3>
+          <p>Acesse +50 temas premium para Shopify organizados por nicho. Moda, eletrônicos, pet shop, dropshipping. Instale com 1 clique, sem pagar por tema.</p>
+          <div style="margin-top:16px;display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--pink)">✓</span> Instalação direta via Shopify API
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--pink)">✓</span> Preview ao vivo antes de instalar
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--pink)">✓</span> Atualizações automáticas de temas
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-secondary);">
+              <span style="color:var(--pink)">✓</span> Personalize cores e fontes no app
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: Chrome Extension -->
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h3>Extensão Chrome</h3>
+          <p>Instale nossa extensão e importe qualquer produto enquanto navega. Aparece automaticamente nas páginas de produto.</p>
+        </div>
+
+        <!-- Feature 5: AI -->
+        <div class="feature-card">
+          <div class="feature-icon cyan-icon">🤖</div>
+          <h3>IA Integrada</h3>
+          <p>GPT-4 para reescrever títulos, descrições e traduzir reviews. Crie copy de produto que converte automaticamente.</p>
+        </div>
+
+        <!-- Feature 6: Multi-store -->
+        <div class="feature-card">
+          <div class="feature-icon pink-icon">🏪</div>
+          <h3>Multi-lojas</h3>
+          <p>Gerencie várias lojas Shopify em uma única conta. Perfeito para gestores de e-commerce e agências.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW IT WORKS
+       ============================================ -->
+  <section id="how-it-works" style="background: var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">🚀 <span data-i18n="sec_how">Como Funciona</span></div>
+        <h2 class="section-title" data-i18n="how_title">Pronto em menos de 5 minutos</h2>
+        <p class="section-subtitle" data-i18n="how_subtitle">Não precisa ser técnico. Qualquer lojista consegue usar.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-number"><span class="step-icon">👤</span></div>
+          <h4>Crie sua conta</h4>
+          <p>Cadastro rápido com e-mail. Trial de 7 dias sem cartão de crédito.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number" style="border-color:var(--cyan)"><span class="step-icon">🔗</span></div>
+          <h4>Conecte sua loja</h4>
+          <p>Conecte sua loja Shopify com 1 clique via OAuth. Leva menos de 30 segundos.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number" style="border-color:var(--pink)"><span class="step-icon">📋</span></div>
+          <h4>Importe produtos</h4>
+          <p>Cole o link e importe. Ou navegue e use a extensão Chrome para importar instantaneamente.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number" style="border-color:#22c55e"><span class="step-icon">🚀</span></div>
+          <h4>Publique e venda</h4>
+          <p>Produtos e reviews publicados na sua loja. Escolha um tema e comece a vender.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       REVIEWS DEMO SECTION
+       ============================================ -->
+  <section>
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+        <div>
+          <div class="section-label">⭐ Reviews em Massa</div>
+          <h2 class="section-title">Centenas de avaliações euros em menos de 30 segundos</h2>
+          <p class="section-subtitle">Usamos proxies e IA para importar, traduzir e publicar reviews euros de outros sites diretamente na sua loja. Compatível com os principais apps de review.</p>
+
+          <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+            <div style="display:flex;align-items:center;gap:14px;background:var(--bg-card);padding:16px 20px;border-radius:12px;border:1px solid var(--border);">
+              <span style="font-size:1.5rem;">🏪</span>
+              <div>
+                <div style="font-size:0.88rem;font-weight:600;margin-bottom:2px;">Judge.me</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Integração nativa</div>
+              </div>
+              <span style="margin-left:auto;color:#22c55e;font-size:0.78rem;font-weight:600;">✓ Conectado</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;background:var(--bg-card);padding:16px 20px;border-radius:12px;border:1px solid var(--border);">
+              <span style="font-size:1.5rem;">📸</span>
+              <div>
+                <div style="font-size:0.88rem;font-weight:600;margin-bottom:2px;">Loox Reviews</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Integração nativa</div>
+              </div>
+              <span style="margin-left:auto;color:#22c55e;font-size:0.78rem;font-weight:600;">✓ Conectado</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;background:var(--bg-card);padding:16px 20px;border-radius:12px;border:1px solid var(--border);">
+              <span style="font-size:1.5rem;">⭐</span>
+              <div>
+                <div style="font-size:0.88rem;font-weight:600;margin-bottom:2px;">Ryviu + Yotpo + 8 mais</div>
+                <div style="font-size:0.78rem;color:var(--text-muted);">Todos suportados</div>
+              </div>
+              <span style="margin-left:auto;color:#22c55e;font-size:0.78rem;font-weight:600;">✓ Disponível</span>
+            </div>
+          </div>
+
+          <a href="#planos" class="btn btn-primary" id="cta-reviews">⭐ Importar Reviews Agora</a>
+        </div>
+
+        <div class="reviews-demo">
+          <div class="reviews-demo-header">
+            <div>
+              <div style="font-size:0.78rem;color:var(--text-muted);font-weight:600;">REVIEWS IMPORTADOS</div>
+              <div style="font-size:1.5rem;font-weight:800;font-family:var(--font-display);">847 avaliações</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span style="color:#f59e0b;font-size:1.1rem;">★★★★★</span>
+              <span style="font-weight:700;">4.9</span>
+            </div>
+          </div>
+
+          <div class="reviews-demo-grid">
+            <div class="review-card-demo">
+              <div class="review-author">
+                <div class="review-avatar" style="background:rgba(124,58,237,0.3);color:var(--purple-light);">M</div>
+                <div>
+                  <div class="review-name">Maria S.</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Produto chegou rápido, qualidade incrível! Muito além do esperado.</div>
+              <div class="review-source">via aliexpress.com • 📸 com foto</div>
+            </div>
+
+            <div class="review-card-demo">
+              <div class="review-author">
+                <div class="review-avatar" style="background:rgba(6,182,212,0.3);color:var(--cyan-light);">J</div>
+                <div>
+                  <div class="review-name">João P.</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Comprei e recomendo! Entrega rápida e produto perfeito.</div>
+              <div class="review-source">via shopee.com.br • ✍️ verificado</div>
+            </div>
+
+            <div class="review-card-demo">
+              <div class="review-author">
+                <div class="review-avatar" style="background:rgba(236,72,153,0.3);color:var(--pink);">A</div>
+                <div>
+                  <div class="review-name">Ana L.</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Superou expectativas. Já é a segunda vez que compro!</div>
+              <div class="review-source">via shein.com • 📸 com foto</div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;text-align:center;font-size:0.8rem;color:var(--text-muted);">
+            ⚡ 847 reviews importados em <strong style="color:var(--cyan-light)">23 segundos</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       THEMES SECTION
+       ============================================ -->
+  <section id="temas" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">🎨 Biblioteca de Temas</div>
+        <h2 class="section-title">+50 temas premium inclusos no plano</h2>
+        <p class="section-subtitle">Pare de pagar € 50+ por tema. Com o Shopfyr Pro você acessa todos os temas premium da biblioteca e instala com 1 clique.</p>
+      </div>
+
+      <div class="themes-grid">
+        <div class="theme-card">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+            <div class="theme-preview-inner">
+              <div class="theme-mockup-nav"></div>
+              <div class="theme-mockup-hero" style="background:linear-gradient(135deg,rgba(124,58,237,0.3),rgba(6,182,212,0.2))"></div>
+              <div class="theme-mockup-grid">
+                <div class="theme-mockup-card"></div>
+                <div class="theme-mockup-card"></div>
+                <div class="theme-mockup-card"></div>
+              </div>
+            </div>
+            <div class="theme-overlay">
+              <a href="#planos" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">⚡ Instalar Tema</a>
+            </div>
+          </div>
+          <div class="theme-info">
+            <div><div class="theme-name">Luxe Pro</div><div class="theme-tag">Moda · Premium</div></div>
+            <span class="theme-plan-badge badge-pro">PRO</span>
+          </div>
+        </div>
+
+        <div class="theme-card">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#0f2027,#203a43);">
+            <div class="theme-preview-inner">
+              <div class="theme-mockup-nav" style="background:rgba(6,182,212,0.2)"></div>
+              <div class="theme-mockup-hero" style="background:linear-gradient(135deg,rgba(6,182,212,0.3),rgba(34,211,238,0.15))"></div>
+              <div class="theme-mockup-grid">
+                <div class="theme-mockup-card" style="background:rgba(6,182,212,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(6,182,212,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(6,182,212,0.1)"></div>
+              </div>
+            </div>
+            <div class="theme-overlay">
+              <a href="#planos" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">⚡ Instalar Tema</a>
+            </div>
+          </div>
+          <div class="theme-info">
+            <div><div class="theme-name">TechDrop</div><div class="theme-tag">Eletrônicos · Dropship</div></div>
+            <span class="theme-plan-badge badge-free">STARTER</span>
+          </div>
+        </div>
+
+        <div class="theme-card">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#2d1b69,#1a0533);">
+            <div class="theme-preview-inner">
+              <div class="theme-mockup-nav" style="background:rgba(236,72,153,0.2)"></div>
+              <div class="theme-mockup-hero" style="background:linear-gradient(135deg,rgba(236,72,153,0.3),rgba(124,58,237,0.2))"></div>
+              <div class="theme-mockup-grid">
+                <div class="theme-mockup-card" style="background:rgba(236,72,153,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(236,72,153,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(236,72,153,0.1)"></div>
+              </div>
+            </div>
+            <div class="theme-overlay">
+              <a href="#planos" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">⚡ Instalar Tema</a>
+            </div>
+          </div>
+          <div class="theme-info">
+            <div><div class="theme-name">Beauty Queen</div><div class="theme-tag">Beleza · Cosméticos</div></div>
+            <span class="theme-plan-badge badge-pro">PRO</span>
+          </div>
+        </div>
+
+        <div class="theme-card">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#064e3b,#022c22);">
+            <div class="theme-preview-inner">
+              <div class="theme-mockup-nav" style="background:rgba(34,197,94,0.2)"></div>
+              <div class="theme-mockup-hero" style="background:linear-gradient(135deg,rgba(34,197,94,0.3),rgba(16,185,129,0.2))"></div>
+              <div class="theme-mockup-grid">
+                <div class="theme-mockup-card" style="background:rgba(34,197,94,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(34,197,94,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(34,197,94,0.1)"></div>
+              </div>
+            </div>
+            <div class="theme-overlay">
+              <a href="#planos" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">⚡ Instalar Tema</a>
+            </div>
+          </div>
+          <div class="theme-info">
+            <div><div class="theme-name">NatureSell</div><div class="theme-tag">Orgânicos · Saúde</div></div>
+            <span class="theme-plan-badge badge-free">STARTER</span>
+          </div>
+        </div>
+
+        <div class="theme-card">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#451a03,#7c2d12);">
+            <div class="theme-preview-inner">
+              <div class="theme-mockup-nav" style="background:rgba(251,146,60,0.2)"></div>
+              <div class="theme-mockup-hero" style="background:linear-gradient(135deg,rgba(251,146,60,0.3),rgba(234,88,12,0.2))"></div>
+              <div class="theme-mockup-grid">
+                <div class="theme-mockup-card" style="background:rgba(251,146,60,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(251,146,60,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(251,146,60,0.1)"></div>
+              </div>
+            </div>
+            <div class="theme-overlay">
+              <a href="#planos" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">⚡ Instalar Tema</a>
+            </div>
+          </div>
+          <div class="theme-info">
+            <div><div class="theme-name">Sportify</div><div class="theme-tag">Esportes · Fitness</div></div>
+            <span class="theme-plan-badge badge-pro">PRO</span>
+          </div>
+        </div>
+
+        <div class="theme-card">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#312e81,#1e1b4b);">
+            <div class="theme-preview-inner">
+              <div class="theme-mockup-nav" style="background:rgba(129,140,248,0.2)"></div>
+              <div class="theme-mockup-hero" style="background:linear-gradient(135deg,rgba(129,140,248,0.3),rgba(99,102,241,0.2))"></div>
+              <div class="theme-mockup-grid">
+                <div class="theme-mockup-card" style="background:rgba(129,140,248,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(129,140,248,0.1)"></div>
+                <div class="theme-mockup-card" style="background:rgba(129,140,248,0.1)"></div>
+              </div>
+            </div>
+            <div class="theme-overlay">
+              <a href="#planos" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">⚡ Instalar Tema</a>
+            </div>
+          </div>
+          <div class="theme-info">
+            <div><div class="theme-name">PetLove</div><div class="theme-tag">Pet Shop · Animals</div></div>
+            <span class="theme-plan-badge badge-pro">AGENCY</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <a href="themes.html" class="btn btn-outline btn-lg" id="cta-themes">Ver todos os 50+ temas →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PRICING SECTION
+       ============================================ -->
+  <section id="pricing">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">💳 <span data-i18n="nav_pricing">Preços</span></div>
+        <h2 class="section-title" data-i18n="price_title">Simples, transparente. Sem surpresas.</h2>
+        <p class="section-subtitle" data-i18n="plan_trial">7 dias grátis em todos os planos. Cancele quando quiser.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Starter -->
+        <div class="pricing-card">
+          <div class="pricing-plan-name">Starter</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">€</span>
+            <span class="pricing-value">29</span>
+            <span class="pricing-period">/mês</span>
+          </div>
+          <p class="pricing-description">Para quem está começando. Ideal para 1 loja Shopify.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 100 importações de produto/mês</li>
+            <li><span class="check">✓</span> 500 reviews/mês</li>
+            <li><span class="check">✓</span> 1 loja Shopify</li>
+            <li><span class="check">✓</span> 5 temas gratuitos</li>
+            <li><span class="check">✓</span> Extensão Chrome</li>
+            <li><span class="check">✓</span> Suporte por chat</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;" id="cta-plan-starter">Começar Trial Grátis</a>
+        </div>
+
+        <!-- Pro (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">MAIS POPULAR</div>
+          <div class="pricing-plan-name">Pro</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">€</span>
+            <span class="pricing-value">79</span>
+            <span class="pricing-period">/mês</span>
+          </div>
+          <p class="pricing-description">Para quem quer escalar. O plano favorito dos dropshippers.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> 1.000 importações de produto/mês</li>
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> Reviews ilimitados</li>
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> 3 lojas Shopify</li>
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> Todos os 50+ temas</li>
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> IA para reescrever produtos</li>
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> Importação em massa</li>
+            <li class="featured-feature"><span class="check" style="background:rgba(124,58,237,0.3)">✓</span> Suporte prioritário</li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;" id="cta-plan-pro">⚡ Começar Trial Grátis</a>
+        </div>
+
+        <!-- Agency -->
+        <div class="pricing-card">
+          <div class="pricing-plan-name">Agency</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">€</span>
+            <span class="pricing-value">199</span>
+            <span class="pricing-period">/mês</span>
+          </div>
+          <p class="pricing-description">Para agências e gestores que gerenciam múltiplas lojas.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Importações ilimitadas</li>
+            <li><span class="check">✓</span> Reviews ilimitados</li>
+            <li><span class="check">✓</span> 10 lojas Shopify</li>
+            <li><span class="check">✓</span> Todos os temas + exclusivos</li>
+            <li><span class="check">✓</span> API acesso completo</li>
+            <li><span class="check">✓</span> Whitelabel disponível</li>
+            <li><span class="check">✓</span> Suporte VIP + onboarding</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;" id="cta-plan-agency">Falar com Vendas</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS
+       ============================================ -->
+  <section style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">💬 Depoimentos</div>
+        <h2 class="section-title">+2.000 lojistas já usam o Shopfyr</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Era impossível imaginar minha rotina sem o Shopfyr agora. Em 10 minutos importei 50 produtos do AliExpress com reviews e coloquei na minha loja. Incrível!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(124,58,237,0.3);color:var(--purple-light);">R</div>
+            <div>
+              <div class="testimonial-name">Rafael M.</div>
+              <div class="testimonial-handle">@rafael_drop • Plano Pro</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Os temas são lindos e profissionais. Antes eu pagava € 83 por tema, agora tenho acesso a 50 temas no meu plano. Economizei muito dinheiro."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(6,182,212,0.3);color:var(--cyan-light);">J</div>
+            <div>
+              <div class="testimonial-name">Juliana K.</div>
+              <div class="testimonial-handle">@juju.store • Plano Pro</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Gerencio 5 lojas de clientes diferentes pelo painel. A importação de reviews é o diferencial — minha conversão subiu 35% em um mês."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:rgba(236,72,153,0.3);color:var(--pink);">D</div>
+            <div>
+              <div class="testimonial-name">Douglas S.</div>
+              <div class="testimonial-handle">@d.ecommerce • Plano Agency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FAQ SECTION
+       ============================================ -->
+  <section id="faq">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">❓ FAQ</div>
+        <h2 class="section-title">Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item open">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Funciona com qualquer loja Shopify?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim! Funciona com qualquer loja Shopify, seja plano Basic, Shopify ou Advanced. Você conecta sua loja via OAuth com total segurança e em menos de 1 minuto.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Precisa de crédito para o trial?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Não! O trial de 7 dias é 100% gratuito e não exige cartão de crédito. Você só precisa informar o pagamento se quiser continuar após o trial.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Os reviews importados são euros?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim. Importamos reviews euros diretamente de plataformas como AliExpress, Shopee e Shein. Você pode filtrar por nota, idioma e se têm foto.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Quantas lojas posso conectar?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">No plano Starter: 1 loja. No Pro: 3 lojas. No Agency: 10 lojas. Precisa de mais? Entre em contato para um plano customizado.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Como funciona a biblioteca de temas?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Você acessa a galeria com mais de 50 temas. Faz o preview ao vivo e instala diretamente na sua loja via Shopify API com 1 clique. Os temas ficam atualizados automaticamente.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Posso cancelar quando quiser?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim, sem burocracia. Cancele quando quiser direto no painel de conta. Você continua tendo acesso até o fim do período pago.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="section-label" style="justify-content:center;margin-bottom:20px;">🚀 Comece Agora</div>
+        <h2>Pronto para transformar<br/><span class="gradient-text">sua loja Shopify?</span></h2>
+        <p>Junte-se a +2.000 lojistas que já usam o Shopfyr. Comece grátis por 7 dias.</p>
+        <div class="cta-actions">
+          <a href="#planos" class="btn btn-primary btn-lg" id="cta-bottom">⚡ Começar Gratuitamente</a>
+          <a href="dashboard.html" class="btn btn-outline btn-lg">Ver Dashboard →</a>
+        </div>
+        <p class="cta-note">✅ Sem cartão · ✅ 7 dias grátis · ✅ Cancele quando quiser</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="margin-bottom:10px;">
+            <div class="nav-logo-icon">⚡</div>
+            <span class="nav-logo-text">Shop<span>fyr</span></span>
+          </a>
+          <p>O SaaS tudo-em-um para lojistas Shopify. Importe produtos, reviews e instale temas premium em segundos.</p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Produto</div>
+          <ul class="footer-links">
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#planos">Preços</a></li>
+            <li><a href="themes.html">Temas</a></li>
+            <li><a href="#">Extensão Chrome</a></li>
+            <li><a href="#">API</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Empresa</div>
+          <ul class="footer-links">
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Afiliados</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Suporte</div>
+          <ul class="footer-links">
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Documentação</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Shopfyr. Todos os direitos reservados.</span>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" title="Instagram">📷</a>
+          <a href="#" class="footer-social-btn" title="YouTube">▶️</a>
+          <a href="#" class="footer-social-btn" title="WhatsApp">💬</a>
+          <a href="#" class="footer-social-btn" title="Twitter/X">🐦</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       NOTIFICATION POP
+       ============================================ -->
+  <div class="notification-pop" id="notifPop">
+    <div class="notif-icon">⚡</div>
+    <div class="notif-text">
+      <strong>Ricardo K. acabou de assinar o Pro</strong>
+      <div class="notif-time">há 2 minutos · São Paulo, SP</div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

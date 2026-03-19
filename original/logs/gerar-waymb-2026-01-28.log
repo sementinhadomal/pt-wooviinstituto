@@ -1,0 +1,250 @@
+[2026-01-28 18:41:14] 📥 Nova requisição para gerar pagamento WayMB
+----------------------------------------
+[2026-01-28 18:41:14] Dados recebidos
+Dados: {
+    "amount": 21,
+    "method": "mbway",
+    "payer": {
+        "name": "teste asdad",
+        "document": "636346341",
+        "phone": "+351910262447"
+    },
+    "trackingParams": {
+        "utm_source": "",
+        "utm_campaign": "",
+        "utm_medium": "",
+        "utm_content": "",
+        "utm_term": "",
+        "src": "",
+        "sck": "",
+        "xcod": "",
+        "fbclid": "",
+        "gclid": "",
+        "ttclid": ""
+    }
+}
+----------------------------------------
+[2026-01-28 18:41:14] Dados preparados para API WayMB
+Dados: {
+    "client_id": "hantosmanvamp_8973bcb1",
+    "client_secret": "77e4a4e1-a13b-44ba-84dc-8c255d3f4528",
+    "account_email": "hantosmanvamp@gmail.com",
+    "amount": 21,
+    "method": "mbway",
+    "currency": "EUR",
+    "payer": {
+        "name": "teste asdad",
+        "document": "636346341",
+        "phone": "+351910262447"
+    },
+    "callbackUrl": "https:\/\/salveochico.online\/webhook-waymb.php",
+    "success_url": "https:\/\/salveochico.online\/sucesso.html",
+    "failed_url": "https:\/\/salveochico.online\/falha.html"
+}
+----------------------------------------
+[2026-01-28 18:41:14] Enviando requisição para API WayMB
+----------------------------------------
+[2026-01-28 18:41:17] Resposta da API WayMB
+Dados: {
+    "httpCode": 200,
+    "response": "{\"statusCode\":200,\"message\":\"Pagamento criado com sucesso\",\"amount\":21,\"value\":21,\"callbackUrl\":\"https:\/\/salveochico.online\/webhook-waymb.php\",\"transactionID\":\"pi_3SudfzDuN4N07SmQ2zsLeDPw\",\"id\":\"pi_3SudfzDuN4N07SmQ2zsLeDPw\",\"method\":\"mbway\",\"createdAt\":1769625677644,\"generatedMBWay\":true}",
+    "error": ""
+}
+----------------------------------------
+[2026-01-28 18:41:17] Pagamento WayMB criado com sucesso
+Dados: {
+    "transaction_id": "pi_3SudfzDuN4N07SmQ2zsLeDPw"
+}
+----------------------------------------
+[2026-01-28 18:41:17] ⚠️ Erro ao conectar ao banco de dados, continuando sem salvar
+----------------------------------------
+[2026-01-28 18:41:17] 🚀 [UTMIFY PENDENTE] Enviando para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "token": "vb2fL5wiiS...",
+    "data": {
+        "orderId": "pi_3SudfzDuN4N07SmQ2zsLeDPw",
+        "platform": "WayMB",
+        "paymentMethod": "pix",
+        "status": "waiting_payment",
+        "createdAt": "2026-01-28T18:41:17Z",
+        "approvedDate": null,
+        "refundedAt": null,
+        "customer": {
+            "name": "teste asdad",
+            "email": "cliente@produto.online",
+            "phone": "+351910262447",
+            "document": "636346341",
+            "country": "PT",
+            "ip": "169.150.198.72"
+        },
+        "products": [
+            {
+                "id": "doacao-gofundme",
+                "name": "Doacao GoFundMe",
+                "planId": null,
+                "planName": null,
+                "quantity": 1,
+                "priceInCents": 2100
+            }
+        ],
+        "trackingParameters": {
+            "src": null,
+            "sck": null,
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "utm_term": null,
+            "xcod": null,
+            "fbclid": null,
+            "gclid": null,
+            "ttclid": null
+        },
+        "commission": {
+            "totalPriceInCents": 2100,
+            "gatewayFeeInCents": 0,
+            "userCommissionInCents": 2100
+        },
+        "isTest": false
+    }
+}
+----------------------------------------
+[2026-01-28 18:41:18] 📥 [UTMIFY PENDENTE] Resposta da Utmify
+Dados: {
+    "httpCode": 200,
+    "response": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curlError": "nenhum",
+    "curlInfo": {
+        "total_time": 0.546683,
+        "http_code": 200
+    }
+}
+----------------------------------------
+[2026-01-28 18:41:18] ✅ [UTMIFY PENDENTE] Enviado com sucesso para Utmify
+----------------------------------------
+[2026-01-28 18:42:21] 📥 Nova requisição para gerar pagamento WayMB
+----------------------------------------
+[2026-01-28 18:42:21] Dados recebidos
+Dados: {
+    "amount": 20,
+    "method": "mbway",
+    "payer": {
+        "name": "teste asdad",
+        "document": "636346341",
+        "phone": "+351910262442"
+    },
+    "trackingParams": {
+        "utm_source": "",
+        "utm_campaign": "",
+        "utm_medium": "",
+        "utm_content": "",
+        "utm_term": "",
+        "src": "",
+        "sck": "",
+        "xcod": "",
+        "fbclid": "",
+        "gclid": "",
+        "ttclid": ""
+    }
+}
+----------------------------------------
+[2026-01-28 18:42:21] Dados preparados para API WayMB
+Dados: {
+    "client_id": "hantosmanvamp_8973bcb1",
+    "client_secret": "77e4a4e1-a13b-44ba-84dc-8c255d3f4528",
+    "account_email": "hantosmanvamp@gmail.com",
+    "amount": 20,
+    "method": "mbway",
+    "currency": "EUR",
+    "payer": {
+        "name": "teste asdad",
+        "document": "636346341",
+        "phone": "+351910262442"
+    },
+    "callbackUrl": "https:\/\/salveochico.online\/webhook-waymb.php",
+    "success_url": "https:\/\/salveochico.online\/sucesso.html",
+    "failed_url": "https:\/\/salveochico.online\/falha.html"
+}
+----------------------------------------
+[2026-01-28 18:42:21] Enviando requisição para API WayMB
+----------------------------------------
+[2026-01-28 18:42:23] Resposta da API WayMB
+Dados: {
+    "httpCode": 200,
+    "response": "{\"statusCode\":200,\"message\":\"Pagamento criado com sucesso\",\"amount\":20,\"value\":20,\"callbackUrl\":\"https:\/\/salveochico.online\/webhook-waymb.php\",\"transactionID\":\"pi_3Sudh3DuN4N07SmQ2hWGqSsl\",\"id\":\"pi_3Sudh3DuN4N07SmQ2hWGqSsl\",\"method\":\"mbway\",\"createdAt\":1769625743821,\"generatedMBWay\":true}",
+    "error": ""
+}
+----------------------------------------
+[2026-01-28 18:42:23] Pagamento WayMB criado com sucesso
+Dados: {
+    "transaction_id": "pi_3Sudh3DuN4N07SmQ2hWGqSsl"
+}
+----------------------------------------
+[2026-01-28 18:42:23] ⚠️ Erro ao conectar ao banco de dados, continuando sem salvar
+----------------------------------------
+[2026-01-28 18:42:23] 🚀 [UTMIFY PENDENTE] Enviando para Utmify
+Dados: {
+    "url": "https:\/\/api.utmify.com.br\/api-credentials\/orders",
+    "token": "vb2fL5wiiS...",
+    "data": {
+        "orderId": "pi_3Sudh3DuN4N07SmQ2hWGqSsl",
+        "platform": "WayMB",
+        "paymentMethod": "pix",
+        "status": "waiting_payment",
+        "createdAt": "2026-01-28T18:42:23Z",
+        "approvedDate": null,
+        "refundedAt": null,
+        "customer": {
+            "name": "teste asdad",
+            "email": "cliente@produto.online",
+            "phone": "+351910262442",
+            "document": "636346341",
+            "country": "PT",
+            "ip": "169.150.198.72"
+        },
+        "products": [
+            {
+                "id": "produto",
+                "name": "Copia Nao",
+                "planId": null,
+                "planName": null,
+                "quantity": 1,
+                "priceInCents": 2000
+            }
+        ],
+        "trackingParameters": {
+            "src": null,
+            "sck": null,
+            "utm_source": null,
+            "utm_campaign": null,
+            "utm_medium": null,
+            "utm_content": null,
+            "utm_term": null,
+            "xcod": null,
+            "fbclid": null,
+            "gclid": null,
+            "ttclid": null
+        },
+        "commission": {
+            "totalPriceInCents": 2000,
+            "gatewayFeeInCents": 0,
+            "userCommissionInCents": 2000
+        },
+        "isTest": false
+    }
+}
+----------------------------------------
+[2026-01-28 18:42:24] 📥 [UTMIFY PENDENTE] Resposta da Utmify
+Dados: {
+    "httpCode": 200,
+    "response": "{\"OK\":true,\"data\":{},\"result\":\"SUCCESS\"}",
+    "curlError": "nenhum",
+    "curlInfo": {
+        "total_time": 0.277879,
+        "http_code": 200
+    }
+}
+----------------------------------------
+[2026-01-28 18:42:24] ✅ [UTMIFY PENDENTE] Enviado com sucesso para Utmify
+----------------------------------------

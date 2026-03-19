@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woovi Instituto | {{TITLE}}</title>
+
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+        <script async="" src="js/fbevents.js"></script>
+    <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-ignore-iframe="" data-utmify-prevent-subids="" async="" defer=""></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Importing styles from principal.html to ensure 100% fidelity -->
+    <link rel="stylesheet" href="css/listing.css">
+    <!-- Inline styles from principal.html (Condensed) -->
+    <style>
+        {{CSS_BLOCK}}
+    </style>
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=true;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1574873043554006');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1574873043554006&ev=PageView&noscript=1"></noscript>
+    
+    <script>
+        window.pixelId = "697185be2058fdd08c7d7436";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <script async="" defer="" src="js/pixel.js"></script>
+    <script src="js/protect.js?v=1773470675590" defer></script>
+</head>
+<body class="font-sans m-0 p-0">
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+            <button class="text-gray-600 hover:text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></button>
+            <div class="absolute left-1/2 transform -translate-x-1/2"><a href="index.html"><img loading="lazy" decoding="async" src="images/logo-woovi.png" alt="Woovi Instituto" class="h-20 w-auto"></a></div>
+            <button id="menu-toggle-button" class="text-gray-600 hover:text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-4 pt-4 pb-3 space-y-1">
+                <a href="#donation-section" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-500">Como ajudar</a>
+                <div class="border-t border-gray-200 pt-4 pb-3"><a href="index.html" class="block w-full bg-[#25D366] text-white px-4 py-3 rounded-md font-semibold text-center">Outras campanhas</a></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-black overflow-hidden">
+            <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000;">
+                <img loading="lazy" decoding="async" id="customVideo" src="{{IMAGE_URL}}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+        </div>
+
+        <div id="donation-section" class="bg-white p-4 md:p-6">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div class="relative w-16 h-16 md:w-20 md:h-20">
+                        <svg class="transform -rotate-90 w-full h-full"><circle cx="50%" cy="50%" r="28" stroke="#e5e7eb" stroke-width="6" fill="none"></circle><circle id="progress-circle" cx="50%" cy="50%" r="28" stroke="#2D5A3D" stroke-width="6" fill="none" stroke-dasharray="176" stroke-dashoffset="176" stroke-linecap="round"></circle></svg>
+                        <div class="absolute inset-0 flex items-center justify-center"><span id="progress-percentage" class="text-sm md:text-base font-bold text-gray-800">0%</span></div>
+                    </div>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-xl md:text-2xl font-bold text-gray-800" id="value-raised-desktop">€ {{VALUE_RAISED}}</p>
+                    <p class="text-xs md:text-sm text-gray-500" id="value-goal-desktop">meta € {{VALUE_GOAL}}</p>
+                    <p id="last-donor-info" class="text-xs text-gray-500 mt-1">Carregando doações...</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-3">
+                <button type="button" onclick="shareLink()" class="bg-[#2d5a3d] text-[#c8f77d] py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 cursor-pointer">Compartilhar</button>
+                <button type="button" onclick="openPixModal(false)" class="bg-[#c8f77d] text-[#2d5a3d] py-3 rounded-full font-bold text-sm text-center hover:bg-[#b8e76d] cursor-pointer">Doar</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-6">
+            <div class="bg-white p-4 rounded-lg shadow-sm mb-6 font-montserrat">
+                <h1 id="campaign-title-desktop" class="text-2xl font-bold text-gray-800">{{FULL_TITLE}}</h1>
+                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-desktop">{{ID}}</span></p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-6 font-montserrat">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">{{FULL_TITLE}}</h2>
+                <div id="campaign-description" class="text-gray-700 text-base leading-relaxed space-y-4 mb-6">{{STORY_CONTENT}}</div>
+            </div>
+
+            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm font-montserrat">
+                <div class="flex items-center gap-3 mb-6"><h3 class="text-2xl font-bold text-gray-800">Donations</h3><span id="donations-count-badge" class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm font-semibold">{{DONORS_COUNT}}</span></div>
+                <div id="recent-donations-list" class="space-y-4">
+                    <!-- Donors list injected by script -->
+                </div>
+            </div>
+
+            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm font-montserrat">
+                <div class="flex items-start gap-4">
+                    <img loading="lazy" decoding="async" id="organizer-avatar-tab" src="{{ORGANIZER_AVATAR}}" alt="Organizer" class="w-16 h-16 rounded-full">
+                    <div class="flex-grow">
+                        <h4 id="organizer-name-tab" class="text-xl font-bold text-gray-800">{{ORGANIZER_NAME}}</h4>
+                        <p class="text-sm text-gray-600 mt-1">Organizador</p>
+                        <button class="mt-4 px-8 py-2 border-2 border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-50">Contato</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer, Modal, and Scripts same as principal.html -->
+    {{FOOTER_AND_SCRIPTS_BLOCK}}
+
+    <script>
+        window.campaignData = {
+            id: "{{ID}}",
+            title: "{{FULL_TITLE}}",
+            valueRaised: "{{VALUE_RAISED}}",
+            valueGoal: "{{VALUE_GOAL}}",
+            creator: { name: "{{ORGANIZER_NAME}}", avatarUrl: "{{ORGANIZER_AVATAR}}" },
+            donorsForNotifications: {{DONORS_JSON}}
+        };
+    </script>
+    {{CONSOLIDATED_SCRIPT}}
+
+
+</body></html>

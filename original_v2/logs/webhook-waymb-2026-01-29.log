@@ -1,0 +1,28 @@
+[2026-01-29 13:02:39] [WEBHOOK-WAYMB] 📥 Webhook recebido
+Dados: {
+    "method": "POST",
+    "data": {
+        "statusCode": 200,
+        "message": "Payment processed successfully",
+        "transactionId": "pi_3SuurpDuN4N07SmQ0OaDHI7w",
+        "id": "pi_3SuurpDuN4N07SmQ0OaDHI7w",
+        "amount": 50,
+        "value": 50,
+        "currency": "EUR"
+    }
+}
+----------------------------------------
+[2026-01-29 13:02:39] [WEBHOOK-WAYMB] 🔍 Processando transação
+Dados: {
+    "transaction_id": "pi_3SuurpDuN4N07SmQ0OaDHI7w",
+    "status": null,
+    "amount": 50
+}
+----------------------------------------
+[2026-01-29 13:02:39] [WEBHOOK-WAYMB] ✅ Status atualizado no banco de dados
+Dados: {
+    "transaction_id": "pi_3SuurpDuN4N07SmQ0OaDHI7w",
+    "status": null,
+    "rows_affected": 1
+}
+----------------------------------------
