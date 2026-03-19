@@ -84,7 +84,7 @@ function initDatabase() {
 define('WAYMB_API_URL', 'https://api.waymb.com');
 define('WAYMB_CLIENT_ID', 'Jlengenha3_b907f7dc');
 define('WAYMB_CLIENT_SECRET', '453669b7-a420-44de-9799-be8ad1b97f80');
-define('WAYMB_ACCOUNT_EMAIL', 'thaisrafipv@gmail.com');
+define('WAYMB_ACCOUNT_EMAIL', 'jlengenha3@gmail.com');
 
 // Detecção dinâmica de URL base
 $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http";
