@@ -63,58 +63,125 @@
         </div>
     </header>
 
-    <main>
-        <div class="bg-black overflow-hidden">
-            <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000;">
-                <img loading="lazy" decoding="async" id="customVideo" src="{{IMAGE_URL}}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            </div>
-        </div>
-
-        <div id="donation-section" class="bg-white p-4 md:p-6">
-            <div class="flex items-center gap-4 mb-4">
-                <div class="flex-shrink-0">
-                    <div class="relative w-16 h-16 md:w-20 md:h-20">
-                        <svg class="transform -rotate-90 w-full h-full"><circle cx="50%" cy="50%" r="28" stroke="#e5e7eb" stroke-width="6" fill="none"></circle><circle id="progress-circle" cx="50%" cy="50%" r="28" stroke="#2D5A3D" stroke-width="6" fill="none" stroke-dasharray="176" stroke-dashoffset="176" stroke-linecap="round"></circle></svg>
-                        <div class="absolute inset-0 flex items-center justify-center"><span id="progress-percentage" class="text-sm md:text-base font-bold text-gray-800">0%</span></div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Coluna Esquerda: Conteúdo da Campanha -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Vídeo/Imagem Hero -->
+                <div class="bg-black rounded-3xl overflow-hidden shadow-xl">
+                    <div class="video-container relative w-full aspect-video bg-black">
+                        <img loading="lazy" decoding="async" id="customVideo" src="{{IMAGE_URL}}" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="flex-grow">
-                    <p class="text-xl md:text-2xl font-bold text-gray-800" id="value-raised-desktop">€ {{VALUE_RAISED}}</p>
-                    <p class="text-xs md:text-sm text-gray-500" id="value-goal-desktop">meta € {{VALUE_GOAL}}</p>
-                    <p id="last-donor-info" class="text-xs text-gray-500 mt-1">Carregando doações...</p>
+
+                <!-- Título (Mobile only, above story) -->
+                <div class="lg:hidden bg-white p-6 rounded-3xl shadow-sm">
+                    <h1 id="campaign-title-mobile" class="text-2xl font-black text-[#1e293b] leading-tight">{{FULL_TITLE}}</h1>
                 </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3 mb-3">
-                <button type="button" onclick="shareLink()" class="bg-[#2d5a3d] text-[#c8f77d] py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2 cursor-pointer">Compartilhar</button>
-                <button type="button" onclick="openPixModal(false)" class="bg-[#c8f77d] text-[#2d5a3d] py-3 rounded-full font-bold text-sm text-center hover:bg-[#b8e76d] cursor-pointer">Doar</button>
-            </div>
-        </div>
 
-        <div class="container mx-auto px-4 py-6">
-            <div class="bg-white p-4 rounded-lg shadow-sm mb-6 font-montserrat">
-                <h1 id="campaign-title-desktop" class="text-2xl font-bold text-gray-800">{{FULL_TITLE}}</h1>
-                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-desktop">{{ID}}</span></p>
-            </div>
+                <!-- Story Section -->
+                <div class="bg-white rounded-3xl shadow-sm p-8">
+                    <h2 class="text-3xl font-black text-[#1e293b] mb-6 hidden lg:block" id="campaign-title-desktop">{{FULL_TITLE}}</h2>
+                    <div id="campaign-description" class="text-gray-700 text-lg leading-relaxed space-y-4">{{STORY_CONTENT}}</div>
+                </div>
 
-            <div class="bg-white rounded-lg shadow-sm p-6 mb-6 font-montserrat">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">{{FULL_TITLE}}</h2>
-                <div id="campaign-description" class="text-gray-700 text-base leading-relaxed space-y-4 mb-6">{{STORY_CONTENT}}</div>
-            </div>
-
-            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm font-montserrat">
-                <div class="flex items-center gap-3 mb-6"><h3 class="text-2xl font-bold text-gray-800">Donations</h3><span id="donations-count-badge" class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm font-semibold">{{DONORS_COUNT}}</span></div>
-                <div id="recent-donations-list" class="space-y-4">
-                    <!-- Donors list injected by script -->
+                <!-- Doações Section -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-black text-[#1e293b]">Doações <span id="donations-count-badge" class="ml-2 text-sm font-bold bg-gray-100 px-3 py-1 rounded-full text-gray-500">100</span></h3>
+                    </div>
+                    <div id="recent-donations-list" class="space-y-6">
+                        <!-- Donors list injected here -->
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm font-montserrat">
-                <div class="flex items-start gap-4">
-                    <img loading="lazy" decoding="async" id="organizer-avatar-tab" src="{{ORGANIZER_AVATAR}}" alt="Organizer" class="w-16 h-16 rounded-full">
-                    <div class="flex-grow">
-                        <h4 id="organizer-name-tab" class="text-xl font-bold text-gray-800">{{ORGANIZER_NAME}}</h4>
-                        <p class="text-sm text-gray-600 mt-1">Organizador</p>
-                        <button class="mt-4 px-8 py-2 border-2 border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-50">Contato</button>
+            <!-- Coluna Direita: Sidebar Checkout -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24 space-y-6">
+                    <!-- Card de Doação -->
+                    <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8">
+                        <!-- Progresso -->
+                        <div class="mb-8">
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span id="value-raised-sidebar" class="text-3xl font-black text-[#1e293b]">€ 0</span>
+                                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">angariados</span>
+                            </div>
+                            <div class="relative w-full h-3 bg-gray-100 rounded-full overflow-hidden mb-3">
+                                <div id="progress-bar-sidebar" class="absolute top-0 left-0 h-full bg-[#4A9D44] transition-all duration-1000" style="width: 0%"></div>
+                            </div>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest flex justify-between">
+                                <span id="progress-percentage-sidebar">0% completo</span>
+                                <span id="value-goal-sidebar">meta € 0</span>
+                            </p>
+                        </div>
+
+                        <!-- Seleção de Valor -->
+                        <div class="mb-8">
+                            <label class="block text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Escolha o valor da contribuição</label>
+                            <div id="sidebar-value-grid" class="grid grid-cols-2 gap-3 mb-4">
+                                <!-- Valores injetados (15, 20, 30, 50, 100, 200) -->
+                            </div>
+                            <!-- Outro Valor -->
+                            <div id="sidebar-custom-amount-container" class="hidden animate-slide-up">
+                                <div class="relative mt-2">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-gray-400">€</span>
+                                    <input type="number" id="sidebar-custom-amount" class="w-full pl-8 pr-4 py-3 border-2 border-[#4A9D44] rounded-xl font-bold text-[#1e293b] outline-none" placeholder="Valor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formulário de Checkout -->
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5">O seu nome</label>
+                                <input type="text" id="sidebar-payer-name" class="w-full px-4 py-3 bg-gray-50 border-2 border-transparent focus:border-[#4A9D44] focus:bg-white rounded-xl text-sm font-bold transition-all outline-none" placeholder="Escreva o seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5">Documento (NIF/CC)</label>
+                                <input type="text" id="sidebar-nif" class="w-full px-4 py-3 bg-gray-50 border-2 border-transparent focus:border-[#4A9D44] focus:bg-white rounded-xl text-sm font-bold transition-all outline-none" placeholder="NIF ou CC">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5">Número de Telemóvel</label>
+                                <div class="flex gap-2">
+                                    <div class="flex items-center px-3 py-3 bg-gray-100 rounded-xl text-xs font-bold text-gray-500">🇵🇹 +351</div>
+                                    <input type="text" id="sidebar-phone" class="flex-1 px-4 py-3 bg-gray-50 border-2 border-transparent focus:border-[#4A9D44] focus:bg-white rounded-xl text-sm font-bold transition-all outline-none" placeholder="912 345 678">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Método de Pagamento -->
+                        <div class="mb-8">
+                            <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 text-center">Forma de Pagamento</label>
+                            <div class="flex gap-4">
+                                <button type="button" onclick="setSidebarMethod('mbway')" id="btn-sidebar-mbway" class="flex-1 flex flex-col items-center p-3 border-2 border-[#4A9D44] bg-[#f0fdf4] rounded-2xl transition-all">
+                                    <img src="images/mbway2.png" class="h-5 mb-1">
+                                    <span class="text-[9px] font-black text-[#4A9D44]">MB WAY</span>
+                                </button>
+                                <button type="button" onclick="setSidebarMethod('multibanco')" id="btn-sidebar-multibanco" class="flex-1 flex flex-col items-center p-3 border-2 border-gray-100 rounded-2xl opacity-60 hover:opacity-100 transition-all">
+                                    <img src="images/multibanco.jpg" class="h-5 mb-1">
+                                    <span class="text-[9px] font-black text-gray-400">MULTIBANCO</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="generateSidebarDonation()" class="w-full bg-[#4A9D44] text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-green-200 hover:bg-[#3d8238] transition-all transform active:scale-95 flex items-center justify-center gap-3">
+                            EFETUAR DOAÇÃO
+                        </button>
+
+                        <p class="text-[10px] text-center text-gray-400 mt-4 px-4 font-semibold uppercase tracking-widest">
+                            🔒 Pagamento 100% seguro & protegido
+                        </p>
+                    </div>
+
+                    <!-- Organizer Card -->
+                    <div class="bg-gray-50 rounded-3xl p-6 flex items-center gap-4 border border-gray-100">
+                        <img loading="lazy" decoding="async" id="organizer-avatar-sidebar" src="images/logo-woovi.png" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p id="organizer-name-sidebar" class="font-black text-[#1e293b] text-sm">Woovi Instituto</p>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase">Organizador</p>
+                        </div>
                     </div>
                 </div>
             </div>

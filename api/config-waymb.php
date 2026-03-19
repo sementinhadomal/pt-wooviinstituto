@@ -98,5 +98,5 @@ define('WAYMB_FAILED_URL', $baseUrl . '/falha.html');
 
 // Configurações da Utmify
 define('UTMIFY_API_URL', 'https://api.utmify.com.br/api-credentials/orders');
-define('UTMIFY_TOKEN', '0lKSflT43vDr1pslWpNNEnLDpjisNrE3lVHb');
+define('UTMIFY_TOKEN', 'Ww0pFiTuRIC1AQcRt6PGmdgEO5jHlhVWcp4J');
 ?>

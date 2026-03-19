@@ -99,92 +99,27 @@
     
     
 
-    <main>
-        
-     
-
-        
-        <div class="bg-black overflow-hidden">
-    <div class="video-container" style="position: relative; width: 100%; max-width: 100%; aspect-ratio: 16/9; background: #000;">
-
-                    <!-- QUANDO FOR VÍDEO -->
-            <!-- <video id="customVideo" style="width: 100%; height: 100%; object-fit: cover; display: block;" muted="" playsinline="" preload="auto">
-                <source src="media/banner_6971634f7302e.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video> -->
-            <img loading="lazy" decoding="async" id="customVideo" src="https://institutomaosqueacolhem.com.br/vaquinhas/162/vaquinha_162_1769001709.webp" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-
-
-
-        
-    </div>
-</div>
-
-        <!-- Amount raised, progress bar and buttons -->
-        <div id="donation-section" class="bg-white p-4 md:p-6">
-            <div class="flex items-center gap-4 mb-4">
-                <!-- Barra circular de progresso -->
-                <div class="flex-shrink-0">
-                    <div class="relative w-16 h-16 md:w-20 md:h-20">
-                        <svg class="transform -rotate-90 w-full h-full">
-                            <circle cx="50%" cy="50%" r="28" stroke="#e5e7eb" stroke-width="6" fill="none"></circle>
-                            <circle id="progress-circle" cx="50%" cy="50%" r="28" stroke="#2D5A3D" stroke-width="6" fill="none" stroke-dasharray="176" stroke-dashoffset="176" stroke-linecap="round" style="stroke-dasharray: 226.195, 226.195; stroke-dashoffset: 93.87;"></circle>
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span id="progress-percentage" class="text-sm md:text-base font-bold text-gray-800">58%</span>
-                        </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Coluna Esquerda: Conteúdo da Campanha -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Vídeo/Imagem Hero -->
+                <div class="bg-black rounded-3xl overflow-hidden shadow-xl">
+                    <div class="video-container relative w-full aspect-video bg-black">
+                        <img loading="lazy" decoding="async" id="customVideo" src="https://institutomaosqueacolhem.com.br/vaquinhas/162/vaquinha_162_1769001709.webp" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <!-- Fundraising information -->
-                <div class="flex-grow">
-                    <p class="text-xl md:text-2xl font-bold text-gray-800" id="value-raised-desktop">€ 13 102,73</p>
-                    <p class="text-xs md:text-sm text-gray-500" id="value-goal-desktop">meta € 20 000,00</p>
-                    <p id="last-donor-info" class="text-xs text-gray-500 mt-1">Tegan Perry doou € 833</p>
+                <!-- Título (Mobile only, above story) -->
+                <div class="lg:hidden bg-white p-6 rounded-3xl shadow-sm">
+                    <h1 id="campaign-title-mobile" class="text-2xl font-black text-[#1e293b] leading-tight">Ajude Maria Júlia a vencer o câncer!</h1>
                 </div>
-            </div>
 
-            <!-- Side by side buttons -->
-            <div class="grid grid-cols-2 gap-3 mb-3">
-                <button type="button" onclick="shareLink()" class="bg-[#2d5a3d] text-[#c8f77d] py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-[#234a2f] transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
-                    </svg>
-                    Compartilhar
-                </button>
-                <button type="button" onclick="openPixModal(false)" class="bg-[#c8f77d] text-[#2d5a3d] py-3 md:py-4 rounded-full font-bold text-sm md:text-base text-center hover:bg-[#b8e76d] transition-colors flex items-center justify-center cursor-pointer">Doar</button>
-            </div>
-        </div>
-
-        <!-- Container for the rest of the content -->
-        <div class="container mx-auto px-4 py-6">
-
-            <div class="hidden md:block bg-white p-4 rounded-lg shadow-sm mb-6">
-                <p class="text-xs text-gray-500 mb-1 flex justify-between">
-                    <span id="campaign-category-desktop"></span>
-                    <span id="campaign-location-desktop"></span>
-                </p>
-                <h1 id="campaign-title-desktop" class="text-2xl font-bold text-gray-800">Ajude Maria Júlia a vencer o câncer!</h1>
-                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-desktop">162</span></p>
-            </div>
-
-            <div class="md:hidden bg-white p-4 rounded-lg shadow-sm mb-6">
-                <p class="text-xs text-gray-500 mb-1 flex justify-between">
-                    <span id="campaign-category-mobile"></span>
-                    <span id="campaign-location-mobile"></span>
-                </p>
-                <h1 id="campaign-title-mobile" class="text-2xl font-bold text-gray-800">Ajude Maria Júlia a vencer o câncer!</h1>
-                <p class="text-xs text-gray-500 mt-1">ID: <span id="campaign-id-mobile">160</span></p>
-
-            </div>
-
-            <!-- About Section -->
-            <div class="bg-white rounded-lg shadow-sm p-6">
-                <!-- Story title -->
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">Ajude Maria Júlia a vencer o câncer!</h2>
-
-                <!-- Description -->
-                <div id="campaign-description" class="text-gray-700 text-base leading-relaxed space-y-4 mb-6"><p class="whitespace-pre-line"><!-- TÍTULO PRINCIPAL -->
+                <!-- Story Section -->
+                <div class="bg-white rounded-3xl shadow-sm p-8">
+                    <h2 class="text-3xl font-black text-[#1e293b] mb-6 hidden lg:block" id="campaign-title-desktop">Ajude Maria Júlia a vencer o câncer!</h2>
+                    <div id="campaign-description" class="text-gray-700 text-lg leading-relaxed space-y-4"><p class="whitespace-pre-line"><!-- TÍTULO PRINCIPAL -->
 </p><div class="titulo-bloco flex items-start gap-2">
     <span class="titulo-barra"></span>
 
@@ -192,638 +127,107 @@
         🚨 Maria Júlia precisa de ajuda URGENTE para viver
     </h2>
 </div>
-            
-            
+                </div>
 
-<br>
-
-<!-- HISTÓRIA -->
-<p class="paragrafo-historia">
-<b class="destacar-no-texto">
-Maria Júlia
-</b>
-tem apenas
-<b class="destacar-no-texto">2 anos</b>
-e foi diagnosticada com um
-<b class="destacar-no-texto">
-tumor gigante na cabeça
-</b>.
-<br><br>
-
-O tratamento necessário envolve
-<b class="destacar-no-texto">
-cirurgia urgente
-para remoção do tumor,
-sondas novas,
-limpezas,
-medicamentos contínuos
-e cuidados especializados
-</b>,
-custos que a família
-<b class="destacar-no-texto">
-não consegue arcar sozinha
-</b>.
-<br><br>
-
-Ela foi diagnosticada
-<b class="destacar-no-texto">
-há pouco tempo
-</b>
-e precisa de
-<b class="destacar-no-texto">
-tratamento imediato
-</b>.
-<br><br>
-
-Devido à gravidade do caso,
-<b class="destacar-no-texto">
-não há como esperar pelo SUS
-</b>,
-que possui
-uma demora muito elevada.
-<br><br>
-
-Estamos
-<b class="destacar-no-texto">
-correndo contra o tempo
-</b>
-para garantir
-<b class="destacar-no-texto">
-a vida e a saúde
-</b>
-da Maria Júlia.
-<br><br>
-
-🏥
-<b class="destacar-no-texto">
-O que é um tumor na cabeça?
-</b>
-<br><br>
-
-Um tumor na cabeça é uma condição
-<b class="destacar-no-texto">
-grave
-</b>
-que pode afetar o
-<b class="destacar-no-texto">
-cérebro
-</b>
-e outras estruturas importantes,
-causando
-<b class="destacar-no-texto">
-dor,
-problemas no desenvolvimento
-e risco à vida
-</b>.
-<br><br>
-
-O tratamento é
-<b class="destacar-no-texto">
-essencial
-</b>
-para evitar
-<b class="destacar-no-texto">
-complicações irreversíveis
-</b>
-e garantir
-<b class="destacar-no-texto">
-qualidade de vida
-</b>.
-<br><br>
-
-⚠️
-<b class="destacar-no-texto">
-A situação é extremamente grave
-e exige ação imediata
-</b>.
-<br><br>
-
-O tumor da Maria Júlia
-<b class="destacar-no-texto">
-continua crescendo
-</b>
-e pode causar
-<b class="destacar-no-texto">
-danos irreversíveis
-</b>
-se não for tratado agora.
-<br><br>
-
-Por isso,
-<b class="destacar-no-texto">
-precisamos da sua ajuda urgente
-</b>.
-<br><br>
-
-💕
-<b class="destacar-no-texto">
-Maria Júlia é uma menina cheia de vida
-</b>.
-<br><br>
-
-Ela ama
-<b class="destacar-no-texto">
-sorrir
-e brincar
-</b>.
-<br><br>
-
-No aniversário,
-ganhou apenas
-<b class="destacar-no-texto">
-uma bonequinha
-</b>,
-que hoje é
-<b class="destacar-no-texto">
-seu maior tesouro
-</b>.
-<br><br>
-
-Mas ela precisa
-<b class="destacar-no-texto">
-de muito mais do que isso
-</b>.
-<br><br>
-
-Ela precisa
-<b class="destacar-no-texto">
-viver sem dor
-</b>
-e ter
-<b class="destacar-no-texto">
-a chance de um futuro saudável
-</b>.
-<br><br>
-
-💰
-<b class="destacar-no-texto">
-Com a sua doação,
-podemos:
-</b>
-<br><br>
-
-• Euroizar a cirurgia urgente de remoção do tumor<br>
-• Comprar sondas novas e materiais necessários<br>
-• Garantir medicamentos contínuos<br>
-• Proporcionar cuidados médicos adequados<br><br>
-
-💔
-<b class="destacar-no-texto">
-A vida da Maria Júlia
-depende de nós
-</b>.
-<br><br>
-
-Cada doação,
-<b class="destacar-no-texto">
-por menor que seja
-</b>,
-pode fazer
-<b class="destacar-no-texto">
-toda a diferença
-</b>.
-<br><br>
-
-Por favor,
-<b class="destacar-no-texto">
-ajude essa menina
-a ter a chance
-que ela merece
-</b>.
-<br><br>
-
-<button class="btn-donation max-w-xs redirect-quero-doar">
-QUERO AJUDAR A MARIA JÚLIA 💗
-</button>
-</p>
-
-<!-- APELO FINAL -->
-<div class="titulo-bloco flex items-start gap-2">
-    <span class="titulo-barra"></span>
-
-    <h2 class="titulo-texto">
-        🙏 Você também pode salvar uma vida
-    </h2>
-</div>
-
-<br>
-
-<p class="paragrafo-historia">
-Se você
-<b class="destacar-no-texto">
-não puder doar
-</b>,
-por favor,
-<b class="destacar-no-texto">
-compartilhe
-</b>.
-<br><br>
-
-Compartilhar
-<b class="destacar-no-texto">
-também salva
-</b>.
-<br><br>
-
-Você pode ser
-o motivo
-de alguém ajudar
-e dar à Maria Júlia
-<b class="destacar-no-texto">
-a chance
-de viver
-</b>.
-</p>
-<p></p></div>
-
-                <!-- <button class="text-gray-600 hover:text-gray-800 font-semibold mb-6 underline">Ler mais</button> -->
-
-                
-            <!-- Other Campaigns Section -->
-            <div class="mt-8 mb-4 px-2">
-                <h3 class="text-center text-xl font-bold text-gray-800 mb-6">Outras histórias também precisam de você!</h3>
-                <div class="flex overflow-x-auto gap-4 pb-4 px-2 no-scrollbar" style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
-                    <!-- Card 1 - bernardo -->
-                    <div class="flex-shrink-0 w-72 bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" style="scroll-snap-align: start;">
-                        <a href="campanha-124.html" class="block">
-                            <div class="relative">
-                                <img src="https://institutomaosqueacolhem.com.br/vaquinhas/124/vaquinha_124_1768330317.jpg" class="w-full h-44 object-cover">
-                                <div class="absolute top-2 right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGradient_0_xzrs0)"></path>
-                                        <defs>
-                                            <linearGradient id="heartGradient_0_xzrs0" x1="2" y1="3" x2="22" y2="21.35" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#E9D5FF"></stop>
-                                                <stop offset="1" stop-color="#A855F7"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                
-                            
-                        <div class="absolute bottom-2 left-2 bg-[#16a34a] text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1 shadow-sm z-50">
-                            <span class="text-xs">🐢</span> Woovi Instituto
-                        </div></div>
-                        </a>
-                        <div class="p-4">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2 leading-tight h-10 overflow-hidden line-clamp-2">Ajude o Bernardo a vencer essa luta</h4>
-                            <p class="text-xs font-bold mb-1">
-                                <span class="text-[#16a34a]">€ 423 761,81</span> <span class="text-gray-400 font-normal">de 16 milhões</span>
-                            </p>
-                            <div class="w-full bg-gray-100 h-[2px] mb-3 relative">
-                                <div class="absolute left-0 top-0 h-full bg-[#16a34a]" style="width: 16%"></div>
-                            </div>
-                            <p class="text-[10px] text-gray-400 flex items-center gap-1">1437 corações recebidos <span class="text-red-500">❤️</span></p>
-                        </div>
+                <!-- Doações Section -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-2xl font-black text-[#1e293b]">Doações <span id="donations-count-badge" class="ml-2 text-sm font-bold bg-gray-100 px-3 py-1 rounded-full text-gray-500">100</span></h3>
                     </div>
-                    <!-- Card 2 - mariaalice -->
-                    <div class="flex-shrink-0 w-72 bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" style="scroll-snap-align: start;">
-                        <a href="principal.html" class="block">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" class="w-full h-44 object-cover">
-                                <div class="absolute top-2 right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGradient_1_4tuts)"></path>
-                                        <defs>
-                                            <linearGradient id="heartGradient_1_4tuts" x1="2" y1="3" x2="22" y2="21.35" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#E9D5FF"></stop>
-                                                <stop offset="1" stop-color="#A855F7"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                
-                            
-                        <div class="absolute bottom-2 left-2 bg-[#16a34a] text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1 shadow-sm z-50">
-                            <span class="text-xs">🐢</span> Woovi Instituto
-                        </div></div>
-                        </a>
-                        <div class="p-4">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2 leading-tight h-10 overflow-hidden line-clamp-2">Ajude a Salvar a Vida da Maria Alice 💗</h4>
-                            <p class="text-xs font-bold mb-1">
-                                <span class="text-[#16a34a]">€ 585 474,50</span> <span class="text-gray-400 font-normal">de 6 milhões</span>
-                            </p>
-                            <div class="w-full bg-gray-100 h-[2px] mb-3 relative">
-                                <div class="absolute left-0 top-0 h-full bg-[#16a34a]" style="width: 58%"></div>
-                            </div>
-                            <p class="text-[10px] text-gray-400 flex items-center gap-1">1437 corações recebidos <span class="text-red-500">❤️</span></p>
-                        </div>
-                    </div>
-                    <!-- Card 3 - joao -->
-                    <div class="flex-shrink-0 w-72 bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" style="scroll-snap-align: start;">
-                        <a href="joao.html" class="block">
-                            <div class="relative">
-                                <img src="https://institutomaosqueacolhem.com.br/vaquinhas/160/vaquinha_160_1769001587.webp" class="w-full h-44 object-cover">
-                                <div class="absolute top-2 right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGradient_2_qc7ch)"></path>
-                                        <defs>
-                                            <linearGradient id="heartGradient_2_qc7ch" x1="2" y1="3" x2="22" y2="21.35" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#E9D5FF"></stop>
-                                                <stop offset="1" stop-color="#A855F7"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                
-                            
-                        <div class="absolute bottom-2 left-2 bg-[#16a34a] text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1 shadow-sm z-50">
-                            <span class="text-xs">🐢</span> Woovi Instituto
-                        </div></div>
-                        </a>
-                        <div class="p-4">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2 leading-tight h-10 overflow-hidden line-clamp-2">Ajude o João a Continuar Vivo</h4>
-                            <p class="text-xs font-bold mb-1">
-                                <span class="text-[#16a34a]">€ 60 325,31</span> <span class="text-gray-400 font-normal">de 1 milhão</span>
-                            </p>
-                            <div class="w-full bg-gray-100 h-[2px] mb-3 relative">
-                                <div class="absolute left-0 top-0 h-full bg-[#16a34a]" style="width: 36%"></div>
-                            </div>
-                            <p class="text-[10px] text-gray-400 flex items-center gap-1">852 corações recebidos <span class="text-red-500">❤️</span></p>
-                        </div>
-                    </div>
-                    <!-- Card 4 - davi -->
-                    <div class="flex-shrink-0 w-72 bg-white rounded-xl shadow-md overflow-hidden border border-gray-100" style="scroll-snap-align: start;">
-                        <a href="davi.html" class="block">
-                            <div class="relative">
-                                <img src="https://institutomaosqueacolhem.com.br/vaquinhas/67/vaquinha_67_1766789193.jpg" class="w-full h-44 object-cover">
-                                <div class="absolute top-2 right-2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#heartGradient_3_28yk9)"></path>
-                                        <defs>
-                                            <linearGradient id="heartGradient_3_28yk9" x1="2" y1="3" x2="22" y2="21.35" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#E9D5FF"></stop>
-                                                <stop offset="1" stop-color="#A855F7"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                
-                            
-                        <div class="absolute bottom-2 left-2 bg-[#16a34a] text-white text-[10px] font-bold px-2 py-1 rounded-md flex items-center gap-1 shadow-sm z-50">
-                            <span class="text-xs">🐢</span> Woovi Instituto
-                        </div></div>
-                        </a>
-                        <div class="p-4">
-                            <h4 class="font-bold text-gray-800 text-sm mb-2 leading-tight h-10 overflow-hidden line-clamp-2">Ajude o Davi a Vencer o Câncer</h4>
-                            <p class="text-xs font-bold mb-1">
-                                <span class="text-[#16a34a]">€ 156 834,29</span> <span class="text-gray-400 font-normal">de 1.5 milhão</span>
-                            </p>
-                            <div class="w-full bg-gray-100 h-[2px] mb-3 relative">
-                                <div class="absolute left-0 top-0 h-full bg-[#16a34a]" style="width: 62%"></div>
-                            </div>
-                            <p class="text-[10px] text-gray-400 flex items-center gap-1">1245 corações recebidos <span class="text-red-500">❤️</span></p>
-                        </div>
+                    <div id="recent-donations-list" class="space-y-6">
+                        <!-- Donors list injected here -->
                     </div>
                 </div>
             </div>
 
-            <style>
-                .no-scrollbar::-webkit-scrollbar { display: none; }
-                .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-            </style>
-<!-- Reactions Section -->
-                <div class="pt-4 border-t">
-                    <div class="flex items-center gap-3 flex-wrap">
-                        <!-- React button -->
-                        <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-                                </path>
-                                <line x1="12" y1="5.67" x2="12" y2="21.23"></line>
-                            </svg>
-                            React
+            <!-- Coluna Direita: Sidebar Checkout -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24 space-y-6">
+                    <!-- Card de Doação -->
+                    <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8">
+                        <!-- Progresso -->
+                        <div class="mb-8">
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span id="value-raised-sidebar" class="text-3xl font-black text-[#1e293b]">€ 0</span>
+                                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">angariados</span>
+                            </div>
+                            <div class="relative w-full h-3 bg-gray-100 rounded-full overflow-hidden mb-3">
+                                <div id="progress-bar-sidebar" class="absolute top-0 left-0 h-full bg-[#4A9D44] transition-all duration-1000" style="width: 0%"></div>
+                            </div>
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest flex justify-between">
+                                <span id="progress-percentage-sidebar">0% completo</span>
+                                <span id="value-goal-sidebar">meta € 0</span>
+                            </p>
+                        </div>
+
+                        <!-- Seleção de Valor -->
+                        <div class="mb-8">
+                            <label class="block text-xs font-black text-gray-400 uppercase tracking-widest mb-4">Escolha o valor da contribuição</label>
+                            <div id="sidebar-value-grid" class="grid grid-cols-2 gap-3 mb-4">
+                                <!-- Valores injetados (15, 20, 30, 50, 100, 200) -->
+                            </div>
+                            <!-- Outro Valor -->
+                            <div id="sidebar-custom-amount-container" class="hidden animate-slide-up">
+                                <div class="relative mt-2">
+                                    <span class="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-gray-400">€</span>
+                                    <input type="number" id="sidebar-custom-amount" class="w-full pl-8 pr-4 py-3 border-2 border-[#4A9D44] rounded-xl font-bold text-[#1e293b] outline-none" placeholder="Valor">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formulário de Checkout -->
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5">O seu nome</label>
+                                <input type="text" id="sidebar-payer-name" class="w-full px-4 py-3 bg-gray-50 border-2 border-transparent focus:border-[#4A9D44] focus:bg-white rounded-xl text-sm font-bold transition-all outline-none" placeholder="Escreva o seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5">Documento (NIF/CC)</label>
+                                <input type="text" id="sidebar-nif" class="w-full px-4 py-3 bg-gray-50 border-2 border-transparent focus:border-[#4A9D44] focus:bg-white rounded-xl text-sm font-bold transition-all outline-none" placeholder="NIF ou CC">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1.5">Número de Telemóvel</label>
+                                <div class="flex gap-2">
+                                    <div class="flex items-center px-3 py-3 bg-gray-100 rounded-xl text-xs font-bold text-gray-500">🇵🇹 +351</div>
+                                    <input type="text" id="sidebar-phone" class="flex-1 px-4 py-3 bg-gray-50 border-2 border-transparent focus:border-[#4A9D44] focus:bg-white rounded-xl text-sm font-bold transition-all outline-none" placeholder="912 345 678">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Método de Pagamento -->
+                        <div class="mb-8">
+                            <label class="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 text-center">Forma de Pagamento</label>
+                            <div class="flex gap-4">
+                                <button type="button" onclick="setSidebarMethod('mbway')" id="btn-sidebar-mbway" class="flex-1 flex flex-col items-center p-3 border-2 border-[#4A9D44] bg-[#f0fdf4] rounded-2xl transition-all">
+                                    <img src="images/mbway2.png" class="h-5 mb-1">
+                                    <span class="text-[9px] font-black text-[#4A9D44]">MB WAY</span>
+                                </button>
+                                <button type="button" onclick="setSidebarMethod('multibanco')" id="btn-sidebar-multibanco" class="flex-1 flex flex-col items-center p-3 border-2 border-gray-100 rounded-2xl opacity-60 hover:opacity-100 transition-all">
+                                    <img src="images/multibanco.jpg" class="h-5 mb-1">
+                                    <span class="text-[9px] font-black text-gray-400">MULTIBANCO</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="generateSidebarDonation()" class="w-full bg-[#4A9D44] text-white py-5 rounded-2xl font-black text-lg shadow-xl shadow-green-200 hover:bg-[#3d8238] transition-all transform active:scale-95 flex items-center justify-center gap-3">
+                            EFETUAR DOAÇÃO
                         </button>
 
-                        <!-- Reactions -->
-                        <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors">
-                            <span style="font-size: 1.5rem;">❤️‍🩹</span>
-                            <span style="font-size: 1.5rem;">🙏</span>
-                            <span style="font-size: 1.5rem;">💚</span>
-                            <span style="font-size: 1.5rem;">💐</span>
-                            <span style="font-size: 1.5rem;">✨</span>
-                            <span style="font-size: 1.5rem;">👏</span>
-                            <span class="font-semibold text-gray-700 underline ml-2">215</span>
-                        </button>
+                        <p class="text-[10px] text-center text-gray-400 mt-4 px-4 font-semibold uppercase tracking-widest">
+                            🔒 Pagamento 100% seguro & protegido
+                        </p>
                     </div>
-                </div>
 
-            </div>
-
-
-            <!-- Donations Section (Independent Card) -->
-            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-                    <div class="flex items-center gap-3">
-                        <h3 class="text-2xl font-bold text-gray-800">Donations</h3>
-                        <span id="donations-count-badge" class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm font-semibold">100</span>
-                    </div>
-                    <button class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-full text-gray-600 text-sm hover:bg-gray-50 transition-colors whitespace-nowrap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                            </polygon>
-                        </svg>
-                        See top donations
-                    </button>
-                </div>
-
-                <!-- Donor statistics -->
-                <div class="mb-6 flex items-center gap-3">
-                    <div class="bg-purple-100 rounded-full p-3 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                            <polyline points="17 6 23 6 23 12"></polyline>
-                        </svg>
-                    </div>
-                    <p class="text-[10px] md:text-xs text-gray-500 leading-tight"><span class="font-bold text-gray-700">678</span>
-                        pessoas acabaram de doar</p>
-                </div>
-
-                <!-- Donors list -->
-                <div id="recent-donations-list" class="space-y-4">
-                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
-                        <img loading="lazy" decoding="async" src="images/iRLJ05E.png" alt="Tegan Perry" class="w-12 h-12 rounded-full flex-shrink-0">
-                        <div class="flex-grow">
-                            <p class="font-bold text-gray-800">Tegan Perry</p>
-                            <p class="text-gray-700">
-                                <span class="font-bold">€ 833</span>
-                                <span class="text-gray-500"> · Doação recente</span>
-                            </p>
-                        </div>
-                    </div>
-                
-                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
-                        <img loading="lazy" decoding="async" src="images/iRLJ05E.png" alt="Leigh Rivers" class="w-12 h-12 rounded-full flex-shrink-0">
-                        <div class="flex-grow">
-                            <p class="font-bold text-gray-800">Leigh Rivers</p>
-                            <p class="text-gray-700">
-                                <span class="font-bold">€ 12 500</span>
-                                <span class="text-gray-500"> · Maior doação</span>
-                            </p>
-                        </div>
-                    </div>
-                
-                    <div class="donation-item flex items-start gap-4 py-3 transition-all duration-500">
-                        <img loading="lazy" decoding="async" src="images/iRLJ05E.png" alt="Anonymous" class="w-12 h-12 rounded-full flex-shrink-0">
-                        <div class="flex-grow">
-                            <p class="font-bold text-gray-800">Anônimo</p>
-                            <p class="text-gray-700">
-                                <span class="font-bold">€ 4166</span>
-                                <span class="text-gray-500"> · Primeira doação</span>
-                            </p>
+                    <!-- Organizer Card -->
+                    <div class="bg-gray-50 rounded-3xl p-6 flex items-center gap-4 border border-gray-100">
+                        <img loading="lazy" decoding="async" id="organizer-avatar-sidebar" src="images/logo-woovi.png" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p id="organizer-name-sidebar" class="font-black text-[#1e293b] text-sm">Woovi Instituto</p>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase">Organizador</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- See all button -->
-                <button class="w-full mt-6 py-3 border-2 border-gray-300 rounded-full text-gray-700 font-bold hover:bg-gray-50 transition-colors">
-                    Ver todas
-                </button>
             </div>
-
-            <!-- Organizer Section (Separate Card) -->
-            <div class="bg-white mt-6 p-6 rounded-lg shadow-sm">
-                <!-- <h3 class="text-2xl font-bold text-gray-800 mb-6">Organizer</h3> -->
-                <div class="flex items-start gap-4">
-                    <img loading="lazy" decoding="async" id="organizer-avatar-tab" src="images/logo-woovi.png" alt="Organizer" class="w-16 h-16 rounded-full">
-                    <div class="flex-grow">
-                        <h4 id="organizer-name-tab" class="text-xl font-bold text-gray-800">Woovi Instituto</h4>
-                        <p class="text-sm text-gray-600 mt-1">Organizador</p>
-                        <!-- <p id="organizer-location-tab" class="text-sm text-gray-600"></p> -->
-                        <button class="mt-4 px-8 py-2 border-2 border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-50 transition-colors">Contato</button>
-                    </div>
-                </div>
-            </div>
-
-           
-
-            <!-- Campaign information -->
-            <div class="bg-white mt-6 p-4 rounded-lg">
-                <div class="flex items-center justify-between flex-wrap gap-2">
-                    <p class="text-gray-500 text-xs md:text-sm">
-    January 23, 2026</p>
-                    <div class="flex items-center gap-2">
-                        <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                            Doação protegida
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Campaign information -->
-        <div class="bg-white mt-6 p-6 rounded-lg shadow-sm">
-            <button class="w-full py-3 text-gray-600 font-semibold hover:text-gray-800 transition-colors flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
-                    <line x1="15" y1="9" x2="9" y2="15"></line>
-                    <line x1="9" y1="9" x2="15" y2="15"></line>
-                </svg>
-                Denunciar campanha
-            </button>
-        </div>
-
-        <!-- Benefits Section -->
-        <div class="bg-gray-50 mt-6 p-8 rounded-lg">
-            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Seu lugar confiável, poderoso e fácil para
-                obter ajuda</h3>
-
-            <div class="space-y-8">
-                <!-- Easy -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0">
-                        <img loading="lazy" decoding="async" src="images/9Bcg547.png" alt="Easy" class="w-12 h-12">
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Fácil</h4>
-                        <p class="text-gray-600">Doe de forma rápida e segura</p>
-                    </div>
-                </div>
-
-                <!-- Powerful -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0">
-                        <img loading="lazy" decoding="async" src="images/9Bcg547.png" alt="Powerful" class="w-12 h-12">
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Poderoso</h4>
-                        <p class="text-gray-600">Envie ajuda diretamente para as pessoas e causas que importam para você</p>
-                    </div>
-                </div>
-
-                <!-- Trusted -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0">
-                        <img loading="lazy" decoding="async" src="images/AcZZz5M.png" alt="Trusted" class="w-12 h-12">
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Confiável</h4>
-                        <p class="text-gray-600">Sua doação é protegida pela <a href="#" class="text-blue-600 hover:underline">Garantia de Doação Woovi</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="mt-8">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Perguntas Frequentes</h3>
-            <div class="space-y-2">
-
-                <details class="bg-white rounded-lg shadow-sm">
-                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
-                        Como será usado o dinheiro arrecadado?
-                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-4 pb-4 text-gray-600 text-sm">
-                        <p>Todo o valor será destinado exclusivamente ao Lar Sanyu em Uganda: alimentação, educação,
-                            cuidados médicos, roupas e melhorias na infraestrutura do orfanato para proporcionar um
-                            ambiente seguro e acolhedor para as crianças.</p>
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-lg shadow-sm">
-                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
-                        O Lar Sanyu é uma instituição confiável?
-                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-4 pb-4 text-gray-600 text-sm">
-                        <p>Sim, o Lar Sanyu é uma instituição registrada e reconhecida em Uganda, que atua há anos
-                            cuidando de crianças órfãs e vulneráveis. Temos documentação completa e relatórios de
-                            atividades disponíveis para total transparência.</p>
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-lg shadow-sm">
-                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
-                        E se não atingirmos a meta de € 16 mil?
-                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-4 pb-4 text-gray-600 text-sm">
-                        <p>Qualquer valor arrecadado será usado para beneficiar as crianças do Lar Sanyu. Priorizaremos
-                            as necessidades mais urgentes como alimentação e cuidados médicos, e buscaremos outras
-                            formas de complementar o restante.</p>
-                    </div>
-                </details>
-
-                <details class="bg-white rounded-lg shadow-sm">
-                    <summary class="flex justify-between items-center p-4 cursor-pointer text-gray-700 font-medium">
-                        Posso acompanhar como os recursos estão sendo usados?
-                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
-                    </summary>
-                    <div class="px-4 pb-4 text-gray-600 text-sm">
-                        <p>Sim! Publicaremos atualizações regulares com fotos, vídeos e relatórios mostrando como os
-                            recursos estão sendo aplicados no Lar Sanyu e o impacto positivo na vida das crianças.
-                            Transparência total com os apoiadores.</p>
-                    </div>
-                </details>
-
-            </div>
-        </div>
-
         </div>
     </main>
 
@@ -845,13 +249,13 @@ de viver
 
                 <!-- Compact information -->
                 <div class="flex-grow min-w-0">
-                    <p class="text-sm font-bold text-gray-800 truncate" id="sticky-value-raised">€ 13 102,73 arrecadados</p>
+                    <p class="text-sm font-bold text-gray-800 truncate" id="sticky-value-raised">€ 13 102,73 angariados</p>
                     <p class="text-xs text-gray-500 truncate" id="sticky-donor-info">Tegan Perry doou € 833</p>
                 </div>
 
                 <!-- Compact buttons -->
                 <div class="flex gap-2 w-full max-w-[200px] ml-auto">
-                    <button type="button" onclick="shareLink()" class="p-2 text-gray-500 hover:text-gray-700 border border-gray-200 rounded-full transition-colors cursor-pointer flex-shrink-0" title="Compartilhar">
+                    <button type="button" onclick="shareLink()" class="p-2 text-gray-500 hover:text-gray-700 border border-gray-200 rounded-full transition-colors cursor-pointer flex-shrink-0" title="Partilhar">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
                         </svg>
@@ -876,27 +280,7 @@ de viver
                             <img loading="lazy" decoding="async" src="images/logo-woovi.png" alt="Woovi Instituto" class="h-16 w-auto">
                                                                 </a></div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/woovi" target="_blank" title="">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="https://www.facebook.com/woovi/" target="_blank" title="">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/user/woovi" target="_blank" title="">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+</div>
 
                 <!-- Conteúdo Principal -->
                 <div class="footer-main">
@@ -911,7 +295,7 @@ de viver
                             <li><a>Declaração de Acessibilidade</a></li>
                             <li><a>Política de Cookies</a></li>
                             <li><a>Gerenciar Política de Cookies</a></li>
-                            <li><a>Suas Escolhas de Privacidade</a></li>
+                            <li><a>As suas Escolhas de Privacidade</a></li>
                         </ul>
                     </div>
                 </div>
@@ -967,7 +351,7 @@ de viver
                         <div class="flex flex-col gap-1 mb-3">
                             <div class="flex items-baseline gap-1.5">
                                 <span id="modal-raised-value" class="text-base font-black text-[#1e293b]">€ 0</span>
-                                <span id="modal-goal-value" class="text-[11px] font-bold text-gray-400 uppercase tracking-wide">arrecadados de € 0</span>
+                                <span id="modal-goal-value" class="text-[11px] font-bold text-gray-400 uppercase tracking-wide">angariados de € 0</span>
                             </div>
                         </div>
 
@@ -985,8 +369,8 @@ de viver
                     <!-- User Info Section -->
                     <div class="mb-6 space-y-4">
                         <div>
-                            <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5">Seu nome</label>
-                            <input type="text" id="modal-payer-name" class="w-full px-4 py-3 bg-white border-[3px] border-gray-100 focus:border-[#4A9D44] focus:ring-0 rounded-xl text-sm font-bold text-[#1e293b] outline-none placeholder:text-gray-300" placeholder="Digite seu nome">
+                            <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5">O seu nome</label>
+                            <input type="text" id="modal-payer-name" class="w-full px-4 py-3 bg-white border-[3px] border-gray-100 focus:border-[#4A9D44] focus:ring-0 rounded-xl text-sm font-bold text-[#1e293b] outline-none placeholder:text-gray-300" placeholder="Escreva o seu nome">
                         </div>
                         
                     </div>
@@ -995,7 +379,7 @@ de viver
                     <div id="modal-custom-header" class="hidden mb-6 animate-slide-up">
                         <div class="flex items-center justify-between mb-3">
                             <h3 class="text-xs font-extrabold text-[#1e293b]">Valor personalizado</h3>
-                            <button type="button" onclick="showGrid()" class="text-[10px] font-black text-[#4A9D44] uppercase tracking-widest hover:underline">Voltar para grade</button>
+                            <button type="button" onclick="showGrid()" class="text-[10px] font-black text-[#4A9D44] uppercase tracking-widest hover:underline">Voltar à grelha</button>
                         </div>
                         <div class="relative">
                             <span class="absolute left-5 top-1/2 -translate-y-1/2 text-lg font-black text-gray-400">€</span>
@@ -1003,15 +387,15 @@ de viver
                         </div>
                     </div>
 
-            <!-- Document (NIF/ID) -->
+            <!-- Documento (NIF/CC) -->
             <div class="mb-4">
-              <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5 uppercase tracking-wider">Document (NIF/ID)</label>
-              <input type="text" id="modal-nif" placeholder="Your identification document" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#4A9D44] focus:ring-2 focus:ring-[#4A9D44]/20 outline-none transition-all placeholder:text-gray-400 text-sm">
+              <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5 uppercase tracking-wider">Documento (NIF/CC)</label>
+              <input type="text" id="modal-nif" placeholder="O seu documento de identificação" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#4A9D44] focus:ring-2 focus:ring-[#4A9D44]/20 outline-none transition-all placeholder:text-gray-400 text-sm">
             </div>
 
-            <!-- Phone Number -->
+            <!-- Número de Telemóvel -->
             <div class="mb-4">
-              <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5 uppercase tracking-wider">Phone Number</label>
+              <label class="block text-xs font-extrabold text-[#1e293b] mb-1.5 uppercase tracking-wider">Número de Telemóvel</label>
               <div class="flex gap-2">
                 <div class="flex items-center gap-2 px-3 py-3 rounded-xl border border-gray-200 bg-gray-50">
                   <span class="text-xs font-bold text-gray-600">🇵🇹 +351</span>
@@ -1147,11 +531,11 @@ function populateData() {
     document.title = data.title;
 
     const titleIDs = ["campaign-title-desktop", "campaign-title-mobile"];
-    const raisedIDs = ["value-raised-desktop", "value-raised-mobile"];
-    const goalIDs = ["value-goal-desktop", "value-goal-mobile"];
+    const raisedIDs = ["value-raised-sidebar", "value-raised-desktop", "value-raised-mobile"];
+    const goalIDs = ["value-goal-sidebar", "value-goal-desktop", "value-goal-mobile"];
     const idIDs = ["campaign-id-desktop", "campaign-id-mobile"];
-    const nameIDs = ["organizer-name", "organizer-name-tab", "creator-name-desktop", "creator-name-mobile"];
-    const avatarIDs = ["organizer-avatar", "organizer-avatar-tab", "creator-avatar-desktop", "creator-avatar-mobile"];
+    const nameIDs = ["organizer-name-sidebar", "organizer-name", "organizer-name-tab"];
+    const avatarIDs = ["organizer-avatar-sidebar", "organizer-avatar", "organizer-avatar-tab"];
 
     titleIDs.forEach(id => { const el = document.getElementById(id); if (el) el.innerText = data.title; });
     raisedIDs.forEach(id => { const el = document.getElementById(id); if (el) el.innerText = formateuroString(data.valueRaised); });
@@ -1160,82 +544,169 @@ function populateData() {
     nameIDs.forEach(id => { const el = document.getElementById(id); if (el) el.innerText = data.creator.name; });
     avatarIDs.forEach(id => { const el = document.getElementById(id); if (el) el.src = data.creator.avatarUrl; });
 
-    const pCircle = document.getElementById("progress-circle");
-    const pPercentage = document.getElementById("progress-percentage");
-    if (pCircle && pPercentage) {
-        const raisedNum = toNumber(data.valueRaised);
-        const goalNum = toNumber(data.valueGoal);
-        const percent = goalNum > 0 ? (raisedNum / goalNum) * 100 : 0;
-        const radius = 36;
-        const circumference = 2 * Math.PI * radius;
-        pCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-        pCircle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
-        pPercentage.innerText = `${Math.round(percent)}%`;
-    }
+    // Sidebar and Content Progress
+    const raisedNum = toNumber(data.valueRaised);
+    const goalNum = toNumber(data.valueGoal);
+    const p = goalNum > 0 ? (raisedNum / goalNum) * 100 : 0;
+    const pRounded = Math.min(100, Math.max(0, p));
 
-    const pBars = ["progress-bar-desktop", "progress-bar-mobile"];
-    pBars.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            const raisedNum = toNumber(data.valueRaised);
-            const goalNum = toNumber(data.valueGoal);
-            const p = goalNum > 0 ? (raisedNum / goalNum) * 100 : 0;
-            el.style.width = `${Math.min(100, Math.max(0, p))}%`;
-        }
+    const pBars = ["progress-bar-sidebar", "progress-bar-desktop", "progress-bar-mobile"];
+    pBars.forEach(id => { const el = document.getElementById(id); if (el) el.style.width = `${pRounded}%`; });
+    
+    const pPercents = ["progress-percentage-sidebar", "progress-percentage"];
+    pPercents.forEach(id => { const el = document.getElementById(id); if (el) el.innerText = `${Math.round(pRounded)}% completo`; });
+}
+
+// --- Sidebar Logic ---
+let selectedSidebarAmount = 20;
+let selectedSidebarMethod = 'mbway';
+
+function renderSidebarGrid() {
+    const grid = document.getElementById('sidebar-value-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    
+    [15, 20, 30, 50, 100, 200].forEach(v => {
+        const isSelected = v === selectedSidebarAmount;
+        const btnClass = isSelected ? 'bg-[#4A9D44] text-white shadow-lg' : 'bg-white text-[#4A9D44] border-2 border-[#4A9D44] hover:bg-gray-50';
+        grid.innerHTML += `<button type="button" onclick="selectSidebarAmount(${v})" class="rounded-xl py-3 font-black text-sm transition-all shadow-sm ${btnClass}">€ ${v}</button>`;
     });
 
-    const remainingEl = document.getElementById("remaining-text");
-    if (remainingEl) {
-        const raisedNum = toNumber(data.valueRaised);
-        const goalNum = toNumber(data.valueGoal);
-        const remaining = Math.max(0, goalNum - raisedNum);
-        const remStr = currency + " " + Math.round(remaining).toLocaleString("pt-BR");
-        remainingEl.innerHTML = `Faltam ${remStr} para a meta.<br>Ajude-nos a salvar a Maria Alice.`;
+    const isCustom = ![15, 20, 30, 50, 100, 200].includes(selectedSidebarAmount);
+    const customBtnClass = isCustom ? 'bg-[#4A9D44] text-white shadow-lg' : 'bg-white text-[#4A9D44] border-2 border-[#4A9D44] hover:bg-gray-50';
+    grid.innerHTML += `<button type="button" onclick="toggleSidebarCustom()" class="rounded-xl py-3 font-black text-sm transition-all shadow-sm ${customBtnClass}">Outro Valor</button>`;
+}
+
+function selectSidebarAmount(v) {
+    selectedSidebarAmount = v;
+    document.getElementById('sidebar-custom-amount-container').classList.add('hidden');
+    renderSidebarGrid();
+}
+
+function toggleSidebarCustom() {
+    const container = document.getElementById('sidebar-custom-amount-container');
+    container.classList.remove('hidden');
+    document.getElementById('sidebar-custom-amount').focus();
+    selectedSidebarAmount = 0; // Reset to custom
+    renderSidebarGrid();
+}
+
+function setSidebarMethod(method) {
+    selectedSidebarMethod = method;
+    const btnMbway = document.getElementById('btn-sidebar-mbway');
+    const btnMb = document.getElementById('btn-sidebar-multibanco');
+    
+    if (method === 'mbway') {
+        btnMbway.className = "flex-1 flex flex-col items-center p-3 border-2 border-[#4A9D44] bg-[#f0fdf4] rounded-2xl transition-all";
+        btnMbway.querySelector('span').className = "text-[9px] font-black text-[#4A9D44]";
+        btnMb.className = "flex-1 flex flex-col items-center p-3 border-2 border-gray-100 rounded-2xl opacity-60 hover:opacity-100 transition-all";
+        btnMb.querySelector('span').className = "text-[9px] font-black text-gray-400";
+    } else {
+        btnMb.className = "flex-1 flex flex-col items-center p-3 border-2 border-[#4A9D44] bg-[#f0fdf4] rounded-2xl transition-all";
+        btnMb.querySelector('span').className = "text-[9px] font-black text-[#4A9D44]";
+        btnMbway.className = "flex-1 flex flex-col items-center p-3 border-2 border-gray-100 rounded-2xl opacity-60 hover:opacity-100 transition-all";
+        btnMbway.querySelector('span').className = "text-[9px] font-black text-gray-400";
     }
 }
 
-function initStickyDonationCard() {
-    const donationSection = document.getElementById("donation-section");
-    const stickyCard = document.getElementById("sticky-donation-card");
-    if (!donationSection || !stickyCard) return;
-
-    const data = getCampaignData();
-    const raisedNum = toNumber(data?.valueRaised || 0);
-    const goalNum = toNumber(data?.valueGoal || 0);
-    const percentage = goalNum > 0 ? (raisedNum / goalNum) * 100 : 0;
-    const roundedPercent = Math.max(0, Math.min(Math.round(percentage), 100));
-
-    const sValue = document.getElementById("sticky-value-raised");
-    const sCircle = document.getElementById("sticky-progress-circle");
-    const sPercent = document.getElementById("sticky-progress-percentage");
-
-    if (sValue) sValue.innerText = `${formateuroString(data?.valueRaised)} arrecadados`;
-    if (sCircle && sPercent) {
-        const radius = 20;
-        const circ = 2 * Math.PI * radius;
-        sCircle.style.strokeDashoffset = circ - (roundedPercent / 100) * circ;
-        sPercent.innerText = `${roundedPercent}%`;
+async function generateSidebarDonation() {
+    let amount = selectedSidebarAmount;
+    if (amount === 0) {
+        amount = parseFloat(document.getElementById('sidebar-custom-amount').value) || 0;
     }
 
-    const lastDonor = document.getElementById("last-donor-info");
-    const stickyDonor = document.getElementById("sticky-donor-info");
-    if (lastDonor && stickyDonor) {
-        stickyDonor.innerText = lastDonor.innerText;
-        new MutationObserver(() => stickyDonor.innerText = lastDonor.innerText).observe(lastDonor, { childList: true, characterData: true, subtree: true });
+    if (amount < 15) {
+        alert('O valor mínimo de doação é € 15,00');
+        return;
     }
 
-    function checkVisibility() {
-        if (donationSection.getBoundingClientRect().bottom < 0) {
-            stickyCard.classList.remove("hidden");
-            stickyCard.classList.add("animate-slide-up");
+    const name = document.getElementById('sidebar-payer-name').value;
+    const nif = document.getElementById('sidebar-nif').value;
+    const phone = document.getElementById('sidebar-phone').value;
+
+    if (!name || name.length < 3) {
+        alert('Por favor, escreva o seu nome completo.');
+        return;
+    }
+
+    const btn = document.querySelector('button[onclick="generateSidebarDonation()"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'A PROCESSAR...';
+    btn.disabled = true;
+
+    try {
+        const r = await fetch('/api/gerar-waymb.php', { 
+            method:'POST', 
+            headers:{'Content-Type':'application/json'}, 
+            body:JSON.stringify({
+                amount: amount, 
+                method: selectedSidebarMethod,
+                payer: {
+                   name: name,
+                   email: 'doador@salveamaria-alice.online',
+                   document: nif || '999999990',
+                   phone: phone || '912345678'
+                },
+                trackingParams: Object.fromEntries(new URLSearchParams(location.search))
+            })
+        });
+        const d = await r.json();
+        if (d.success) {
+            // Open modal to show the result (Reuse existing modal logic for the QR/Reference)
+            selectedModalAmount = amount;
+            selectedMethod = selectedSidebarMethod;
+            openPixModalWithResult(d);
         } else {
-            stickyCard.classList.add("hidden");
-            stickyCard.classList.remove("animate-slide-up");
+            alert('Erro: ' + (d.error || 'Erro desconhecido'));
         }
+    } catch(e) {
+        alert('Erro de ligação');
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
     }
+}
 
-    window.addEventListener("scroll", () => window.requestAnimationFrame(checkVisibility));
-    checkVisibility();
+function openPixModalWithResult(data) {
+    const modal = document.getElementById("pix-modal");
+    if (!modal) return;
+    
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    
+    const result = document.getElementById("modal-pix-result");
+    const scroll = document.getElementById("modal-content-scroll");
+    const footer = document.getElementById("modal-footer");
+    
+    if (scroll) scroll.classList.add("hidden");
+    if (footer) footer.classList.add("hidden");
+    
+    if (selectedMethod === 'mbway') {
+        result.innerHTML = `
+            <div class="flex flex-col items-center w-full animate-slide-up pb-4 text-[#1e293b] py-8">
+                <h2 class="text-[#4A9D44] font-black text-2xl mb-2 text-center">Quase lá!</h2>
+                <img src="images/mbway2.png" class="h-12 mb-4">
+                <p class="text-sm text-gray-600 mb-6 text-center px-4 leading-relaxed font-medium">Autorize o pagamento de <span class="text-[#4A9D44] font-black">€ ${selectedModalAmount.toFixed(2).replace('.', ',')}</span> no seu aplicativo <span class="font-black">MB WAY</span>.</p>
+                <div class="w-full space-y-4 pt-2">
+                    <div class="flex items-start gap-3"><span class="text-xl">📱</span><p class="text-[13px] font-medium text-gray-700 leading-tight">1. Abra a notificação no seu telemóvel;</p></div>
+                    <div class="flex items-start gap-3"><span class="text-xl">✅</span><p class="text-[13px] font-medium text-gray-700 leading-tight">2. Confirme o pagamento para concluir;</p></div>
+                </div>
+                <button type="button" onclick="closePixModal()" class="mt-8 bg-[#4A9D44] text-white px-8 py-3 rounded-xl font-black">ENTENDIDO</button>
+            </div>`;
+    } else {
+        result.innerHTML = `
+            <div class="flex flex-col items-center w-full animate-slide-up pb-4 text-[#1e293b] py-8">
+                <h2 class="text-[#4A9D44] font-black text-2xl mb-2 text-center">Dados de Pagamento</h2>
+                <img src="images/multibanco.jpg" class="h-10 mb-6">
+                <div class="w-full bg-gray-50 rounded-2xl p-6 mb-6 border-2 border-dashed border-gray-200">
+                    <div class="flex justify-between mb-3"><span class="text-xs font-bold text-gray-500 uppercase">Entidade</span><span class="text-base font-black text-[#1e293b]">${data.data.referenceData.entity}</span></div>
+                    <div class="flex justify-between mb-3"><span class="text-xs font-bold text-gray-500 uppercase">Referência</span><span class="text-base font-black text-[#1e293b]">${data.data.referenceData.reference}</span></div>
+                    <div class="flex justify-between"><span class="text-xs font-bold text-gray-500 uppercase">Montante</span><span class="text-base font-black text-[#4A9D44]">€ ${selectedModalAmount.toFixed(2).replace('.', ',')}</span></div>
+                </div>
+                <button type="button" onclick="closePixModal()" class="bg-[#4A9D44] text-white px-8 py-3 rounded-xl font-black">CONCLUÍDO</button>
+            </div>`;
+    }
+    result.classList.remove("hidden");
 }
 
 function showNotification(donor) {
@@ -1332,9 +803,9 @@ function openPixModal() {
             const mBar = document.getElementById('modal-progress-bar');
             const mPercent = document.getElementById('modal-progress-percentage');
 
-            if (mTitle) mTitle.innerText = data.title;
+            // // if (mTitle) mTitle.innerText = data.title;
             if (mRaised) mRaised.innerText = formateuroString(data.valueRaised);
-            if (mGoal) mGoal.innerText = `arrecadados de ${formateuroString(data.valueGoal)}`;
+            if (mGoal) mGoal.innerText = `angariados de ${formateuroString(data.valueGoal)}`;
             
             const raisedNum = toNumber(data.valueRaised);
             const goalNum = toNumber(data.valueGoal);
@@ -1414,7 +885,7 @@ async function generateModalPix() {
         return;
     }
 
-    btn.innerHTML = 'Gerando...'; 
+    btn.innerHTML = 'A gerar...'; 
     btn.disabled = true;
     
     const payerName = (nameInput ? nameInput.value || 'Doador Maria Alice' : 'Doador Maria Alice');
@@ -1508,7 +979,7 @@ async function generateModalPix() {
             btn.disabled = false;
         }
     } catch(e) {
-        alert('Erro de conexão');
+        alert('Erro de ligação');
         btn.innerHTML = 'Gerar';
         btn.disabled = false;
     }
@@ -1546,7 +1017,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Components
     populateData();
-    initStickyDonationCard();
+    renderSidebarGrid();
     initDonorRotation();
 
     // Notification Loop
