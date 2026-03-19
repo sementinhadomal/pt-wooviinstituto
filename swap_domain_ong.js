@@ -14,25 +14,27 @@ function processDirectory(dirPath) {
             }
         } else if (file.endsWith('.html') || file.endsWith('.js')) {
             let content = fs.readFileSync(fullPath, 'utf8');
-            const target = 'https://ongmaosqueacolhem.com/vaquinhas';
-            const replacement = 'https://ongmaosqueacolhem.com/vaquinhas';
-            
-            // Also fix the root domain references just in case
+            const target = 'https://ongmaosqueacolhem.com';
             const target2 = 'https://ongmaosqueacolhem.com';
-            const replacement2 = 'https://ongmaosqueacolhem.com';
+            const replacement = 'https://ongmaosqueacolhem.com';
             
-            if (content.includes(target) || content.includes(target2)) {
+            let changed = false;
+            if (content.includes(target)) {
                 content = content.replace(new RegExp(target, 'g'), replacement);
-                
-                // Only replace target2 if it's not already www (target2 replacement might create www.www if we aren't careful, so let's use a regex)
-                content = content.replace(/https:\/\/institutomaosqueacolhem\.com\.br(?![\w])/g, replacement2);
-                
+                changed = true;
+            }
+            if (content.includes(target2)) {
+                content = content.replace(new RegExp(target2, 'g'), replacement);
+                changed = true;
+            }
+            
+            if(changed) {
                 fs.writeFileSync(fullPath, content);
-                console.log('Fixed URLs in', fullPath);
+                console.log('Swapped domain in', fullPath);
             }
         }
     });
 }
 
 processDirectory(__dirname);
-console.log('All files processed for www addition.');
+console.log('All files processed for ongmaosqueacolhem.com addition.');
