@@ -28,14 +28,8 @@ function setCorsHeaders() {
     }
 }
 
-// Configuração do banco de dados SQLite
-define('DB_PATH', __DIR__ . '/database/salveochico.db');
-
-// Criar diretório do banco se não existir
-$dbDir = dirname(DB_PATH);
-if (!file_exists($dbDir)) {
-    mkdir($dbDir, 0777, true);
-}
+// Configuração do banco de dados SQLite (usando /tmp para compatibilidade com Vercel)
+define('DB_PATH', sys_get_temp_dir() . '/salveochico.db');
 
 // Criar tabelas se não existirem
 function initDatabase() {

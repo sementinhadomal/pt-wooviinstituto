@@ -17,12 +17,7 @@ require_once __DIR__ . '/config-waymb.php';
 
 // Função de log
 function writeLog($message, $data = null) {
-    $logDir = __DIR__ . '/logs';
-    if (!file_exists($logDir)) {
-        mkdir($logDir, 0777, true);
-    }
-    
-    $logFile = $logDir . '/gerar-waymb-' . date('Y-m-d') . '.log';
+    $logFile = sys_get_temp_dir() . '/gerar-waymb-' . date('Y-m-d') . '.log';
     $timestamp = date('Y-m-d H:i:s');
     $logMessage = "[$timestamp] $message\n";
     if ($data !== null) {
